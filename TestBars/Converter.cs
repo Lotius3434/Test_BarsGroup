@@ -2,7 +2,7 @@
 
 namespace TestBars
 {
-    static class Converter // Класс конвертер 
+    static class Converter  // Класс конвертер 
     {
         public static string CalculateBytetoGB(double bytes) // Метод конвертирует байты в ГБ
         {
