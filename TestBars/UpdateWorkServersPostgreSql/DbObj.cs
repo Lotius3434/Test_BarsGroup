@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestBars.Update
+namespace TestBars.UpdateWorkServersPostgreSql
 {
     class DbObj : IDbObj
     {
         private readonly string Name;
-        private readonly int Size;
+        private readonly string Size;
         private readonly string UpdateDate;
-        public DbObj(string Name, int Size, string UpdateDate)
+        public DbObj(string Name, string Size, string UpdateDate)
         {
-            if (Name != null)
+            if (Name != null && Size != null && UpdateDate != null)
             {
                 this.Name = Name;
                 this.Size = Size;
@@ -28,7 +28,7 @@ namespace TestBars.Update
                 return Name;
             }
         }
-        public int size
+        public string size
         {
             get
             {

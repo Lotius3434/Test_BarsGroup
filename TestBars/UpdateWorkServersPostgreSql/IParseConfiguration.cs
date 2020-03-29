@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace TestBars.UpdateWorkServersPostgreSql
 {
-    interface IServerObj
+    interface IParseConfiguration
     {
-        string NameServer { get; }
-        IList<IDbObj> DataBases { get; }
+        Dictionary<string, string> GetConfigServers_Npgsql();
     }
 }

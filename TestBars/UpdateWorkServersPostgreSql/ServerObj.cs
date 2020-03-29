@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestBars.Update
+namespace TestBars.UpdateWorkServersPostgreSql
 {
-    class ServerObj
+    class ServerObj : IServerObj
     {
         private readonly string _NameServer;
         IList<IDbObj> dbObjs;
@@ -16,6 +16,11 @@ namespace TestBars.Update
             {
                 this._NameServer = _NameServer;
                 this.dbObjs = dbObjs;
+            }
+            else
+            {
+                
+                return;
             }
         }
         public string NameServer

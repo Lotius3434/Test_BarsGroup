@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestBars.Update
+namespace TestBars.UpdateWorkServersPostgreSql
 {
     interface IDbObj
     {
         string name { get; }
-        int size { get; }
+        string size { get; }
         string updateDate { get; }
     }
 }
