@@ -9,7 +9,6 @@ namespace TestBars.Update
     interface IServerObj
     {
         string NameServer { get; }
-        string ConnectionParams { get; }
         IList<IDbObj> DataBases { get; }
     }
 }

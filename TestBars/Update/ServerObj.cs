@@ -9,14 +9,12 @@ namespace TestBars.Update
     class ServerObj
     {
         private readonly string _NameServer;
-        private readonly string _ConnectionParams;
         IList<IDbObj> dbObjs;
-        public ServerObj(string _NameServer, string _ConnectionParams, IList<IDbObj> dbObjs)
+        public ServerObj(string _NameServer, IList<IDbObj> dbObjs)
         {
-            if (_NameServer != null && _ConnectionParams != null)
+            if (_NameServer != null)
             {
                 this._NameServer = _NameServer;
-                this._ConnectionParams = _ConnectionParams;
                 this.dbObjs = dbObjs;
             }
         }
@@ -27,14 +25,7 @@ namespace TestBars.Update
                 return _NameServer;
             }
         }
-        public string ConnectionParams
-        {
-            get
-            {
-                return _ConnectionParams;
-            }
-        }
-        public IList<IDbObj> DataBases
+       public IList<IDbObj> DataBases
         {
             get
             {
