@@ -8,21 +8,9 @@ namespace TestBars.UpdateWorkServersPostgreSql
 {
     class ServerObj : IServerObj
     {
-        private readonly string _NameServer;
-        IList<IDbObj> dbObjs;
-        public ServerObj(string _NameServer, IList<IDbObj> dbObjs)
-        {
-            if (_NameServer != null)
-            {
-                this._NameServer = _NameServer;
-                this.dbObjs = dbObjs;
-            }
-            else
-            {
-                
-                return;
-            }
-        }
+        private string _NameServer;
+        private IList<IDbObj> dbObjs;
+        
         public string NameServer
         {
             get
@@ -35,6 +23,14 @@ namespace TestBars.UpdateWorkServersPostgreSql
             get
             {
                 return dbObjs;
+            }
+            set
+            {
+                if (dbObjs == null)
+                {
+                    dbObjs = value;
+                }
+                
             }
         }
 

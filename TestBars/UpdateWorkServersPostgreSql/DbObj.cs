@@ -8,24 +8,20 @@ namespace TestBars.UpdateWorkServersPostgreSql
 {
     class DbObj : IDbObj
     {
-        private readonly string Name;
-        private readonly string Size;
-        private readonly string UpdateDate;
-        public DbObj(string Name, string Size, string UpdateDate)
-        {
-            if (Name != null && Size != null && UpdateDate != null)
-            {
-                this.Name = Name;
-                this.Size = Size;
-                this.UpdateDate = UpdateDate;
-            }
-
-        }
+        private  string Name;
+        private  string Size;
+        private  string UpdateDate;
+        
         public string name
         {
             get
             {
                 return Name;
+            }
+            set
+            {
+                if (Name == null)
+                    Name = value;
             }
         }
         public string size
@@ -34,12 +30,22 @@ namespace TestBars.UpdateWorkServersPostgreSql
             {
                 return Size;
             }
+            set
+            {
+                if (Size == null)
+                    Size = value;
+            }
         }
         public string updateDate
         {
             get
             {
                 return UpdateDate;
+            }
+            set
+            {
+                if (UpdateDate == null)
+                    UpdateDate = value;
             }
         }
 

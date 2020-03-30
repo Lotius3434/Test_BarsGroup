@@ -8,7 +8,7 @@ namespace TestBars.UpdateWorkServersPostgreSql
 {
     interface IServerObj
     {
-        string NameServer { get; }
-        IList<IDbObj> DataBases { get; }
+        string NameServer { get; set; }
+        IList<IDbObj> DataBases { get; set; }
     }
 }

@@ -103,6 +103,7 @@
     <Compile Include="Drives.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlConfig.cs" />
     <Compile Include="UpdateWorkServersPostgreSql\ConnectionDb.cs" />
     <Compile Include="UpdateWorkServersPostgreSql\DbObj.cs" />
     <Compile Include="UpdateWorkServersPostgreSql\IDbObj.cs" />

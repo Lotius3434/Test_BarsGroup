@@ -8,8 +8,8 @@ namespace TestBars.UpdateWorkServersPostgreSql
 {
     interface IDbObj
     {
-        string name { get; }
-        string size { get; }
-        string updateDate { get; }
+        string name { get; set; }
+        string size { get; set; }
+        string updateDate { get; set; }
     }
 }

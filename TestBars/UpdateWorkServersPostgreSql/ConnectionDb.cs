@@ -10,17 +10,18 @@ namespace TestBars.UpdateWorkServersPostgreSql
 {
     class ConnectionDb
     {
-        private NpgsqlConnection connection;
-        private NpgsqlCommand NpgsqlCommand;
-        private NpgsqlDataReader result;
+        //private NpgsqlConnection connection;
+        //private NpgsqlCommand NpgsqlCommand;
+        //private NpgsqlDataReader result;
         IParseConfiguration parseConfiguration;
         Dictionary<string, string> Configurations;
         IList<IServerObj> servers;
-        public ConnectionDb(IParseConfiguration parseConfiguration)
+        public ConnectionDb(IParseConfiguration parseConfiguration, IList<IServerObj> servers)
         {
             if (parseConfiguration != null)
             {
                 this.parseConfiguration = parseConfiguration;
+                this.servers = servers;
             }
             
         }
@@ -29,9 +30,30 @@ namespace TestBars.UpdateWorkServersPostgreSql
             Configurations = parseConfiguration.GetConfigServers_Npgsql();
             if (Configurations != null)
             {
-                servers = new List<IServerObj>();
+                
                 foreach (var item in Configurations)
                 {
+                    
+                    try
+                    {
+                        using (NpgsqlConnection connection = new NpgsqlConnection(item.Value))
+                        {
+                            NpgsqlCommand NpgsqlCommand = new NpgsqlCommand(SqlConfig.sqlquery,connection);
+                            
+                            connection.Open();
+                            NpgsqlDataReader result = NpgsqlCommand.ExecuteReader();
+
+                            while ()
+                            {
+
+                            }
+                        }
+
+                    }
+                    catch(Exception e)
+                    {
+                        Console.WriteLine();
+                    }
                     //Закончил здесь
                 }
             }
