@@ -17,6 +17,12 @@ namespace TestBars.UpdateWorkServersPostgreSql
             {
                 return _NameServer;
             }
+            set
+            {
+                if (_NameServer == null)
+                    _NameServer = value;
+               
+            }
         }
        public IList<IDbObj> DataBases
         {

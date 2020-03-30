@@ -43,9 +43,9 @@ namespace TestBars.UpdateWorkServersPostgreSql
                             connection.Open();
                             NpgsqlDataReader result = NpgsqlCommand.ExecuteReader();
 
-                            while ()
+                            while (result.Read())
                             {
-
+                                // Закончил здесьservers
                             }
                         }
 
@@ -54,7 +54,7 @@ namespace TestBars.UpdateWorkServersPostgreSql
                     {
                         Console.WriteLine();
                     }
-                    //Закончил здесь
+                    
                 }
             }
             return servers;
