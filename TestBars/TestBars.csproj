@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.3.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=5.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.5.0.1\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Apis, Version=1.44.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.1.44.0\lib\net45\Google.Apis.dll</HintPath>
     </Reference>
@@ -79,6 +85,7 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
@@ -91,6 +98,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -109,8 +117,10 @@
     <Compile Include="UpdateWorkServersPostgreSql\IDbObj.cs" />
     <Compile Include="UpdateWorkServersPostgreSql\IParseConfiguration.cs" />
     <Compile Include="UpdateWorkServersPostgreSql\IServerObj.cs" />
+    <Compile Include="UpdateWorkServersPostgreSql\IWriterServers.cs" />
     <Compile Include="UpdateWorkServersPostgreSql\ParseConfiguration.cs" />
     <Compile Include="UpdateWorkServersPostgreSql\ServerObj.cs" />
+    <Compile Include="UpdateWorkServersPostgreSql\WriterServers.cs" />
     <Compile Include="WorkServersPostgreSql\AbstractServers.cs" />
     <Compile Include="WorkServersPostgreSql\ContainerServers.cs" />
     <Compile Include="WorkServersPostgreSql\IContainerServers.cs" />

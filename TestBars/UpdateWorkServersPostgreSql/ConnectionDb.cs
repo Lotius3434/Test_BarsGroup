@@ -14,14 +14,15 @@ namespace TestBars.UpdateWorkServersPostgreSql
         //private NpgsqlCommand NpgsqlCommand;
         //private NpgsqlDataReader result;
         IParseConfiguration parseConfiguration;
+        IWriterServers writerServers;
         Dictionary<string, string> Configurations;
         IList<IServerObj> servers;
-        public ConnectionDb(IParseConfiguration parseConfiguration, IList<IServerObj> servers)
+        public ConnectionDb(IParseConfiguration parseConfiguration, IWriterServers writerServers)
         {
             if (parseConfiguration != null)
             {
                 this.parseConfiguration = parseConfiguration;
-                this.servers = servers;
+                this.writerServers = writerServers;
             }
             
         }
@@ -42,17 +43,15 @@ namespace TestBars.UpdateWorkServersPostgreSql
                             
                             connection.Open();
                             NpgsqlDataReader result = NpgsqlCommand.ExecuteReader();
-
-                            while (result.Read())
-                            {
-                                // Закончил здесьservers
-                            }
+                            connection.Close();
+                            
                         }
 
                     }
                     catch(Exception e)
                     {
                         Console.WriteLine();
+                        //доделать
                     }
                     
                 }
