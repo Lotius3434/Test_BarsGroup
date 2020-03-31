@@ -114,6 +114,7 @@
     <Compile Include="SqlConfig.cs" />
     <Compile Include="UpdateWorkServersPostgreSql\ConnectionDb.cs" />
     <Compile Include="UpdateWorkServersPostgreSql\DbObj.cs" />
+    <Compile Include="UpdateWorkServersPostgreSql\IConnectionDb.cs" />
     <Compile Include="UpdateWorkServersPostgreSql\IDbObj.cs" />
     <Compile Include="UpdateWorkServersPostgreSql\IParseConfiguration.cs" />
     <Compile Include="UpdateWorkServersPostgreSql\IServerObj.cs" />

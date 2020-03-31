@@ -14,19 +14,19 @@ namespace TestBars.UpdateWorkServersPostgreSql
         //private NpgsqlCommand NpgsqlCommand;
         //private NpgsqlDataReader result;
         IParseConfiguration parseConfiguration;
-        IWriterServers writerServers;
+        
         Dictionary<string, string> Configurations;
-        IList<IServerObj> servers;
-        public ConnectionDb(IParseConfiguration parseConfiguration, IWriterServers writerServers)
+        IList<NpgsqlDataReader> DataReader = new List<NpgsqlDataReader>();
+        public ConnectionDb(IParseConfiguration parseConfiguration)
         {
             if (parseConfiguration != null)
             {
                 this.parseConfiguration = parseConfiguration;
-                this.writerServers = writerServers;
+                
             }
             
         }
-        public IList<IServerObj> GetServers()
+        public IList<NpgsqlDataReader> GetServers()
         {
             Configurations = parseConfiguration.GetConfigServers_Npgsql();
             if (Configurations != null)
@@ -42,7 +42,7 @@ namespace TestBars.UpdateWorkServersPostgreSql
                             NpgsqlCommand NpgsqlCommand = new NpgsqlCommand(SqlConfig.sqlquery,connection);
                             
                             connection.Open();
-                            NpgsqlDataReader result = NpgsqlCommand.ExecuteReader();
+                            DataReader.Add(NpgsqlCommand.ExecuteReader());
                             connection.Close();
                             
                         }
@@ -56,7 +56,7 @@ namespace TestBars.UpdateWorkServersPostgreSql
                     
                 }
             }
-            return servers;
+            return DataReader;
         }
     }
 }

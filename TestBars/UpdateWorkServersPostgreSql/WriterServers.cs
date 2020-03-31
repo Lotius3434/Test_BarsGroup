@@ -10,14 +10,18 @@ namespace TestBars.UpdateWorkServersPostgreSql
     class WriterServers
     {
         IList<IServerObj> serverObjs = new List<IServerObj>();
-        
-
-        public IList<IServerObj> WriteServer(NpgsqlDataReader result)
+        IList<NpgsqlDataReader> resultconnectionDb;
+        public WriterServers(IConnectionDb connectionDb)
         {
-            while (result.Read())
+            if (connectionDb != null)
             {
-                // Закончил здесьservers
+                resultconnectionDb = connectionDb.GetServers();
             }
+        }
+
+        public IList<IServerObj> WriteServer()
+        {
+            
             return serverObjs;
         }
     }
