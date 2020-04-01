@@ -107,6 +107,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationCastleWindsor.cs" />
     <Compile Include="Converter.cs" />
     <Compile Include="Drives.cs" />
     <Compile Include="Program.cs" />

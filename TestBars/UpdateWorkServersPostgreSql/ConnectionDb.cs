@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace TestBars.UpdateWorkServersPostgreSql
 {
-    class ConnectionDb
+    class ConnectionDb : IConnectionDb
     {
         //private NpgsqlConnection connection;
         //private NpgsqlCommand NpgsqlCommand;
         //private NpgsqlDataReader result;
         IParseConfiguration parseConfiguration;
         
-        Dictionary<string, string> Configurations;
-        IList<NpgsqlDataReader> DataReader = new List<NpgsqlDataReader>();
+        IDictionary<string, string> Configurations;
+        IDictionary<string, NpgsqlDataReader> DictDataReaders = new Dictionary<string, NpgsqlDataReader>();
         public ConnectionDb(IParseConfiguration parseConfiguration)
         {
             if (parseConfiguration != null)
@@ -26,7 +26,7 @@ namespace TestBars.UpdateWorkServersPostgreSql
             }
             
         }
-        public IList<NpgsqlDataReader> GetServers()
+        public IDictionary<string, NpgsqlDataReader> GetServers()
         {
             Configurations = parseConfiguration.GetConfigServers_Npgsql();
             if (Configurations != null)
@@ -42,7 +42,7 @@ namespace TestBars.UpdateWorkServersPostgreSql
                             NpgsqlCommand NpgsqlCommand = new NpgsqlCommand(SqlConfig.sqlquery,connection);
                             
                             connection.Open();
-                            DataReader.Add(NpgsqlCommand.ExecuteReader());
+                            DictDataReaders.Add(item.Key, NpgsqlCommand.ExecuteReader());
                             connection.Close();
                             
                         }
@@ -56,7 +56,7 @@ namespace TestBars.UpdateWorkServersPostgreSql
                     
                 }
             }
-            return DataReader;
+            return DictDataReaders;
         }
     }
 }

@@ -8,5 +8,6 @@ namespace TestBars.UpdateWorkServersPostgreSql
 {
     interface IWriterServers
     {
+        IList<IServerObj> WriteServerObjs();
     }
 }

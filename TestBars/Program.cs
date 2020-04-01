@@ -6,6 +6,8 @@ using TestBars.WorkSheetsGoogle;
 using System.Threading;
 using Google.Apis.Sheets.v4;
 using Google.Apis.Drive.v3;
+using Castle.Windsor;
+using TestBars.UpdateWorkServersPostgreSql;
 
 namespace TestBars
 {
@@ -13,18 +15,23 @@ namespace TestBars
     {
         static void Main(string[] args)
         {
-            Timer timer = new Timer(new TimerCallback(StartProgram), null, 1000, 30000);
+            var container = new WindsorContainer();
+            container.Install(new ConfigurationCastleWindsor());
+            var writerservers = container.Resolve<IWriterServers>();
+            IList<IServerObj> servers = writerservers.WriteServerObjs();
+            Console.ReadKey();
+            //Timer timer = new Timer(new TimerCallback(StartProgram), null, 1000, 30000);
 
-            
-            ConsoleKeyInfo button_press;
-            do
-            {
-                Task.Delay(1000).Wait();
-                button_press = Console.ReadKey();
 
-            } while (button_press.KeyChar != 'q');
-            timer.Dispose();
-            Console.WriteLine("\nВыход из программы");
+            //ConsoleKeyInfo button_press;
+            //do
+            //{
+            //    Task.Delay(1000).Wait();
+            //    button_press = Console.ReadKey();
+
+            //} while (button_press.KeyChar != 'q');
+            //timer.Dispose();
+            //Console.WriteLine("\nВыход из программы");
 
         }
         static public void StartProgram(object state)
