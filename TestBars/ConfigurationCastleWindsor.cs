@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TestBars.UpdateWorkServersPostgreSql;
+using TestBars.WorkSheetsGoogle;
 
 namespace TestBars
 {
@@ -20,7 +21,13 @@ namespace TestBars
             container.Register(Component.For<IParseConfiguration>().ImplementedBy<ParseConfiguration>());
             container.Register(Component.For<IConnectionDb>().ImplementedBy<ConnectionDb>());
             container.Register(Component.For<IWriterServers>().ImplementedBy<WriterServers>());
+
+            container.Register(Component.For<IUserAuthentication>().ImplementedBy<UserAuthentication>());
+            container.Register(Component.For<IServices>().ImplementedBy<Services>());
+            container.Register(Component.For<ISpreasheet>().ImplementedBy<Spreasheet>());
+            container.Register(Component.For<ISearchSpreadsheets>().ImplementedBy<SearchSpreadsheets>());
             
+
         }
     }
 }

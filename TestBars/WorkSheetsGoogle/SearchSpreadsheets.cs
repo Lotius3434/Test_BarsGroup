@@ -5,11 +5,23 @@ using System.Configuration;
 
 namespace TestBars.WorkSheetsGoogle
 {
-    class SearchSpreadsheets //Класс для работы с гугл диском
+    class SearchSpreadsheets : ISearchSpreadsheets//Класс для работы с гугл диском
     {
-        public List<string> Search(DriveService service)// Метод поиска таблицы по названию
+        DriveService service;
+        public DriveService driveService
         {
-            List<string> listId = new List<string>();
+            set
+            {
+                if (service == null)
+                {
+                    service = value;
+                }
+            }
+        }
+        
+        public string Search()// Метод поиска таблицы по названию
+        {
+            string spreadsheetId = null;
 
             
             FilesResource.ListRequest request = service.Files.List();
@@ -18,14 +30,13 @@ namespace TestBars.WorkSheetsGoogle
             
             if (folderId.Files.Count > 0)
             {
-                for (int a = 0; a < folderId.Files.Count; a++)
-                {
-                    listId.Add(folderId.Files[a].Id);
+                
+                    spreadsheetId = folderId.Files[0].Id;
                     Console.WriteLine("Найдена таблица: {0}", ConfigurationManager.AppSettings["NameSpreadSheet"]);
-                }
+                
             }
 
-            return listId;
+            return spreadsheetId;
 
         }
     }

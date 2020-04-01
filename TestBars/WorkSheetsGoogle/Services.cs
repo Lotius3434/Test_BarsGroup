@@ -6,22 +6,21 @@ using System.Configuration;
 
 namespace TestBars.WorkSheetsGoogle
 {
-    class Services : IGetSheetsService , IGetDriveService
+    class Services : IServices
     {
-        UserCredential credential;
-        public Services(UserCredential credential)
-        {
-            if (credential != null)
-            {
-                this.credential = credential;
-            }
+        UserCredential _credential;
 
+        
+        public Services(IUserAuthentication userAuthentication)
+        {
+            this._credential = userAuthentication.Authentication();
         }
         public SheetsService GetSheetsService()
         {
+
             var service = new SheetsService(new BaseClientService.Initializer()
             {
-                HttpClientInitializer = credential,
+                HttpClientInitializer = _credential,
                 ApplicationName = ConfigurationManager.AppSettings["ApplicationName"],
             });
             return service;
@@ -30,7 +29,7 @@ namespace TestBars.WorkSheetsGoogle
         {
             var service = new DriveService(new BaseClientService.Initializer()
             {
-                HttpClientInitializer = credential,
+                HttpClientInitializer = _credential,
                 ApplicationName = ConfigurationManager.AppSettings["ApplicationName"],
             });
             return service;

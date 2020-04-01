@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using TestBars.WorkServersPostgreSql;
+
 using TestBars.WorkSheetsGoogle;
 using System.Threading;
 using Google.Apis.Sheets.v4;
@@ -54,7 +54,8 @@ namespace TestBars
         }
         static public void StartProgram(object state)
         {
-            
+            var container = new WindsorContainer();
+            container.Install(new ConfigurationCastleWindsor());
             List<IList<IList<Object>>> ListInfo; //Главный спиcок, который хранит в себе все сервера и их данные.
 
             //IContainerServers containerServers = new ContainerServers(); //Контейнер, который создает и хранит в себе список серверов.
@@ -72,7 +73,7 @@ namespace TestBars
             //    ListInfo = new List<IList<IList<Object>>>();
             //    for (int a = 0; a < servers.Count; a++)
             //    {
-                    
+
             //        ListInfo.Add(servers[a].GetBasesandSizes());//Добавление данных из баз серверов.
             //    }
 
@@ -83,7 +84,7 @@ namespace TestBars
             //        servers[a].CloseConnection(); // Закрытие соединения с серверами.
             //    }
 
-                
+
             //}
             //else
             //{
@@ -92,52 +93,50 @@ namespace TestBars
             //}
 
 
+            //UserAuthentication userAuthentication = new UserAuthentication(); // Аутенфикация пользователя.
+            //Services services = new Services();  //Создание сервисов.
+            //Config_Scope_Appname.credential = userAuthentication.Authentication(); //Добавление списка полномочий в общий стат класс.
 
-            UserAuthentication userAuthentication = new UserAuthentication(); // Аутенфикация пользователя.
-            Services services = new Services();  //Создание сервисов.
-            Config_Scope_Appname.credential = userAuthentication.Authentication(); //Добавление списка полномочий в общий стат класс.
+            //SheetsService sheetsService = services.GetSheetsService(); //Получение сервиса для гугл таблиц. 
+            //DriveService driveService = services.GetDriveService(); //Получение сервиса для гугл диска. 
+            var connection = container.Resolve<IConnectionDb>();
+            IList<IServerObj> servers = connection.GetServers();
 
-            SheetsService sheetsService = services.GetSheetsService(); //Получение сервиса для гугл таблиц. 
-            DriveService driveService = services.GetDriveService(); //Получение сервиса для гугл диска. 
-
-            SearchSpreadsheets searchSheets = new SearchSpreadsheets();
+            IServices services = container.Resolve<IServices>();
             
-            ISpreasheet spreasheet = new Spreasheet(sheetsService); // Реализация интерфейса, который содержит в себе весь фунционал работы с таблицами и листами.
+            ISpreasheet spreasheet = container.Resolve<ISpreasheet>();
+            ISearchSpreadsheets searchSpreadsheets = container.Resolve<ISearchSpreadsheets>();
+
+            spreasheet.sheetsService = services.GetSheetsService();
+            searchSpreadsheets.driveService = services.GetDriveService();
+            // Реализация интерфейса, который содержит в себе весь фунционал работы с таблицами и листами.
 
 
 
 
 
-            List<string> ListServer = new List<string>();
-            foreach (var lisinf in ListInfo)
+
+
+
+
+
+            string listIdSreadssheet = searchSpreadsheets.Search(); //Поиск таблиц на гугл диске.
+            if (listIdSreadssheet != null)
             {
-                foreach (var li in lisinf[0])
-                {
-                    ListServer.Add(li.ToString());
-                    break;
-                }
-            }
+                
 
-
-
-            List<string> listIdSreadssheet = searchSheets.Search(driveService); //Поиск таблиц на гугл диске.
-            if (listIdSreadssheet.Count != 0)
-            {
-                foreach (var _lisId in listIdSreadssheet) //Если таблицы найдены, происходит доп. проверка соответсвие листов.
-                {
-
-                    spreasheet.ScanSheets(_lisId, ListServer, ListInfo); //Скан листов, если листов серверов по названию не найдено, они добавляются.
-                    spreasheet.WriteSheet(_lisId, ListInfo); //Обновление листов в таблице.
+                    spreasheet.ScanSheets(listIdSreadssheet, servers); //Скан листов, если листов серверов по названию не найдено, они добавляются.
+                    spreasheet.WriteSheet(listIdSreadssheet, servers); //Обновление листов в таблице.
                     Console.WriteLine("--Таблица обновлена...");
-                }
+                
             }
             else // Если таблица не найдена, создаеться новая.
             {
                 
                 Console.WriteLine("Таблица не найдена\nНачинается создание таблицы...");
                 
-                string spreadsheet = spreasheet.CreateSpreasheet(ListServer); //Создание таблицы и листов.
-                spreasheet.WriteSheet(spreadsheet, ListInfo); //Добавление данных в таблицы.
+                string spreadsheet = spreasheet.CreateSpreasheet(servers); //Создание таблицы и листов.
+                spreasheet.WriteSheet(spreadsheet, servers); //Добавление данных в таблицы.
             }
 
             Console.WriteLine("--Ожидание повторного запуска, интервал: 30 сек...\nДля выхода из программы, нажмите 'q'\n");

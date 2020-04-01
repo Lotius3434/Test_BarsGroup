@@ -6,19 +6,26 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using TestBars.UpdateWorkServersPostgreSql;
 namespace TestBars.WorkSheetsGoogle
 {
-    class Spreasheet : AbstractSpreadsheet //Класс для работы с таблицами и листами.
+    class Spreasheet : ISpreasheet //Класс для работы с таблицами и листами.
     {
         
         SheetsService service;
-
-        public Spreasheet(SheetsService service)
+        public SheetsService sheetsService
         {
-            this.service = service;
+            set
+            {
+                if (service == null)
+                {
+                    service = value;
+                }
+            }
         }
-        public override string CreateSpreasheet(List<string> ServersName) // Метод создания таблицы.
+
+      
+        public string CreateSpreasheet(IList<IServerObj> servers) // Метод создания таблицы.
         {
             string spreadsheetName = ConfigurationManager.AppSettings["NameSpreadSheet"];
 
@@ -27,11 +34,11 @@ namespace TestBars.WorkSheetsGoogle
             myNewSheet.Properties.Title = spreadsheetName;
 
             myNewSheet.Sheets = new List<Sheet>();
-            for (int a = 0; a < ServersName.Count; a++)
+            for (int a = 0; a < servers.Count; a++)
             {
                 var sheet = new Sheet();
                 sheet.Properties = new SheetProperties();
-                sheet.Properties.Title = ServersName[a];
+                sheet.Properties.Title = servers[a].NameServer;
                 myNewSheet.Sheets.Add(sheet);
             }
             Spreadsheet newSheet = service.Spreadsheets.Create(myNewSheet).Execute();
@@ -42,15 +49,17 @@ namespace TestBars.WorkSheetsGoogle
 
         }
 
-        public override void WriteSheet(string spreadsheet, List<IList<IList<Object>>> ListInfo) // Метод добавления данных в листы.
+        public void WriteSheet(string spreadsheet, IList<IServerObj> servers) // Метод добавления данных в листы.
         {
-            for (int a = 0; a < ListInfo.Count; a++)
+
+            //string range = "'Server1'!A1:D";
+
+            foreach (var _servers in servers)
             {
-                //string range = "'Server1'!A1:D";
-
-
-                string range = null;
+                string range = "!A1:D";
                 IList<IList<Object>> valueToWrite = new List<IList<Object>>();
+
+
                 IList<Object> FirstLineNames = new List<Object>()
                 {
                     "Сервер",
@@ -58,17 +67,27 @@ namespace TestBars.WorkSheetsGoogle
                     "Размер в ГБ",
                     "Дата обновления"
                 };
-
-
                 valueToWrite.Add(FirstLineNames);
-
-                foreach (var _ListInfo in ListInfo[a])
+                foreach (var _DataBases in _servers.DataBases)
                 {
+                    IList<Object> listdatabase = new List<Object>();
+                    listdatabase.Add(_servers.NameServer);
+                    listdatabase.Add(_DataBases.name);
+                    listdatabase.Add(_DataBases.size);
+                    listdatabase.Add(_DataBases.updateDate);
 
-                    valueToWrite.Add(_ListInfo);
-                    range = _ListInfo[0].ToString() + "!A1:D";
+
+                    valueToWrite.Add(listdatabase);
 
                 }
+
+                //foreach (var _ListInfo in ListInfo[a])
+                //{
+
+                //    valueToWrite.Add(_ListInfo);
+                //    range = _ListInfo[0].ToString() + "!A1:D";
+
+                //}
 
                 IList<IList<Object>> drivesInfo = Drives.GetDriveFreeSize();
                 foreach (var drv in drivesInfo)
@@ -81,15 +100,18 @@ namespace TestBars.WorkSheetsGoogle
 
                 var update = service.Spreadsheets.Values.Update(valueRange, spreadsheet, range);
                 update.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.USERENTERED;
-                
+
                 update.Execute();
+
             }
+                
+            
             
         }   
 
 
 
-        public override void CreateSheets(string SpreadsheetId, List<string> ListServer, List<IList<IList<Object>>> ListInfo) //Метод для создания листов.
+        public void CreateSheets(string SpreadsheetId, List<string> ListServer, IList<IServerObj> servers) //Метод для создания листов.
         {
             Console.WriteLine("Количество не найденых листов: {0}\nНачинается добавление недостающих листов...", ListServer.Count);
 
@@ -106,29 +128,24 @@ namespace TestBars.WorkSheetsGoogle
                 batchUpdateRequest.Execute();
             }
 
-            List<IList<IList<Object>>> newListInfo = new List<IList<IList<object>>>();
+            IList<IServerObj> newServers = new List<IServerObj>();
 
             for (int a = 0; a < ListServer.Count; a++)
             {
-                foreach (var _ListInfo in ListInfo)
+                foreach (var _servers in servers)
                 {
-                    foreach (var _ListInfo2 in _ListInfo)
+                    if (ListServer[a].ToString() == _servers.NameServer)
                     {
-                        if (ListServer[a].ToString() == _ListInfo2[0].ToString())
-                        {
-                            newListInfo.Add(_ListInfo);
-                        }
-                        break;
+                        newServers.Add(_servers);
                     }
-
                 }
             }
 
 
-            WriteSheet(SpreadsheetId, newListInfo);
+            WriteSheet(SpreadsheetId, newServers);
 
         }
-        public override void ScanSheets(string ListId, List<string> ListServer, List<IList<IList<Object>>> ListInfo)// Метод который парсит листы в таблице.
+        public void ScanSheets(string ListId, IList<IServerObj> servers)// Метод который парсит листы в таблице.
         {
             Console.WriteLine("Сканирование листов в таблице");
 
@@ -145,20 +162,19 @@ namespace TestBars.WorkSheetsGoogle
                 sheets.Add(gsSheet.Properties.Title);
             }
 
-            foreach (var nameServ in ListServer)
+            foreach (var nameServ in servers)
             {
-                string Servsname = sheets.Find((x) => x == nameServ);
+                string Servsname = sheets.Find((x) => x == nameServ.NameServer);
                 if (Servsname == null)
                 {
-                    result.Add(nameServ);
+                    result.Add(nameServ.NameServer);
                 }
             }
 
 
             if (result.Count > 0) // Если соответствующих листов не найдено, происходит их добавление.
             {
-
-                CreateSheets(ListId, result, ListInfo);
+                CreateSheets(ListId, result, servers);
             }
 
         }
