@@ -123,13 +123,6 @@
     <Compile Include="UpdateWorkServersPostgreSql\ParseConfiguration.cs" />
     <Compile Include="UpdateWorkServersPostgreSql\ServerObj.cs" />
     <Compile Include="UpdateWorkServersPostgreSql\WriterServers.cs" />
-    <Compile Include="WorkServersPostgreSql\AbstractServers.cs" />
-    <Compile Include="WorkServersPostgreSql\ContainerServers.cs" />
-    <Compile Include="WorkServersPostgreSql\IContainerServers.cs" />
-    <Compile Include="WorkServersPostgreSql\IParseConfiguration.cs" />
-    <Compile Include="WorkServersPostgreSql\IServer.cs" />
-    <Compile Include="WorkServersPostgreSql\ParseConfiguration.cs" />
-    <Compile Include="WorkServersPostgreSql\Server.cs" />
     <Compile Include="WorkSheetsGoogle\ISearchSpreadsheets.cs" />
     <Compile Include="WorkSheetsGoogle\IServices.cs" />
     <Compile Include="WorkSheetsGoogle\ISpreasheet.cs" />
@@ -143,8 +136,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UpdateWorkSheetsGoogle\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
