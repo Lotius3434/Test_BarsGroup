@@ -11,19 +11,12 @@ namespace TestBars.UpdateWorkServersPostgreSql
     class WriterServers : IWriterServers
     {
         IList<IServerObj> ListServerObjs = new List<IServerObj>();
-        IConnectionDb connectionDb;
-        IDictionary<string, NpgsqlDataReader> DictDataReaders;
-        public WriterServers(IConnectionDb connectionDb)
-        {
-            if (connectionDb != null)
-            {
-                this.connectionDb = connectionDb;
-            }
-        }
+        
+        
 
-        public IList<IServerObj> WriteServerObjs()
+        public IList<IServerObj> WriteServerObjs(IDictionary<string, NpgsqlDataReader> DictDataReaders)
         {
-            DictDataReaders = connectionDb.GetServers();
+            
             if (DictDataReaders.Count != 0)
             {
                 var container = new WindsorContainer();

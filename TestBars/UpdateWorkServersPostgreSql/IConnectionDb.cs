@@ -9,6 +9,6 @@ namespace TestBars.UpdateWorkServersPostgreSql
 {
     interface IConnectionDb
     {
-        IDictionary<string, NpgsqlDataReader> GetServers();
+        IList<IServerObj> GetServers();
     }
 }

@@ -10,23 +10,22 @@ namespace TestBars.UpdateWorkServersPostgreSql
 {
     class ConnectionDb : IConnectionDb
     {
-        //private NpgsqlConnection connection;
-        //private NpgsqlCommand NpgsqlCommand;
-        //private NpgsqlDataReader result;
+       
         IParseConfiguration parseConfiguration;
-        
+        IWriterServers writerServers;
+        IList<IServerObj> ListServerObjs;
         IDictionary<string, string> Configurations;
         IDictionary<string, NpgsqlDataReader> DictDataReaders = new Dictionary<string, NpgsqlDataReader>();
-        public ConnectionDb(IParseConfiguration parseConfiguration)
+        public ConnectionDb(IParseConfiguration parseConfiguration, IWriterServers writerServers)
         {
             if (parseConfiguration != null)
             {
                 this.parseConfiguration = parseConfiguration;
-                
+                this.writerServers = writerServers;
             }
             
         }
-        public IDictionary<string, NpgsqlDataReader> GetServers()
+        public IList<IServerObj> GetServers()
         {
             Configurations = parseConfiguration.GetConfigServers_Npgsql();
             if (Configurations != null)
@@ -42,7 +41,10 @@ namespace TestBars.UpdateWorkServersPostgreSql
                             NpgsqlCommand NpgsqlCommand = new NpgsqlCommand(SqlConfig.sqlquery,connection);
                             
                             connection.Open();
+
                             DictDataReaders.Add(item.Key, NpgsqlCommand.ExecuteReader());
+                            ListServerObjs = writerServers.WriteServerObjs(DictDataReaders);
+
                             connection.Close();
                             
                         }
@@ -50,13 +52,12 @@ namespace TestBars.UpdateWorkServersPostgreSql
                     }
                     catch(Exception e)
                     {
-                        Console.WriteLine();
-                        //доделать
+                        Console.WriteLine("Ошибка: {0}",e.Message);                       
                     }
                     
                 }
             }
-            return DictDataReaders;
+            return ListServerObjs;
         }
     }
 }
