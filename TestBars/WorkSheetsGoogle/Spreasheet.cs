@@ -56,7 +56,7 @@ namespace TestBars.WorkSheetsGoogle
 
             foreach (var _servers in servers)
             {
-                string range = "!A1:D";
+                string range = null;
                 IList<IList<Object>> valueToWrite = new List<IList<Object>>();
 
 
@@ -76,7 +76,7 @@ namespace TestBars.WorkSheetsGoogle
                     listdatabase.Add(_DataBases.size);
                     listdatabase.Add(_DataBases.updateDate);
 
-
+                    range = _servers.NameServer + "!A1:D";
                     valueToWrite.Add(listdatabase);
 
                 }
