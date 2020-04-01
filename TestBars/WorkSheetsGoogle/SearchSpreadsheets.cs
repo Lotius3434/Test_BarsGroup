@@ -1,6 +1,7 @@
 ﻿using Google.Apis.Drive.v3;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace TestBars.WorkSheetsGoogle
 {
@@ -12,7 +13,7 @@ namespace TestBars.WorkSheetsGoogle
 
             
             FilesResource.ListRequest request = service.Files.List();
-            request.Q = $"mimeType = 'application/vnd.google-apps.spreadsheet' and name = '{Config_Scope_Appname.NameSpreadSheet}'";
+            request.Q = $"mimeType = 'application/vnd.google-apps.spreadsheet' and name = '{ConfigurationManager.AppSettings["NameSpreadSheet"]}'";
             var folderId = request.Execute();
             
             if (folderId.Files.Count > 0)
@@ -20,7 +21,7 @@ namespace TestBars.WorkSheetsGoogle
                 for (int a = 0; a < folderId.Files.Count; a++)
                 {
                     listId.Add(folderId.Files[a].Id);
-                    Console.WriteLine("Найдена таблица: {0}", Config_Scope_Appname.NameSpreadSheet);
+                    Console.WriteLine("Найдена таблица: {0}", ConfigurationManager.AppSettings["NameSpreadSheet"]);
                 }
             }
 

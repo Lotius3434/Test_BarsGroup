@@ -38,7 +38,7 @@ namespace TestBars
         {
             
            
-            Timer timer = new Timer(new TimerCallback(Test), null, 1000, 10000);
+            Timer timer = new Timer(new TimerCallback(StartProgram), null, 1000, 10000);
 
 
             ConsoleKeyInfo button_press;
@@ -57,39 +57,39 @@ namespace TestBars
             
             List<IList<IList<Object>>> ListInfo; //Главный спиcок, который хранит в себе все сервера и их данные.
 
-            IContainerServers containerServers = new ContainerServers(); //Контейнер, который создает и хранит в себе список серверов.
+            //IContainerServers containerServers = new ContainerServers(); //Контейнер, который создает и хранит в себе список серверов.
 
-            if (containerServers.CreateServers())
-            {
-                List<IServer> servers = containerServers.GetServers;
+            //if (containerServers.CreateServers())
+            //{
+            //    List<IServer> servers = containerServers.GetServers;
 
-                for (int a = 0; a < servers.Count; a++)
-                {
-                    servers[a].OpenConnection(); // Открытие соединения с серверами.
-                }
+            //    for (int a = 0; a < servers.Count; a++)
+            //    {
+            //        servers[a].OpenConnection(); // Открытие соединения с серверами.
+            //    }
 
 
-                ListInfo = new List<IList<IList<Object>>>();
-                for (int a = 0; a < servers.Count; a++)
-                {
+            //    ListInfo = new List<IList<IList<Object>>>();
+            //    for (int a = 0; a < servers.Count; a++)
+            //    {
                     
-                    ListInfo.Add(servers[a].GetBasesandSizes());//Добавление данных из баз серверов.
-                }
+            //        ListInfo.Add(servers[a].GetBasesandSizes());//Добавление данных из баз серверов.
+            //    }
 
 
 
-                for (int a = 0; a < servers.Count; a++)
-                {
-                    servers[a].CloseConnection(); // Закрытие соединения с серверами.
-                }
+            //    for (int a = 0; a < servers.Count; a++)
+            //    {
+            //        servers[a].CloseConnection(); // Закрытие соединения с серверами.
+            //    }
 
                 
-            }
-            else
-            {
-                Console.WriteLine("Конфигурации не найдены, заполните данные сервера\nДля выхода из программы, нажмите 'q'\n");
-                return;
-            }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Конфигурации не найдены, заполните данные сервера\nДля выхода из программы, нажмите 'q'\n");
+            //    return;
+            //}
 
 
 

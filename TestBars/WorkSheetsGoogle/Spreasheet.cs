@@ -2,6 +2,7 @@
 using Google.Apis.Sheets.v4.Data;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace TestBars.WorkSheetsGoogle
         }
         public override string CreateSpreasheet(List<string> ServersName) // Метод создания таблицы.
         {
-            string spreadsheetName = Config_Scope_Appname.NameSpreadSheet;
+            string spreadsheetName = ConfigurationManager.AppSettings["NameSpreadSheet"];
 
             var myNewSheet = new Spreadsheet();
             myNewSheet.Properties = new SpreadsheetProperties();

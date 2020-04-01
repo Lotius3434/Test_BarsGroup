@@ -131,8 +131,10 @@
     <Compile Include="WorkServersPostgreSql\ParseConfiguration.cs" />
     <Compile Include="WorkServersPostgreSql\Server.cs" />
     <Compile Include="WorkSheetsGoogle\AbstractSpreadsheet.cs" />
-    <Compile Include="WorkSheetsGoogle\Config_Scope_Appname.cs" />
+    <Compile Include="WorkSheetsGoogle\IGetDriveService.cs" />
+    <Compile Include="WorkSheetsGoogle\IGetSheetsService.cs" />
     <Compile Include="WorkSheetsGoogle\ISpreasheet.cs" />
+    <Compile Include="WorkSheetsGoogle\IUserAuthentication.cs" />
     <Compile Include="WorkSheetsGoogle\SearchSpreadsheets.cs" />
     <Compile Include="WorkSheetsGoogle\Services.cs" />
     <Compile Include="WorkSheetsGoogle\Spreasheet.cs" />
