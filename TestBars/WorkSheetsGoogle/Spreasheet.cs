@@ -80,15 +80,6 @@ namespace TestBars.WorkSheetsGoogle
                     valueToWrite.Add(listdatabase);
 
                 }
-
-                //foreach (var _ListInfo in ListInfo[a])
-                //{
-
-                //    valueToWrite.Add(_ListInfo);
-                //    range = _ListInfo[0].ToString() + "!A1:D";
-
-                //}
-
                 IList<IList<Object>> drivesInfo = Drives.GetDriveFreeSize();
                 foreach (var drv in drivesInfo)
                 {

@@ -52,7 +52,23 @@ namespace TestBars.UpdateWorkServersPostgreSql
                     }
                     catch(Exception e)
                     {
-                        Console.WriteLine("Ошибка: {0}",e.Message);                       
+                        string[] code = e.Message.Split(':');
+                        string ExceptionMessage;
+                        switch (code[0])
+                        {
+                            case "28P01":
+                                ExceptionMessage = "Не правильный пароль или User Id, для подключения к серверу";
+                                break;
+                            
+                            default:
+                                ExceptionMessage = e.Message;
+                                break;
+                        }
+
+                        Console.WriteLine("Ошибка: {0}\nНажмите любую кнопку для закрытия программы", e.Message);
+                        Console.ReadKey();
+                        Environment.Exit(1);
+                        
                     }
                     
                 }

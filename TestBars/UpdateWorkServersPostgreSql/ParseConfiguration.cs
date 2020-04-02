@@ -15,42 +15,41 @@ namespace TestBars.UpdateWorkServersPostgreSql
 
         public Dictionary<string, string> GetConfigServers_Npgsql()
         {
-            
-            SearchKey = ConfigurationManager.AppSettings["SearchKey"];
-            if (SearchKey != null )
+            try
             {
-                Console.WriteLine("Поиск серверов по настройке файла конфигурации");
-
-                if (ConfigurationManager.ConnectionStrings.Count != 0)
+                SearchKey = ConfigurationManager.AppSettings["SearchKey"];
+                if (SearchKey != null)
                 {
-                    for (int a = 0; a < ConfigurationManager.ConnectionStrings.Count; a++)
-                    {
-                        if (ConfigurationManager.ConnectionStrings[a].ProviderName == SearchKey)
+                    Console.WriteLine("Поиск серверов по настройке файла конфигурации");
+
+                    
+                        for (int a = 0; a < ConfigurationManager.ConnectionStrings.Count; a++)
                         {
+                            if (ConfigurationManager.ConnectionStrings[a].ProviderName == SearchKey)
+                            {
 
-                            configlist.Add(ConfigurationManager.ConnectionStrings[a].Name, ConfigurationManager.ConnectionStrings[a].ConnectionString);
+                                configlist.Add(ConfigurationManager.ConnectionStrings[a].Name, ConfigurationManager.ConnectionStrings[a].ConnectionString);
+                            }
+
+
                         }
-                        
-
-                    }
-                    if (configlist.Count == 0)
-                    {    
-                        Console.WriteLine("Не найдено серверов");
-                    }
+                        if (configlist.Count == 0)
+                        {
+                            throw new Exception("Не найдено серверов по ключевому слову");
+                        }
                 }
                 else
                 {
-                    Console.WriteLine("Нет настроек серверов, в файле конфигурации");
+                    throw new Exception("Не найдено ключевого слова, для поиска сервера");
+                    
                 }
-                
             }
-            else
+            catch (Exception e)
             {
-                Console.WriteLine("Нет ключевого слова для поиска сервера");   
+                Console.WriteLine("Ошибка: {0}\nНажмите любую кнопку для закрытия программы", e.Message);
+                Console.ReadKey();
+                Environment.Exit(1);
             }
-            
-
-
             return configlist;
         }
 

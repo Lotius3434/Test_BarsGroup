@@ -36,20 +36,22 @@ namespace TestBars
 
         static void Main(string[] args)
         {
-            
-           
-            Timer timer = new Timer(new TimerCallback(StartProgram), null, 1000, 10000);
 
 
-            ConsoleKeyInfo button_press;
-            do
-            {
-                Task.Delay(1000).Wait();
-                button_press = Console.ReadKey();
+            //Timer timer = new Timer(new TimerCallback(StartProgram), null, 1000, 30000);
 
-            } while (button_press.KeyChar != 'q');
-            timer.Dispose();
-            Console.WriteLine("\nВыход из программы");
+
+            //ConsoleKeyInfo button_press;
+            //do
+            //{
+            //    Task.Delay(1000).Wait();
+            //    button_press = Console.ReadKey();
+
+            //} while (button_press.KeyChar != 'q');
+            //timer.Dispose();
+            //Console.WriteLine("\nВыход из программы");
+            object d = 1;
+            Program.StartProgram(d);
 
         }
         static public void StartProgram(object state)
@@ -66,10 +68,18 @@ namespace TestBars
 
             spreasheet.sheetsService = services.GetSheetsService();
             searchSpreadsheets.driveService = services.GetDriveService();
+
+
+           
+            
+            string listIdSreadssheet = searchSpreadsheets.Search(); //Поиск таблиц на гугл диске.
+            
+            
             
 
+            
+            
 
-            string listIdSreadssheet = searchSpreadsheets.Search(); //Поиск таблиц на гугл диске.
             if (listIdSreadssheet != null)
             {
                 

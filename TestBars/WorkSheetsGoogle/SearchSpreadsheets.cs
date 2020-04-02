@@ -1,4 +1,5 @@
 ﻿using Google.Apis.Drive.v3;
+using Google.Apis.Drive.v3.Data;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -22,13 +23,22 @@ namespace TestBars.WorkSheetsGoogle
         public string Search()// Метод поиска таблицы по названию
         {
             string spreadsheetId = null;
-
+            FileList folderId = null;
+            try
+            {
+                FilesResource.ListRequest request = service.Files.List();
+                request.Q = $"mimeType = 'application/vnd.google-apps.spreadsheet' and name = '{ConfigurationManager.AppSettings["NameSpreadSheet"]}'";
+                folderId = request.Execute();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Ошибка: {0}\nНажмите любую кнопку для закрытия программы",e.Message);
+                Console.ReadKey();
+                Environment.Exit(1);
+            }
             
-            FilesResource.ListRequest request = service.Files.List();
-            request.Q = $"mimeType = 'application/vnd.google-apps.spreadsheet' and name = '{ConfigurationManager.AppSettings["NameSpreadSheet"]}'";
-            var folderId = request.Execute();
             
-            if (folderId.Files.Count > 0)
+            if ( folderId != null && folderId.Files.Count > 0 )
             {
                 
                     spreadsheetId = folderId.Files[0].Id;
