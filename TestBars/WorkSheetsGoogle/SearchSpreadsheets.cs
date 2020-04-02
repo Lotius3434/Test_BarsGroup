@@ -3,13 +3,15 @@ using Google.Apis.Drive.v3.Data;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using TestBars.UpdateWorkServersPostgreSql;
 
 namespace TestBars.WorkSheetsGoogle
 {
     class SearchSpreadsheets : ISearchSpreadsheets//Класс для работы с гугл диском
     {
+        IWorkFiles workFiles;
         DriveService service;
-        public DriveService driveService
+        public DriveService SetDriveService
         {
             set
             {
@@ -19,11 +21,17 @@ namespace TestBars.WorkSheetsGoogle
                 }
             }
         }
-        
-        public string Search()// Метод поиска таблицы по названию
+        public SearchSpreadsheets(IWorkFiles workFiles)
         {
+            this.workFiles = workFiles;
+        }
+        
+        public string Search(IList<IServerObj> servers)// Метод поиска таблицы по названию
+        {
+             
             string spreadsheetId = null;
             FileList folderId = null;
+            Console.WriteLine("Сканирование google disk");
             try
             {
                 FilesResource.ListRequest request = service.Files.List();
@@ -32,7 +40,9 @@ namespace TestBars.WorkSheetsGoogle
             }
             catch(Exception e)
             {
-                Console.WriteLine("Ошибка: {0}\nНажмите любую кнопку для закрытия программы",e.Message);
+                Console.WriteLine("Ошибка: Не удается соединится с google api", e.Message);
+                workFiles.WriteFileTxt(servers);
+                Console.WriteLine("Данные записаны в файл: {0}, в корневой папке программы\nНажмите любую кнопку для закрытия программы", ConfigurationManager.AppSettings["PathFileTxt"]);
                 Console.ReadKey();
                 Environment.Exit(1);
             }

@@ -26,7 +26,7 @@ namespace TestBars
             container.Register(Component.For<IServices>().ImplementedBy<Services>());
             container.Register(Component.For<ISpreasheet>().ImplementedBy<Spreasheet>());
             container.Register(Component.For<ISearchSpreadsheets>().ImplementedBy<SearchSpreadsheets>());
-            
+            container.Register(Component.For<IWorkFiles>().ImplementedBy<WorkFiles>());
 
         }
     }

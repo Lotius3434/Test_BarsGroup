@@ -13,7 +13,7 @@ namespace TestBars.WorkSheetsGoogle
     {
         
         SheetsService service;
-        public SheetsService sheetsService
+        public SheetsService SetSheetsService
         {
             set
             {

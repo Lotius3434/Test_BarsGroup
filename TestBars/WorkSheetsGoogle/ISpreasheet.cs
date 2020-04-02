@@ -10,7 +10,7 @@ namespace TestBars.WorkSheetsGoogle
 {
     interface ISpreasheet
     {
-        SheetsService sheetsService { set; }
+        SheetsService SetSheetsService { set; }
         string CreateSpreasheet(IList<IServerObj> servers);
         void WriteSheet(string spreadsheet, IList<IServerObj> servers);
         void CreateSheets(string SpreadsheetId, List<string> ListServer, IList<IServerObj> servers);

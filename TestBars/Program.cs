@@ -66,13 +66,13 @@ namespace TestBars
             ISpreasheet spreasheet = container.Resolve<ISpreasheet>();
             ISearchSpreadsheets searchSpreadsheets = container.Resolve<ISearchSpreadsheets>();
 
-            spreasheet.sheetsService = services.GetSheetsService();
-            searchSpreadsheets.driveService = services.GetDriveService();
+            spreasheet.SetSheetsService = services.GetSheetsService();
+            searchSpreadsheets.SetDriveService = services.GetDriveService();
 
 
            
             
-            string listIdSreadssheet = searchSpreadsheets.Search(); //Поиск таблиц на гугл диске.
+            string IdSreadssheet = searchSpreadsheets.Search(servers); //Поиск таблиц на гугл диске.
             
             
             
@@ -80,22 +80,22 @@ namespace TestBars
             
             
 
-            if (listIdSreadssheet != null)
+            if (IdSreadssheet == null)
             {
-                
+                Console.WriteLine("Таблица не найдена\nНачинается создание таблицы...");
 
-                    spreasheet.ScanSheets(listIdSreadssheet, servers); //Скан листов, если листов серверов по названию не найдено, они добавляются.
-                    spreasheet.WriteSheet(listIdSreadssheet, servers); //Обновление листов в таблице.
-                    Console.WriteLine("--Таблица обновлена...");
+                string spreadsheetid = spreasheet.CreateSpreasheet(servers); //Создание таблицы и листов.
+                spreasheet.WriteSheet(spreadsheetid, servers); //Добавление данных в таблицы.
+
+                
                 
             }
-            else // Если таблица не найдена, создаеться новая.
+            else // Если таблица найдена, создаеться новая.
             {
-                
-                Console.WriteLine("Таблица не найдена\nНачинается создание таблицы...");
-                
-                string spreadsheet = spreasheet.CreateSpreasheet(servers); //Создание таблицы и листов.
-                spreasheet.WriteSheet(spreadsheet, servers); //Добавление данных в таблицы.
+                spreasheet.ScanSheets(IdSreadssheet, servers); //Скан листов, если листов серверов по названию не найдено, они добавляются.
+                spreasheet.WriteSheet(IdSreadssheet, servers); //Обновление листов в таблице.
+                Console.WriteLine("--Таблица обновлена...");
+
             }
 
             Console.WriteLine("--Ожидание повторного запуска, интервал: 30 сек...\nДля выхода из программы, нажмите 'q'\n");

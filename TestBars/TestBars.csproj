@@ -110,6 +110,7 @@
     <Compile Include="ConfigurationCastleWindsor.cs" />
     <Compile Include="Converter.cs" />
     <Compile Include="Drives.cs" />
+    <Compile Include="IWorkFiles.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlConfig.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="UpdateWorkServersPostgreSql\ParseConfiguration.cs" />
     <Compile Include="UpdateWorkServersPostgreSql\ServerObj.cs" />
     <Compile Include="UpdateWorkServersPostgreSql\WriterServers.cs" />
+    <Compile Include="WorkFiles.cs" />
     <Compile Include="WorkSheetsGoogle\ISearchSpreadsheets.cs" />
     <Compile Include="WorkSheetsGoogle\IServices.cs" />
     <Compile Include="WorkSheetsGoogle\ISpreasheet.cs" />
