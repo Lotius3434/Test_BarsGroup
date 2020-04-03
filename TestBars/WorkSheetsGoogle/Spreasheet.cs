@@ -6,7 +6,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TestBars.UpdateWorkServersPostgreSql;
+using TestBars.WorkServersPostgreSql;
 namespace TestBars.WorkSheetsGoogle
 {
     class Spreasheet : ISpreasheet //Класс для работы с таблицами и листами.

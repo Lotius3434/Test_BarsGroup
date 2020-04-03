@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestBars.UpdateWorkServersPostgreSql
+namespace TestBars.WorkServersPostgreSql
 {
     class WriterServers : IWriterServers
     {

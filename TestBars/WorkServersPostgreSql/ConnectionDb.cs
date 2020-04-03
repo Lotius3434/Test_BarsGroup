@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace TestBars.UpdateWorkServersPostgreSql
+namespace TestBars.WorkServersPostgreSql
 {
     class ConnectionDb : IConnectionDb
     {
