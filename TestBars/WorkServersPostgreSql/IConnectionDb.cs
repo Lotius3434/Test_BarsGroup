@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TestBars.WorkServersPostgreSql
 {
-    interface IConnectionDb
+    public interface IConnectionDb
     {
         IList<IServerObj> GetServers();
     }

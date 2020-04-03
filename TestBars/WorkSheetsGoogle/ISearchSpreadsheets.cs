@@ -8,7 +8,7 @@ using TestBars.WorkServersPostgreSql;
 
 namespace TestBars.WorkSheetsGoogle
 {
-    interface ISearchSpreadsheets
+    public interface ISearchSpreadsheets
     {
         DriveService SetDriveService { set; }
         string Search(IList<IServerObj> servers);

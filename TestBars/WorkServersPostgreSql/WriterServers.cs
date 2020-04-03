@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TestBars.WorkServersPostgreSql
 {
-    class WriterServers : IWriterServers
+    public class WriterServers : IWriterServers
     {
         IList<IServerObj> ListServerObjs = new List<IServerObj>();
         

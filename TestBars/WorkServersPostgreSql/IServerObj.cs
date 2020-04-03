@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestBars.WorkServersPostgreSql
 {
-    interface IServerObj
+    public interface IServerObj
     {
         string NameServer { get; set; }
         IList<IDbObj> DataBases { get; set; }

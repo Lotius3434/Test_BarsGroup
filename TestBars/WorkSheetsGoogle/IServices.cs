@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace TestBars.WorkSheetsGoogle
 {
-    interface IServices 
+    public interface IServices 
     {
         SheetsService GetSheetsService();
         DriveService GetDriveService();

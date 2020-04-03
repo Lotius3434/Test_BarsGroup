@@ -6,7 +6,7 @@ using System.Configuration;
 
 namespace TestBars.WorkSheetsGoogle
 {
-    class Services : IServices
+    public class Services : IServices
     {
         UserCredential _credential;
 

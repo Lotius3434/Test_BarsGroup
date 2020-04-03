@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TestBars.WorkSheetsGoogle
 {
-    interface IUserAuthentication
+    public interface IUserAuthentication
     {
         UserCredential Authentication();
     }

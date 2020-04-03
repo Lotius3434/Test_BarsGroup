@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using TestBars.WorkServersPostgreSql;
 namespace TestBars.WorkSheetsGoogle
 {
-    class Spreasheet : ISpreasheet //Класс для работы с таблицами и листами.
+    public class Spreasheet : ISpreasheet //Класс для работы с таблицами и листами.
     {
         
         SheetsService service;

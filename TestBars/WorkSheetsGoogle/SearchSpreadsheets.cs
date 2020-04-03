@@ -7,7 +7,7 @@ using TestBars.WorkServersPostgreSql;
 
 namespace TestBars.WorkSheetsGoogle
 {
-    class SearchSpreadsheets : ISearchSpreadsheets//Класс для работы с гугл диском
+    public class SearchSpreadsheets : ISearchSpreadsheets//Класс для работы с гугл диском
     {
         IWorkFiles workFiles;
         DriveService service;

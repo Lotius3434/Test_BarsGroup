@@ -7,7 +7,7 @@ using TestBars.WorkServersPostgreSql;
 
 namespace TestBars
 {
-    interface IWorkFiles
+    public interface IWorkFiles
     {
         void WriteFileTxt(IList<IServerObj> servers);
     }

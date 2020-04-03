@@ -13,45 +13,23 @@ namespace TestBars
 {
     class Program
     {
-        static public void Test(object state)
-        {
-            var container = new WindsorContainer();
-            container.Install(new ConfigurationCastleWindsor());
-            var connection = container.Resolve<IConnectionDb>();
-            IList<IServerObj> servers = connection.GetServers();
-            foreach (var item in servers)
-            {
-                foreach (var db in item.DataBases)
-                {
-                    Console.WriteLine("Имя сервера: {0}\n Название базы:{1} Размер: {2} Дата: {3}\n ---------"
-                        ,item.NameServer
-                        ,db.name
-                        ,db.size
-                        ,db.updateDate);
-                }
-                
-            }
-            
-        }
-
         static void Main(string[] args)
         {
 
 
-            //Timer timer = new Timer(new TimerCallback(StartProgram), null, 1000, 30000);
+            Timer timer = new Timer(new TimerCallback(StartProgram), null, 1000, 30000);
 
 
-            //ConsoleKeyInfo button_press;
-            //do
-            //{
-            //    Task.Delay(1000).Wait();
-            //    button_press = Console.ReadKey();
+            ConsoleKeyInfo button_press;
+            do
+            {
+                Task.Delay(1000).Wait();
+                button_press = Console.ReadKey();
 
-            //} while (button_press.KeyChar != 'q');
-            //timer.Dispose();
-            //Console.WriteLine("\nВыход из программы");
-            object d = 1;
-            Program.StartProgram(d);
+            } while (button_press.KeyChar != 'q');
+            timer.Dispose();
+            Console.WriteLine("\nВыход из программы");
+
 
         }
         static public void StartProgram(object state)

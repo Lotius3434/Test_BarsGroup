@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestBars.WorkServersPostgreSql
 {
-    interface IParseConfiguration
+    public interface IParseConfiguration
     {
         Dictionary<string, string> GetConfigServers_Npgsql();
     }

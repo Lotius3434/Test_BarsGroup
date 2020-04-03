@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TestBars.WorkServersPostgreSql
 {
-    class ConnectionDb : IConnectionDb
+    public class ConnectionDb : IConnectionDb
     {
        
         IParseConfiguration parseConfiguration;

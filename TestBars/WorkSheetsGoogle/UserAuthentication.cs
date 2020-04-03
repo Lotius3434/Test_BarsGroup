@@ -9,7 +9,7 @@ using System.Threading;
 
 namespace TestBars.WorkSheetsGoogle
 {
-    class UserAuthentication : IUserAuthentication
+    public class UserAuthentication : IUserAuthentication
     {
         UserCredential credential;
         string[] Scopes = { SheetsService.Scope.Spreadsheets, SheetsService.Scope.Drive }; // Доступные разрешения для работы с Google Api.

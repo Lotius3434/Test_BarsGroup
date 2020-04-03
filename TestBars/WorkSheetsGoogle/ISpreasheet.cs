@@ -8,7 +8,7 @@ using TestBars.WorkServersPostgreSql;
 
 namespace TestBars.WorkSheetsGoogle
 {
-    interface ISpreasheet
+    public interface ISpreasheet
     {
         SheetsService SetSheetsService { set; }
         string CreateSpreasheet(IList<IServerObj> servers);

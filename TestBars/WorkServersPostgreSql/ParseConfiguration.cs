@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TestBars.WorkServersPostgreSql
 {
-    class ParseConfiguration : IParseConfiguration 
+    public class ParseConfiguration : IParseConfiguration 
     {
         Dictionary<string, string> configlist = new Dictionary<string, string>();
         string SearchKey = null;
