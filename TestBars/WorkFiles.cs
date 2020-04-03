@@ -7,9 +7,9 @@ using TestBars.WorkServersPostgreSql;
 
 namespace TestBars
 {
-    class WorkFiles : IWorkFiles
+    public class WorkFiles : IWorkFiles
     {
-        protected StringBuilder SortString(IList<string> liststring )
+        public StringBuilder SortString(IList<string> liststring )
         {
             StringBuilder stringBuilder = new StringBuilder();
             for (int i = 0; i < liststring.Count; i++)
@@ -45,7 +45,7 @@ namespace TestBars
             }
             return stringBuilder;
         }
-        protected StringBuilder Createstring(IList<IServerObj> servers)
+        public StringBuilder Createstring(IList<IServerObj> servers)
         {
             StringBuilder stringBuilder = new StringBuilder();
             IList<string> FirstLineNames = new List<string>()
