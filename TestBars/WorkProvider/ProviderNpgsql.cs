@@ -9,10 +9,12 @@ namespace TestBars.WorkProvider
         NpgsqlConnection connection;
         NpgsqlCommand NpgsqlCommand;
         NpgsqlDataReader DataReader;
+        string sqlquery = @"select datname,  pg_database_size(datname)
+                     from pg_database;";
         public void Createconnection(string Configurations)
         {
             connection = new NpgsqlConnection(Configurations);
-            NpgsqlCommand = new NpgsqlCommand(SqlConfig.sqlquery, connection);
+            NpgsqlCommand = new NpgsqlCommand(sqlquery, connection);
         }
         public void OpenConnection()
         {
@@ -20,8 +22,8 @@ namespace TestBars.WorkProvider
         }
         public NpgsqlDataReader GetDataReader()
         {
-            DataReader = NpgsqlCommand.ExecuteReader();
-            return DataReader;
+            //DataReader = NpgsqlCommand.ExecuteReader();
+            return NpgsqlCommand.ExecuteReader();
         }
         public void CloseConnection()
         {

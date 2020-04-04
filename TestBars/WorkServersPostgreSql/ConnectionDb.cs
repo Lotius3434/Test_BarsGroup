@@ -39,13 +39,12 @@ namespace TestBars.WorkServersPostgreSql
                         provider.Createconnection(_Configurations.Value);
                         provider.OpenConnection();
 
-                        using (var DataReader = provider.GetDataReader())
-                        {
+                        var DataReader = provider.GetDataReader();
                             writerServers.CreateServerObj(_Configurations.Key);
 
-                            while (provider.GetDataReader().Read())
+                            while (DataReader.Read())
                             {
-                                string nameDb = DataReader.GetString(0);
+                                string nameDb = provider.GetDataReader().GetString(0);
                                 string sizeDb = Converter.CalculateBytetoGB(DataReader.GetInt64(1));
                                 string updateDateDb = DateTime.Now.ToString("dd.MM.yyyy");
                                 writerServers.WriteServerObjs(nameDb, sizeDb, updateDateDb);
@@ -53,7 +52,7 @@ namespace TestBars.WorkServersPostgreSql
 
                             ListServerObjs.Add(writerServers.GetServerObj());
                             provider.CloseConnection();
-                        }
+                        
                     }
                     catch(Exception e)
                     {
