@@ -7,24 +7,24 @@ namespace TestBars.WorkServersPostgreSql
     public class ParseConfiguration : IParseConfiguration 
     {
         Dictionary<string, string> configlist = new Dictionary<string, string>();
-        string SearchKey = null;
-
+        string SearchKey = ConfigurationManager.AppSettings["SearchKey"];
+        ConnectionStringSettingsCollection ConnectionStrings = ConfigurationManager.ConnectionStrings;
         public Dictionary<string, string> GetConfigServers_Npgsql()
         {
             try
             {
-                SearchKey = ConfigurationManager.AppSettings["SearchKey"];
+                
                 if (SearchKey != null)
                 {
                     Console.WriteLine("Поиск серверов по настройке файла конфигурации");
 
                     
-                        for (int a = 0; a < ConfigurationManager.ConnectionStrings.Count; a++)
+                        for (int a = 0; a < ConnectionStrings.Count; a++)
                         {
-                            if (ConfigurationManager.ConnectionStrings[a].ProviderName == SearchKey)
+                            if (ConnectionStrings[a].ProviderName == SearchKey)
                             {
 
-                                configlist.Add(ConfigurationManager.ConnectionStrings[a].Name, ConfigurationManager.ConnectionStrings[a].ConnectionString);
+                                configlist.Add(ConnectionStrings[a].Name, ConnectionStrings[a].ConnectionString);
                             }
 
 
