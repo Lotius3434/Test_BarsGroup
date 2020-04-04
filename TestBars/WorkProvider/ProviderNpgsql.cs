@@ -1,5 +1,5 @@
 ﻿using Npgsql;
-
+using System.Collections.Generic;
 
 namespace TestBars.WorkProvider
 {
@@ -9,21 +9,21 @@ namespace TestBars.WorkProvider
         NpgsqlConnection connection;
         NpgsqlCommand NpgsqlCommand;
         NpgsqlDataReader DataReader;
-        string sqlquery = @"select datname,  pg_database_size(datname)
-                     from pg_database;";
+        List<NpgsqlDataReader> list = new List<NpgsqlDataReader>();
+        
         public void Createconnection(string Configurations)
         {
             connection = new NpgsqlConnection(Configurations);
-            NpgsqlCommand = new NpgsqlCommand(sqlquery, connection);
+            NpgsqlCommand = new NpgsqlCommand(SqlConfig.sqlquery, connection);
         }
         public void OpenConnection()
         {
             connection.Open();
+            DataReader = NpgsqlCommand.ExecuteReader();
         }
         public NpgsqlDataReader GetDataReader()
         {
-            //DataReader = NpgsqlCommand.ExecuteReader();
-            return NpgsqlCommand.ExecuteReader();
+            return DataReader;
         }
         public void CloseConnection()
         {

@@ -39,19 +39,22 @@ namespace TestBars.WorkServersPostgreSql
                         provider.Createconnection(_Configurations.Value);
                         provider.OpenConnection();
 
-                        var DataReader = provider.GetDataReader();
+                        using (NpgsqlDataReader npgsqlDataReader = provider.GetDataReader())
+                        {
                             writerServers.CreateServerObj(_Configurations.Key);
-
-                            while (DataReader.Read())
+                            while (npgsqlDataReader.Read())
                             {
-                                string nameDb = provider.GetDataReader().GetString(0);
-                                string sizeDb = Converter.CalculateBytetoGB(DataReader.GetInt64(1));
+                                string nameDb = npgsqlDataReader.GetString(0);
+                                string sizeDb = Converter.CalculateBytetoGB(npgsqlDataReader.GetInt64(1));
                                 string updateDateDb = DateTime.Now.ToString("dd.MM.yyyy");
                                 writerServers.WriteServerObjs(nameDb, sizeDb, updateDateDb);
                             }
-
                             ListServerObjs.Add(writerServers.GetServerObj());
                             provider.CloseConnection();
+                        }
+                            
+                        
+                        
                         
                     }
                     catch(Exception e)
