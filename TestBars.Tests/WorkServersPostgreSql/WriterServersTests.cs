@@ -21,7 +21,7 @@ namespace TestBars.WorkServersPostgreSql.Tests
         public void containerCreate()
         {
             container = new WindsorContainer();
-            container.Install(new ConfigurationCastleWindsorTests());
+            container.Install(new ConfigurationCastleWindsorTest());
             writerServers = container.Resolve<IWriterServers>();
             StubtServerObjs = container.Resolve<IServerObj>(); 
 

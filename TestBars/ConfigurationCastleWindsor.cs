@@ -7,7 +7,7 @@ using TestBars.WorkSheetsGoogle;
 
 namespace TestBars
 {
-    public class ConfigurationCastleWindsor : IWindsorInstaller
+    class ConfigurationCastleWindsor : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {

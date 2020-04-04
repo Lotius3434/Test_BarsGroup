@@ -1,29 +1,56 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using TestBars;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Castle.Windsor;
 
 namespace TestBars.Tests
 {
-    [TestClass()]
+    [TestFixture]
     public class WorkFilesTests
     {
-        [TestMethod()]
-        public void SortStringTest()
+        WindsorContainer container;
+        IWorkFiles _IWorkFiles;
+        WorkFiles workFiles;
+        [SetUp]
+        public void containerCreate()
         {
+            container = new WindsorContainer();
+            container.Install(new ConfigurationCastleWindsorTest());
+            _IWorkFiles = container.Resolve<IWorkFiles>();
+            workFiles = new WorkFiles();
 
         }
 
-        [TestMethod()]
+        [Test]
+        public void SortStringTest_returnSortString()
+        {
+            
+            StubFiles stubFiles = new StubFiles();
+            IList<string> listliststring = new List<string>()
+            {
+                "LocalServer"
+                ,"DbTest"
+                ,"0,00741"
+                ,"02.04.2020"
+            };
+            string execute = stubFiles.GetBuildeResulSortString().ToString();
+
+            string resultSortString = workFiles.SortString(listliststring).ToString();
+
+            Assert.AreEqual(execute, resultSortString);
+        }
+
+        [Test]
         public void CreatestringTest()
         {
 
         }
 
-        [TestMethod()]
+        [Test]
         public void WriteFileTxtTest()
         {
 

@@ -16,7 +16,7 @@ namespace TestBars.Tests
         public StubServerObj()
         {
             container = new WindsorContainer();
-            container.Install(new ConfigurationCastleWindsor());
+            container.Install(new ConfigurationCastleWindsorTest());
             IDbObj db = container.Resolve<IDbObj>();
             dbObjs.Add(db);
         }

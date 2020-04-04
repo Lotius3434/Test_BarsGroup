@@ -42,6 +42,7 @@ namespace TestBars.WorkServersPostgreSql
                         using (NpgsqlDataReader npgsqlDataReader = provider.GetDataReader())
                         {
                             writerServers.CreateServerObj(_Configurations.Key);
+
                             while (npgsqlDataReader.Read())
                             {
                                 string nameDb = npgsqlDataReader.GetString(0);
@@ -49,13 +50,11 @@ namespace TestBars.WorkServersPostgreSql
                                 string updateDateDb = DateTime.Now.ToString("dd.MM.yyyy");
                                 writerServers.WriteServerObjs(nameDb, sizeDb, updateDateDb);
                             }
+
                             ListServerObjs.Add(writerServers.GetServerObj());
+
                             provider.CloseConnection();
-                        }
-                            
-                        
-                        
-                        
+                        }    
                     }
                     catch(Exception e)
                     {

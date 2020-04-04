@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using TestBars;
 using System;
 using System.Collections.Generic;
@@ -8,13 +8,17 @@ using System.Threading.Tasks;
 
 namespace TestBars.Tests
 {
-    [TestClass()]
+    [TestFixture]
     public class ConverterTests
     {
-        [TestMethod()]
-        public void CalculateBytetoGBTest()
+        [Test]
+        public void CalculateBytetoGBTest_double7500000kb_returnStringConvertGb()
         {
+            double kb = 7500000;
 
+            string execute = "0,00698";
+
+            Assert.AreEqual(execute, Converter.CalculateBytetoGB(kb));
         }
     }
 }
