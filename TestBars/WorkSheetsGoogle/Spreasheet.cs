@@ -88,8 +88,16 @@ namespace TestBars.WorkSheetsGoogle
 
                 var update = service.Spreadsheets.Values.Update(valueRange, spreadsheet, range);
                 update.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.USERENTERED;
-
-                update.Execute();
+                try
+                {
+                    update.Execute();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Ошибка: {0}\nНе удалось записать данные в таблицу\nНажмите любую кнопку для закрытия программы",e.Message);
+                    Console.ReadKey();
+                    Environment.Exit(1);
+                }
 
             }
                 
