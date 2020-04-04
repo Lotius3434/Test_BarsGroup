@@ -5,6 +5,8 @@ namespace TestBars.WorkServersPostgreSql
 {
     public interface IWriterServers
     {
-        IList<IServerObj> WriteServerObjs(IDictionary<string, NpgsqlDataReader> DictDataReaders);
+        void CreateServerObj(string ServerName);
+        void WriteServerObjs(string nameDb, string sizeDb, string updateDateDb);
+        IServerObj GetServerObj();
     }
 }

@@ -31,6 +31,7 @@ namespace TestBars
         }
         static public void StartProgram(object state)
         {
+
             var container = new WindsorContainer();
             container.Install(new ConfigurationCastleWindsor());
             

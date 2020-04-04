@@ -17,11 +17,11 @@ namespace TestBars.WorkServersPostgreSql.Tests
         [Test]
         public void GetServersTest_ReturnIsNotNull()
         {
-            var container = new WindsorContainer();
-            container.Register();
-            container.Register();
-            ConnectionDb connectionDb = new ConnectionDb();
-            Assert.IsNotNull()
+            //var container = new WindsorContainer();
+            //container.Register();
+            //container.Register();
+            //ConnectionDb connectionDb = new ConnectionDb();
+            //Assert.IsNotNull()
         }
     }
 }

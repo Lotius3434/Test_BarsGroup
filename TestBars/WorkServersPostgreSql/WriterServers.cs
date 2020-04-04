@@ -7,40 +7,32 @@ namespace TestBars.WorkServersPostgreSql
 {
     public class WriterServers : IWriterServers
     {
-        IList<IServerObj> ListServerObjs = new List<IServerObj>();
+        WindsorContainer container;
+        IServerObj server;
+        IList<IDbObj> ListdataBases;
         
-        
-
-        public IList<IServerObj> WriteServerObjs(IDictionary<string, NpgsqlDataReader> DictDataReaders)
+        public void CreateServerObj(string ServerName)
         {
-            
-            if (DictDataReaders.Count != 0)
-            {
-                var container = new WindsorContainer();
-                container.Install(new ConfigurationCastleWindsor());
-                foreach (var _DictDataReader in DictDataReaders)
-                {
-                    IServerObj server = container.Resolve<IServerObj>();
-                    server.NameServer = _DictDataReader.Key;
-                    IList<IDbObj> dataBases = new List<IDbObj>();
+            container = new WindsorContainer();
+            container.Install(new ConfigurationCastleWindsor());
+            server = container.Resolve<IServerObj>();
+            server.NameServer = ServerName;
+            ListdataBases = new List<IDbObj>();
+        }
 
-                    while (_DictDataReader.Value.Read())
-                    {
-                        IDbObj db = container.Resolve<IDbObj>();
-                        db.name = _DictDataReader.Value.GetString(0);
-                        db.size = Converter.CalculateBytetoGB(_DictDataReader.Value.GetInt64(1));
-                        db.updateDate = DateTime.Now.ToString("dd.MM.yyyy");
-                        dataBases.Add(db);
-                    }
+        public void WriteServerObjs(string nameDb, string sizeDb, string updateDateDb)
+        {
+            IDbObj dataObj = container.Resolve<IDbObj>();
+            dataObj.name = nameDb;
+            dataObj.size = sizeDb;
+            dataObj.updateDate = updateDateDb;
+            ListdataBases.Add(dataObj);
 
-                    server.DataBases = dataBases;
-                    ListServerObjs.Add(server);
-
-                }
-            }
-            
-            
-            return ListServerObjs;
+        }
+        public IServerObj GetServerObj()
+        {
+            server.DataBases = ListdataBases;
+            return server;
         }
     }
 }
