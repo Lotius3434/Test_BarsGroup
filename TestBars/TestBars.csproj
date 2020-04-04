@@ -113,6 +113,8 @@
     <Compile Include="IWorkFiles.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkProvider\IProvider.cs" />
+    <Compile Include="WorkProvider\ProviderNpgsql.cs" />
     <Compile Include="SqlConfig.cs" />
     <Compile Include="WorkFiles.cs" />
     <Compile Include="WorkServersPostgreSql\ConnectionDb.cs" />

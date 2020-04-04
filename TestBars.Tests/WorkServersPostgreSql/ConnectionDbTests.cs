@@ -7,21 +7,33 @@ using System.Text;
 using System.Threading.Tasks;
 using Castle.Windsor;
 
+
 namespace TestBars.WorkServersPostgreSql.Tests
 {
     [TestFixture]
     public class ConnectionDbTests
     {
-        
 
+        IConnectionDb ConnectionDb;
+        WindsorContainer container;
+        IList<IServerObj> ListserverObjs;
+
+
+        [SetUp]
+        public void containerCreate()
+        {
+            container = new WindsorContainer();
+            container.Install(new ConfigurationCastleWindsor());
+            ConnectionDb = container.Resolve<IConnectionDb>();
+            ListserverObjs = new List<IServerObj>();
+
+        }
         [Test]
         public void GetServersTest_ReturnIsNotNull()
         {
-            //var container = new WindsorContainer();
-            //container.Register();
-            //container.Register();
-            //ConnectionDb connectionDb = new ConnectionDb();
-            //Assert.IsNotNull()
+            IList<IServerObj> ListserverObjs = ConnectionDb.GetServers();
+            Assert.IsNotNull(ListserverObjs);
+            
         }
     }
 }

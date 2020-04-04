@@ -63,9 +63,12 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationCastleWindsor.cs" />
     <Compile Include="ConverterTests.cs" />
     <Compile Include="DrivesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StubDbObj.cs" />
+    <Compile Include="StubServerObj.cs" />
     <Compile Include="WorkFilesTests.cs" />
     <Compile Include="WorkServersPostgreSql\ConnectionDbTests.cs" />
     <Compile Include="WorkServersPostgreSql\ParseConfigurationTests.cs" />

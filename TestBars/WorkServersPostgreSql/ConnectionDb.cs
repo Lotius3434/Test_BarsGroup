@@ -2,7 +2,7 @@
 using Npgsql;
 using System;
 using System.Collections.Generic;
-
+using TestBars.WorkProvider;
 
 namespace TestBars.WorkServersPostgreSql
 {
@@ -11,15 +11,17 @@ namespace TestBars.WorkServersPostgreSql
        
         IParseConfiguration parseConfiguration;
         IWriterServers writerServers;
+        IProvider provider;
         IList<IServerObj> ListServerObjs = new List<IServerObj>();
         IDictionary<string, string> Configurations;
       
-        public ConnectionDb(IParseConfiguration parseConfiguration, IWriterServers writerServers)
+        public ConnectionDb(IParseConfiguration parseConfiguration, IWriterServers writerServers, IProvider provider)
         {
             if (parseConfiguration != null)
             {
                 this.parseConfiguration = parseConfiguration;
                 this.writerServers = writerServers;
+                this.provider = provider;
             }
             
         }
@@ -34,30 +36,24 @@ namespace TestBars.WorkServersPostgreSql
                     
                     try
                     {
-                        using (NpgsqlConnection connection = new NpgsqlConnection(_Configurations.Value))
+                        provider.Createconnection(_Configurations.Value);
+                        provider.OpenConnection();
+
+                        using (var DataReader = provider.GetDataReader())
                         {
-                            NpgsqlCommand NpgsqlCommand = new NpgsqlCommand(SqlConfig.sqlquery,connection);
-                            NpgsqlDataReader DataReader;
-                           
-                            connection.Open();
-                            DataReader = NpgsqlCommand.ExecuteReader();
-
-
                             writerServers.CreateServerObj(_Configurations.Key);
 
-                            while (DataReader.Read())
-                            { 
+                            while (provider.GetDataReader().Read())
+                            {
                                 string nameDb = DataReader.GetString(0);
                                 string sizeDb = Converter.CalculateBytetoGB(DataReader.GetInt64(1));
                                 string updateDateDb = DateTime.Now.ToString("dd.MM.yyyy");
                                 writerServers.WriteServerObjs(nameDb, sizeDb, updateDateDb);
                             }
-                           
+
                             ListServerObjs.Add(writerServers.GetServerObj());
-
-                            connection.Close();
+                            provider.CloseConnection();
                         }
-
                     }
                     catch(Exception e)
                     {
