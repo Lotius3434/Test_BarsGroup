@@ -9,9 +9,11 @@ namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
     class ScanerSheets : IScanerSheets
     {
         ICreatorSheets creatorSheets;
-        public ScanerSheets(ICreatorSheets creatorSheets)
+        IWriterSheets writerSheets;
+        public ScanerSheets(ICreatorSheets creatorSheets, IWriterSheets writerSheets)
         {
             this.creatorSheets = creatorSheets;
+            this.writerSheets = writerSheets;
         }
         public void ScanSheets(string IdSreadssheet, IList<IServerObj> servers, SheetsService sheetService)// Метод который парсит листы в таблице.
         {
@@ -45,6 +47,7 @@ namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
                 creatorSheets.CreateSheets(IdSreadssheet, result, servers, sheetService);
             }
 
+            writerSheets.WriteSheet(IdSreadssheet, servers, sheetService);
         }
     }
 }

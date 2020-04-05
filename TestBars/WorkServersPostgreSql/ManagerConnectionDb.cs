@@ -1,6 +1,4 @@
-﻿using Castle.Windsor;
-using Npgsql;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using TestBars.WorkProvider;
 
