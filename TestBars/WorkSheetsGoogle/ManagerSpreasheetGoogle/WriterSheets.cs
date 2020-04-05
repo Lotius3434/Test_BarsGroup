@@ -2,12 +2,18 @@
 using Google.Apis.Sheets.v4.Data;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using TestBars.WorkServersPostgreSql;
 
 namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
 {
     class WriterSheets : IWriterSheets
     {
+        IWorkFiles workFiles;
+        public WriterSheets(IWorkFiles workFiles)
+        {
+            this.workFiles = workFiles;
+        }
         public void WriteSheet(string spreadsheet, IList<IServerObj> servers, SheetsService sheetService) // Метод добавления данных в листы.
         {
 
@@ -56,7 +62,9 @@ namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Ошибка: {0}\nНе удалось записать данные в таблицу\nНажмите любую кнопку для закрытия программы", e.Message);
+                    Console.WriteLine("Ошибка: {0}\nНе удалось записать данные в таблицу.\nНажмите любую кнопку для закрытия программы.", e.Message);
+                    workFiles.WriteFileTxt(servers);
+                    Console.WriteLine("Данные записаны в файл: {0}, в корневой папке программы\nНажмите любую кнопку для закрытия программы", ConfigurationManager.AppSettings["PathFileTxt"]);
                     Console.ReadKey();
                     Environment.Exit(1);
                 }

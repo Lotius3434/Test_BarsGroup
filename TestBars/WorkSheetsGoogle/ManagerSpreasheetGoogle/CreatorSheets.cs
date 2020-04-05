@@ -2,6 +2,7 @@
 using Google.Apis.Sheets.v4.Data;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using TestBars.WorkServersPostgreSql;
 
 namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
@@ -9,9 +10,11 @@ namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
     class CreatorSheets : ICreatorSheets
     {
         IWriterSheets writerSheets;
-        public CreatorSheets(IWriterSheets writerSheets)
+        IWorkFiles workFiles;
+        public CreatorSheets(IWriterSheets writerSheets, IWorkFiles workFiles)
         {
             this.writerSheets = writerSheets;
+            this.workFiles = workFiles;
         }
         public void CreateSheets(string SpreadsheetId, List<string> ListServer, IList<IServerObj> servers, SheetsService sheetService) //Метод для создания листов.
         {
@@ -27,7 +30,19 @@ namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
                 batchUpdateSpreadsheetRequest.Requests.Add(new Request { AddSheet = addSheetRequest });
 
                 var batchUpdateRequest = sheetService.Spreadsheets.BatchUpdate(batchUpdateSpreadsheetRequest, SpreadsheetId);
-                batchUpdateRequest.Execute();
+                
+                try
+                {
+                    batchUpdateRequest.Execute();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Ошибка: Не удается соединится с google api, лист в таблице не создан.", e.Message);
+                    workFiles.WriteFileTxt(servers);
+                    Console.WriteLine("Данные записаны в файл: {0}, в корневой папке программы.\nНажмите любую кнопку для закрытия программы.", ConfigurationManager.AppSettings["PathFileTxt"]);
+                    Console.ReadKey();
+                    Environment.Exit(1);
+                }
             }
 
             IList<IServerObj> newServers = new List<IServerObj>();

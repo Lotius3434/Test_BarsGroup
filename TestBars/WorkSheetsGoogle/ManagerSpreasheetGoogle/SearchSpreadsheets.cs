@@ -31,9 +31,9 @@ namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
             }
             catch(Exception e)
             {
-                Console.WriteLine("Ошибка: Не удается соединится с google api", e.Message);
+                Console.WriteLine("Ошибка: Не удается соединится с google api, не удалось отсканировать google disk.", e.Message);
                 workFiles.WriteFileTxt(servers);
-                Console.WriteLine("Данные записаны в файл: {0}, в корневой папке программы\nНажмите любую кнопку для закрытия программы", ConfigurationManager.AppSettings["PathFileTxt"]);
+                Console.WriteLine("Данные записаны в файл: {0}, в корневой папке программы.\nНажмите любую кнопку для закрытия программы.", ConfigurationManager.AppSettings["PathFileTxt"]);
                 Console.ReadKey();
                 Environment.Exit(1);
             }

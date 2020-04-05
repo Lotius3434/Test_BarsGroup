@@ -10,9 +10,11 @@ namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
     class CreatorSpreasheet : ICreatorSpreasheet
     {
         IWriterSheets writerSheets;
-        public CreatorSpreasheet(IWriterSheets writerSheets)
+        IWorkFiles workFiles;
+        public CreatorSpreasheet(IWriterSheets writerSheets, IWorkFiles workFiles)
         {
             this.writerSheets = writerSheets;
+            this.workFiles = workFiles;
         }
         public void CreateSpreasheet(IList<IServerObj> servers, SheetsService sheetService) // Метод создания таблицы.
         {
@@ -30,11 +32,22 @@ namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
                 sheet.Properties.Title = servers[a].NameServer;
                 myNewSheet.Sheets.Add(sheet);
             }
-            Spreadsheet newSheet = sheetService.Spreadsheets.Create(myNewSheet).Execute();
 
-            Console.WriteLine("--Таблица создана\nСсылка на таблицу: {0}", newSheet.SpreadsheetUrl);
-            
-            writerSheets.WriteSheet(newSheet.SpreadsheetId.ToString(), servers, sheetService);
+            try
+            {
+                Spreadsheet newSheet = sheetService.Spreadsheets.Create(myNewSheet).Execute();
+                Console.WriteLine("--Таблица создана\nСсылка на таблицу: {0}", newSheet.SpreadsheetUrl);
+
+                writerSheets.WriteSheet(newSheet.SpreadsheetId.ToString(), servers, sheetService);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Ошибка: Не удается соединится с google api, таблица не создана.", e.Message);
+                workFiles.WriteFileTxt(servers);
+                Console.WriteLine("Данные записаны в файл: {0}, в корневой папке программы.\nНажмите любую кнопку для закрытия программы.", ConfigurationManager.AppSettings["PathFileTxt"]);
+                Console.ReadKey();
+                Environment.Exit(1);
+            }  
         }
     }
 }

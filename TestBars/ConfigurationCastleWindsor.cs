@@ -22,7 +22,7 @@ namespace TestBars
             container.Register(Component.For<IUserAuthentication>().ImplementedBy<UserAuthentication>());
             container.Register(Component.For<IServices>().ImplementedBy<Services>());
             container.Register(Component.For<ISearchSpreadsheets>().ImplementedBy<SearchSpreadsheets>());
-            container.Register(Component.For<IWorkFiles>().ImplementedBy<WorkFiles>());
+            container.Register(Component.For<IWorkFiles>().ImplementedBy<WorkFiles>().LifestyleTransient());
             container.Register(Component.For<IProvider>().ImplementedBy<ProviderNpgsql>());
             
             container.Register(Component.For<IManagerSpreasheet>().ImplementedBy<ManagerSpreasheet>());
