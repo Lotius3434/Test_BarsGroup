@@ -41,7 +41,7 @@ namespace TestBars.WorkServersPostgreSql
                         {
                             string nameDb = _DataList[0];
                             string sizeDb = _DataList[1];
-                            string updateDateDb = DateTime.Now.ToString("dd.MM.yyyy");
+                            string updateDateDb = _DataList[2];
 
                             writerServers.WriteServerObjs(nameDb, sizeDb, updateDateDb);
                         }

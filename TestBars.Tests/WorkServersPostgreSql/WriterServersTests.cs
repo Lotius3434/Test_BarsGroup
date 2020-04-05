@@ -27,7 +27,7 @@ namespace TestBars.WorkServersPostgreSql.Tests
 
         }
         [Test]
-        public void WriteServerObjsTest_ReturnGoodDb()
+        public void WriteServerObjsTest_ReturnCorrectDb()
         {
             string nameServer = "LocalServer";
             string nameDb = "DbTest";

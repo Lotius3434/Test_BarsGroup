@@ -65,16 +65,17 @@
   <ItemGroup>
     <Compile Include="ConfigurationCastleWindsorTest.cs" />
     <Compile Include="ConverterTests.cs" />
+    <Compile Include="MockProviderNpgsql.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StubDbObj.cs" />
     <Compile Include="StubDrives.cs" />
     <Compile Include="StubFiles.cs" />
+    <Compile Include="StubParseConfiguration.cs" />
     <Compile Include="StubServerObj.cs" />
     <Compile Include="WorkFilesTests.cs" />
+    <Compile Include="WorkServersPostgreSql\ManagerConnectionDbTests.cs" />
     <Compile Include="WorkServersPostgreSql\ParseConfigurationTests.cs" />
     <Compile Include="WorkServersPostgreSql\WriterServersTests.cs" />
-    <Compile Include="WorkSheetsGoogle\SearchSpreadsheetsTests.cs" />
-    <Compile Include="WorkSheetsGoogle\SpreasheetTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

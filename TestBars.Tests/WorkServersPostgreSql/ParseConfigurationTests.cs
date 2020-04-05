@@ -17,19 +17,7 @@ namespace TestBars.WorkServersPostgreSql.Tests
     [TestFixture]
     public class ParseConfigurationTests
     {
-        [Test]
-        public void GetConfigServers_NpgsqlTest_ReturnDictionary()
-        {
-            FakeParseConfiguration fakeParseConfiguration = new FakeParseConfiguration();
-
-            Dictionary<string, string> expected = new Dictionary<string, string>();
-            expected.Add(
-                ConfigurationManager.ConnectionStrings[1].Name
-                ,ConfigurationManager.ConnectionStrings[1].ConnectionString);
-
-            Assert.AreEqual(expected, fakeParseConfiguration.GetConfigServers_Npgsql());
-        }
-
+        
         [Test]
         public void GetConfigServers_NpgsqlTest_ReturnIsNotNull()
         {
