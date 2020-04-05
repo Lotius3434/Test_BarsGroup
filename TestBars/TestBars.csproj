@@ -113,6 +113,16 @@
     <Compile Include="IWorkFiles.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateWorkSheetsGoogle\CreatorSheets.cs" />
+    <Compile Include="UpdateWorkSheetsGoogle\ICreatorSheets.cs" />
+    <Compile Include="UpdateWorkSheetsGoogle\ICreatorSpreasheet.cs" />
+    <Compile Include="UpdateWorkSheetsGoogle\IManagerSpreasheet.cs" />
+    <Compile Include="UpdateWorkSheetsGoogle\IScanerSheets.cs" />
+    <Compile Include="UpdateWorkSheetsGoogle\IWriterSheets.cs" />
+    <Compile Include="UpdateWorkSheetsGoogle\ManagerSpreasheet.cs" />
+    <Compile Include="UpdateWorkSheetsGoogle\ScanerSheets.cs" />
+    <Compile Include="UpdateWorkSheetsGoogle\CreatorSpreasheet.cs" />
+    <Compile Include="UpdateWorkSheetsGoogle\WriterSheets.cs" />
     <Compile Include="WorkProvider\IProvider.cs" />
     <Compile Include="WorkProvider\ProviderNpgsql.cs" />
     <Compile Include="SqlConfig.cs" />
