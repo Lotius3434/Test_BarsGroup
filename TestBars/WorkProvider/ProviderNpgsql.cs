@@ -1,4 +1,5 @@
 ﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 
 namespace TestBars.WorkProvider
@@ -9,8 +10,10 @@ namespace TestBars.WorkProvider
         NpgsqlConnection connection;
         NpgsqlCommand NpgsqlCommand;
         NpgsqlDataReader DataReader;
-        List<NpgsqlDataReader> list = new List<NpgsqlDataReader>();
-        
+        IList<List<string>> DataList = new List<List<string>>();
+      
+
+
         public void Createconnection(string Configurations)
         {
             connection = new NpgsqlConnection(Configurations);
@@ -21,9 +24,18 @@ namespace TestBars.WorkProvider
             connection.Open();
             DataReader = NpgsqlCommand.ExecuteReader();
         }
-        public NpgsqlDataReader GetDataReader()
-        {
-            return DataReader;
+        public IList<List<string>> GetDataReader()
+        { 
+            while (DataReader.Read())
+            {
+                List<string> DataReaderResul = new List<string>();
+                DataReaderResul.Add(DataReader.GetString(0));
+                DataReaderResul.Add(Converter.CalculateBytetoGB(DataReader.GetInt64(1)));
+                DataReaderResul.Add(DateTime.Now.ToString("dd.MM.yyyy"));
+
+                DataList.Add(DataReaderResul);
+            }
+            return DataList;
         }
         public void CloseConnection()
         {

@@ -7,7 +7,7 @@ namespace TestBars.WorkProvider
     {
         void Createconnection(string Configurations);
         void OpenConnection();
-        NpgsqlDataReader GetDataReader();
+        IList<List<string>> GetDataReader();
         void CloseConnection();
     }
 }

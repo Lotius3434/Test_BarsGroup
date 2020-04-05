@@ -18,16 +18,17 @@ namespace TestBars
             Timer timer = new Timer(new TimerCallback(StartProgram), null, 1000, 30000);
 
 
-            ConsoleKeyInfo button_press;
-            do
-            {
-                Task.Delay(1000).Wait();
-                button_press = Console.ReadKey();
+            //ConsoleKeyInfo button_press;
+            //do
+            //{
+            //    Task.Delay(1000).Wait();
+            //    button_press = Console.ReadKey();
 
-            } while (button_press.KeyChar != 'q');
-            timer.Dispose();
-            Console.WriteLine("\nВыход из программы");
-
+            //} while (button_press.KeyChar != 'q');
+            //timer.Dispose();
+            //Console.WriteLine("\nВыход из программы");
+            object state = 1;
+            StartProgram(state);
 
         }
         static public void StartProgram(object state)

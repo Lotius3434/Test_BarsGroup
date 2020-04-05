@@ -14,7 +14,8 @@ namespace TestBars.WorkServersPostgreSql
         IProvider provider;
         IList<IServerObj> ListServerObjs = new List<IServerObj>();
         IDictionary<string, string> Configurations;
-      
+        IList<List<string>> DataList;
+
         public ManagerConnectionDb(IParseConfiguration parseConfiguration, IWriterServers writerServers, IProvider provider)
         {
             if (parseConfiguration != null)
@@ -38,23 +39,20 @@ namespace TestBars.WorkServersPostgreSql
                     {
                         provider.Createconnection(_Configurations.Value);
                         provider.OpenConnection();
-
-                        using (NpgsqlDataReader npgsqlDataReader = provider.GetDataReader())
+                        DataList = provider.GetDataReader();
+                        writerServers.CreateServerObj(_Configurations.Key);
+                        foreach (var _DataList in DataList)
                         {
-                            writerServers.CreateServerObj(_Configurations.Key);
+                            string nameDb = _DataList[0];
+                            string sizeDb = _DataList[1];
+                            string updateDateDb = DateTime.Now.ToString("dd.MM.yyyy");
 
-                            while (npgsqlDataReader.Read())
-                            {
-                                string nameDb = npgsqlDataReader.GetString(0);
-                                string sizeDb = Converter.CalculateBytetoGB(npgsqlDataReader.GetInt64(1));
-                                string updateDateDb = DateTime.Now.ToString("dd.MM.yyyy");
-                                writerServers.WriteServerObjs(nameDb, sizeDb, updateDateDb);
-                            }
+                            writerServers.WriteServerObjs(nameDb, sizeDb, updateDateDb);
+                        }
 
-                            ListServerObjs.Add(writerServers.GetServerObj());
+                        ListServerObjs.Add(writerServers.GetServerObj());
 
-                            provider.CloseConnection();
-                        }    
+                        provider.CloseConnection();   
                     }
                     catch(Exception e)
                     {

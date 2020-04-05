@@ -14,5 +14,10 @@ namespace TestBars.Tests
             
             return resul;
         }
+        public string GetCreatestring()
+        {
+            string resul = null;
+            return resul;
+        }
     }
 }
