@@ -9,6 +9,11 @@ namespace TestBars
 {
     public class WorkFiles : IWorkFiles
     {
+        IDrives drives;
+        public WorkFiles(IDrives drives)
+        {
+            this.drives = drives;
+        }
         public string SortString(IList<string> liststring )
         {
             StringBuilder stringBuilder = new StringBuilder();
@@ -78,7 +83,7 @@ namespace TestBars
 
                 }
 
-                IList<IList<Object>> DriveFreeSize = Drives.GetDriveFreeSize();
+                IList<IList<Object>> DriveFreeSize = drives.GetDriveFreeSize();
                 IList<string> listDrive = new List<string>();
                 foreach (var _DriveFreeSize in DriveFreeSize)
                 {

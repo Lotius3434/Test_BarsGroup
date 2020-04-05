@@ -4,9 +4,9 @@ using System.IO;
 
 namespace TestBars
 {
-    public class Drives// Класс для работы с жесткими дисками
+    public class Drives : IDrives// Класс для работы с жесткими дисками
     {
-        public static IList<IList<Object>> GetDriveFreeSize()//Метод получает все жесткие диски и свободное место в памяти на них
+        public IList<IList<Object>> GetDriveFreeSize()//Метод получает все жесткие диски и свободное место в памяти на них
         {
             IList<IList<Object>> drivesInfo = new List<IList<Object>>() { };
             IList<Object> drives = new List<Object>();

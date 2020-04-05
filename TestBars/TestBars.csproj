@@ -110,6 +110,7 @@
     <Compile Include="ConfigurationCastleWindsor.cs" />
     <Compile Include="Converter.cs" />
     <Compile Include="Drives.cs" />
+    <Compile Include="IDrives.cs" />
     <Compile Include="IWorkFiles.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

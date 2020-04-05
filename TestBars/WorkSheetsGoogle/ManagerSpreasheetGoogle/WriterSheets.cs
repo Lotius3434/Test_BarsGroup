@@ -10,9 +10,11 @@ namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
     class WriterSheets : IWriterSheets
     {
         IWorkFiles workFiles;
-        public WriterSheets(IWorkFiles workFiles)
+        IDrives drives;
+        public WriterSheets(IWorkFiles workFiles, IDrives drives)
         {
             this.workFiles = workFiles;
+            this.drives = drives;
         }
         public void WriteSheet(string spreadsheet, IList<IServerObj> servers, SheetsService sheetService) // Метод добавления данных в листы.
         {
@@ -45,7 +47,7 @@ namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
                     valueToWrite.Add(listdatabase);
 
                 }
-                IList<IList<Object>> drivesInfo = Drives.GetDriveFreeSize();
+                IList<IList<Object>> drivesInfo = drives.GetDriveFreeSize();
                 foreach (var drv in drivesInfo)
                 {
                     valueToWrite.Add(drv);

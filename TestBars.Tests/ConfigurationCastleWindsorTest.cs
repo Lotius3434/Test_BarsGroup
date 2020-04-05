@@ -21,7 +21,7 @@ namespace TestBars
             container.Register(Component.For<IUserAuthentication>().ImplementedBy<UserAuthentication>());
             container.Register(Component.For<IServices>().ImplementedBy<Services>());
             container.Register(Component.For<IWorkFiles>().ImplementedBy<WorkFiles>());
-
+            container.Register(Component.For<IDrives>().ImplementedBy<StubDrives>());
         }
     }
 }

@@ -8,7 +8,7 @@ namespace TestBars.Tests
 {
     class StubFiles
     {
-        public string GetBuildeResulSortString()
+        public string GetResulSortString()
         {
             string resul = "|LocalServer         |DbTest              |0,00741             |02.04.2020          |\n+--------------------+--------------------+--------------------+--------------------+\n";
             
@@ -16,7 +16,9 @@ namespace TestBars.Tests
         }
         public string GetCreatestring()
         {
-            string resul = null;
+            string resulDB = "|Сервер              |База данных         |Размер в ГБ         |Дата обновления     |\n+--------------------+--------------------+--------------------+--------------------+\n|LocalServer         |DbTest              |0,00741             |02.04.2020          |\n+--------------------+--------------------+--------------------+--------------------+\n";
+            string resulDrives = "|C:\\                 |Свободно            |62,69174            |05.04.2020          |\n+--------------------+--------------------+--------------------+--------------------+\n";
+            string resul = resulDB + resulDrives;
             return resul;
         }
     }

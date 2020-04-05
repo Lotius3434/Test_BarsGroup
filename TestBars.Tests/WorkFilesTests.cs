@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Castle.Windsor;
+using TestBars.WorkServersPostgreSql;
 
 namespace TestBars.Tests
 {
@@ -13,16 +14,22 @@ namespace TestBars.Tests
     public class WorkFilesTests
     {
         WindsorContainer container;
-        IWorkFiles _IWorkFiles;
+        
         WorkFiles workFiles;
+        IList<IServerObj> ListStubServerObj;
+        IDrives drives;
         [SetUp]
         public void containerCreate()
         {
             container = new WindsorContainer();
             container.Install(new ConfigurationCastleWindsorTest());
-            _IWorkFiles = container.Resolve<IWorkFiles>();
-            workFiles = new WorkFiles();
+            
 
+            ListStubServerObj = new List<IServerObj>();
+            IServerObj StubServerObj = container.Resolve<IServerObj>();
+            IDrives drives = container.Resolve<IDrives>();
+            workFiles = new WorkFiles(drives);
+            ListStubServerObj.Add(StubServerObj);
         }
 
         [Test]
@@ -38,21 +45,26 @@ namespace TestBars.Tests
                 ,"02.04.2020"
             };
 
-            string execute = stubFiles.GetBuildeResulSortString();
+            string execute = stubFiles.GetResulSortString();
 
             Assert.AreEqual(execute, workFiles.SortString(listliststring));
         }
 
         [Test]
-        public void CreatestringTest()
+        public void CreatestringTest_returnCorrectString()
         {
-
+            StubFiles stubFiles = new StubFiles();
+            string execute = stubFiles.GetCreatestring();
+            Assert.AreEqual(execute, workFiles.Createstring(ListStubServerObj));
         }
 
-        [Test]
-        public void WriteFileTxtTest()
+        [TearDown]
+        public void containerNull()
         {
-
+            container = null;
+            workFiles = null;
+            ListStubServerObj = null;
+            drives = null;
         }
     }
 }

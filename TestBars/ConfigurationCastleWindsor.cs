@@ -12,6 +12,7 @@ namespace TestBars
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
+            container.Register(Component.For<IDrives>().ImplementedBy<IDrives>().LifestyleTransient());
             container.Register(Component.For<IDbObj>().ImplementedBy<DbObj>().LifestyleTransient());
             container.Register(Component.For<IServerObj>().ImplementedBy<ServerObj>().LifestyleTransient());
 
