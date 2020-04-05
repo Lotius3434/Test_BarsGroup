@@ -16,9 +16,8 @@ namespace TestBars.WorkSheetsGoogle
         
         public UserCredential Authentication()
         {
-            
-                using (var stream = new MemoryStream(Encoding.UTF8.GetBytes(ConfigurationManager.AppSettings["credentials"])))
-                {
+            using (var stream = new MemoryStream(Encoding.UTF8.GetBytes(ConfigurationManager.AppSettings["credentials"])))
+            {
                     var credPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
                     credPath = Path.Combine(credPath, "CredentialMonitorDb.json");
                     credential =
@@ -29,10 +28,7 @@ namespace TestBars.WorkSheetsGoogle
                             CancellationToken.None,
                             new FileDataStore(credPath, true)).Result;
                     Console.WriteLine(DateTime.Now.ToString() + ": Credential файл сохранен по ссылке: " + credPath);
-                }
-            
-           
-            
+            }
 
             return credential;
         }

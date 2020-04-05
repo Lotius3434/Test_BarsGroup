@@ -11,9 +11,6 @@ namespace TestBars.WorkProvider
         NpgsqlCommand NpgsqlCommand;
         NpgsqlDataReader DataReader;
         IList<List<string>> DataList = new List<List<string>>();
-      
-
-
         public void Createconnection(string Configurations)
         {
             connection = new NpgsqlConnection(Configurations);

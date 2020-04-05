@@ -9,14 +9,11 @@ namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
 {
     public class SearchSpreadsheets : ISearchSpreadsheets//Класс для работы с гугл диском
     {
-        IWorkFiles workFiles;
-        
-        
+        IWorkFiles workFiles;        
         public SearchSpreadsheets(IWorkFiles workFiles)
         {
             this.workFiles = workFiles;
-        }
-        
+        }        
         public string Search(IList<IServerObj> servers, DriveService driveService)// Метод поиска таблицы по названию
         {
             

@@ -42,7 +42,5 @@
                     UpdateDate = value;
             }
         }
-
-
     }
 }

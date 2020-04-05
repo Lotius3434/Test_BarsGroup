@@ -22,13 +22,9 @@ namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
         {
             Console.WriteLine("Сканирование листов в таблице");
 
-
-
-
             List<string> sheets = new List<string>();
             List<string> result = new List<string>();
 
-            
             try
             {
                 Spreadsheet gsSpreadsheet;
@@ -55,8 +51,6 @@ namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
                     result.Add(nameServ.NameServer);
                 }
             }
-
-
 
             if (result.Count > 0) // Если соответствующих листов не найдено, происходит их добавление.
             {

@@ -60,7 +60,6 @@ namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
 
 
             writerSheets.WriteSheet(SpreadsheetId, newServers, sheetService);
-
         }
     }
 }

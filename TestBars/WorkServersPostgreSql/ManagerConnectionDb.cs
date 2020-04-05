@@ -6,14 +6,12 @@ namespace TestBars.WorkServersPostgreSql
 {
     public class ManagerConnectionDb : IManagerConnectionDb
     {
-       
         IParseConfiguration parseConfiguration;
         IWriterServers writerServers;
         IProvider provider;
         IList<IServerObj> ListServerObjs = new List<IServerObj>();
         IDictionary<string, string> Configurations;
         IList<List<string>> DataList;
-
         public ManagerConnectionDb(IParseConfiguration parseConfiguration, IWriterServers writerServers, IProvider provider)
         {
             if (parseConfiguration != null)

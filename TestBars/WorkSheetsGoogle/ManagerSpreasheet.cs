@@ -9,7 +9,6 @@ namespace TestBars.WorkSheetsGoogle
 {
     class ManagerSpreasheet : IManagerSpreasheet
     {
-        IServices services;
         ISearchSpreadsheets searchSpreadsheets;
         ICreatorSpreasheet creatorSpreasheet;
         IScanerSheets scanerSheets;
@@ -18,7 +17,6 @@ namespace TestBars.WorkSheetsGoogle
         DriveService driveService;
         public ManagerSpreasheet(IServices services, ISearchSpreadsheets searchSpreadsheets, ICreatorSpreasheet creatorSpreasheet, IScanerSheets scanerSheets)
         {
-            this.services = services;
             this.searchSpreadsheets = searchSpreadsheets;
             this.creatorSpreasheet = creatorSpreasheet;
             this.scanerSheets = scanerSheets;
@@ -35,17 +33,12 @@ namespace TestBars.WorkSheetsGoogle
                 Console.WriteLine("Таблица не найдена\nНачинается создание таблицы...");
 
                 creatorSpreasheet.CreateSpreasheet(servers, sheetService); //Создание таблицы и листов.
-                
-
-
-
             }
             else // Если таблица найдена, создаеться новая.
             {
                 scanerSheets.ScanSheets(IdSreadssheet, servers, sheetService); //Скан листов, если листов серверов по названию не найдено, они добавляются.
                 
                 Console.WriteLine("--Таблица обновлена...");
-
             }
 
             Console.WriteLine("--Ожидание повторного запуска, интервал: 30 сек...\nДля выхода из программы, нажмите 'q'\n");

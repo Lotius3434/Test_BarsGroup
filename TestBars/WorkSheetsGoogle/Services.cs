@@ -9,8 +9,6 @@ namespace TestBars.WorkSheetsGoogle
     public class Services : IServices
     {
         UserCredential _credential;
-
-        
         public Services(IUserAuthentication userAuthentication)
         {
             this._credential = userAuthentication.Authentication();

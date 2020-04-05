@@ -6,7 +6,6 @@ namespace TestBars.WorkSheetsGoogle
     public interface IServices 
     {
         SheetsService GetSheetsService();
-        DriveService GetDriveService();
-        
+        DriveService GetDriveService();   
     }
 }
