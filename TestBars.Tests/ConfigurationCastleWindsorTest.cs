@@ -15,13 +15,11 @@ namespace TestBars
             container.Register(Component.For<IServerObj>().ImplementedBy<StubServerObj>().LifestyleTransient());
 
             container.Register(Component.For<IParseConfiguration>().ImplementedBy<ParseConfiguration>());
-            container.Register(Component.For<IConnectionDb>().ImplementedBy<ConnectionDb>());
+            container.Register(Component.For<IManagerConnectionDb>().ImplementedBy<ManagerConnectionDb>());
             container.Register(Component.For<IWriterServers>().ImplementedBy<WriterServers>());
 
             container.Register(Component.For<IUserAuthentication>().ImplementedBy<UserAuthentication>());
             container.Register(Component.For<IServices>().ImplementedBy<Services>());
-            container.Register(Component.For<ISpreasheet>().ImplementedBy<Spreasheet>());
-            container.Register(Component.For<ISearchSpreadsheets>().ImplementedBy<SearchSpreadsheets>());
             container.Register(Component.For<IWorkFiles>().ImplementedBy<WorkFiles>());
 
         }

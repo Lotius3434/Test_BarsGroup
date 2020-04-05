@@ -9,7 +9,7 @@ namespace TestBars
 {
     public class WorkFiles : IWorkFiles
     {
-        public StringBuilder SortString(IList<string> liststring )
+        public string SortString(IList<string> liststring )
         {
             StringBuilder stringBuilder = new StringBuilder();
             for (int i = 0; i < liststring.Count; i++)
@@ -43,9 +43,10 @@ namespace TestBars
 
                 }
             }
-            return stringBuilder;
+            string resul = stringBuilder.ToString();
+            return resul;
         }
-        public StringBuilder Createstring(IList<IServerObj> servers)
+        public string Createstring(IList<IServerObj> servers)
         {
             StringBuilder stringBuilder = new StringBuilder();
             IList<string> FirstLineNames = new List<string>()
@@ -90,19 +91,19 @@ namespace TestBars
 
                 stringBuilder.Append(SortString(listDrive));
             }
-            return stringBuilder;
+            string resul = stringBuilder.ToString();
+            return resul;
 
 
         }
         public void WriteFileTxt(IList<IServerObj> servers)
         {
-            StringBuilder ResulStringBuilder = Createstring(servers);
-           
+            string ResulString = Createstring(servers);
             var file = new FileInfo(ConfigurationManager.AppSettings["PathFileTxt"]);
             using (FileStream fileStream = file.Open(FileMode.OpenOrCreate, FileAccess.Write))
             {
                 StreamWriter Writer = new StreamWriter(fileStream);
-                Writer.WriteLine(ResulStringBuilder);
+                Writer.WriteLine(ResulString);
                 Writer.Close();
             }
         }

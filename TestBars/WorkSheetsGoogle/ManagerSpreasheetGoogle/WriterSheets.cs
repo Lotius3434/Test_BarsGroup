@@ -2,16 +2,13 @@
 using Google.Apis.Sheets.v4.Data;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TestBars.WorkServersPostgreSql;
 
-namespace TestBars.UpdateWorkSheetsGoogle
+namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
 {
     class WriterSheets : IWriterSheets
     {
-        public void WriteSheet(string spreadsheet, IList<IServerObj> servers, SheetsService service) // Метод добавления данных в листы.
+        public void WriteSheet(string spreadsheet, IList<IServerObj> servers, SheetsService sheetService) // Метод добавления данных в листы.
         {
 
             //string range = "'Server1'!A1:D";
@@ -51,7 +48,7 @@ namespace TestBars.UpdateWorkSheetsGoogle
 
                 var valueRange = new ValueRange() { Values = valueToWrite };
 
-                var update = service.Spreadsheets.Values.Update(valueRange, spreadsheet, range);
+                var update = sheetService.Spreadsheets.Values.Update(valueRange, spreadsheet, range);
                 update.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.USERENTERED;
                 try
                 {

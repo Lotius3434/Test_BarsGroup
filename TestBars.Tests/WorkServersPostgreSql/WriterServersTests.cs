@@ -43,6 +43,14 @@ namespace TestBars.WorkServersPostgreSql.Tests
             Assert.AreEqual(StubtServerObjs.DataBases[0].updateDate, writerServers.GetServerObj().DataBases[0].updateDate);
 
         }
+        [TearDown]
+        public void containerNull()
+        {
+            writerServers = null;
+            container = null;
+            StubtServerObjs = null;
+
+        }
 
     }
 }

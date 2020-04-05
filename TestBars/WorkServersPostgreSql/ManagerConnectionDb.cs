@@ -6,7 +6,7 @@ using TestBars.WorkProvider;
 
 namespace TestBars.WorkServersPostgreSql
 {
-    public class ConnectionDb : IConnectionDb
+    public class ManagerConnectionDb : IManagerConnectionDb
     {
        
         IParseConfiguration parseConfiguration;
@@ -15,7 +15,7 @@ namespace TestBars.WorkServersPostgreSql
         IList<IServerObj> ListServerObjs = new List<IServerObj>();
         IDictionary<string, string> Configurations;
       
-        public ConnectionDb(IParseConfiguration parseConfiguration, IWriterServers writerServers, IProvider provider)
+        public ManagerConnectionDb(IParseConfiguration parseConfiguration, IWriterServers writerServers, IProvider provider)
         {
             if (parseConfiguration != null)
             {

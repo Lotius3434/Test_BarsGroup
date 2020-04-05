@@ -3,12 +3,9 @@ using Google.Apis.Sheets.v4.Data;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TestBars.WorkServersPostgreSql;
 
-namespace TestBars.UpdateWorkSheetsGoogle
+namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
 {
     class CreatorSpreasheet : ICreatorSpreasheet
     {
@@ -17,7 +14,7 @@ namespace TestBars.UpdateWorkSheetsGoogle
         {
             this.writerSheets = writerSheets;
         }
-        public void CreateSpreasheet(IList<IServerObj> servers, SheetsService service) // Метод создания таблицы.
+        public void CreateSpreasheet(IList<IServerObj> servers, SheetsService sheetService) // Метод создания таблицы.
         {
             string spreadsheetName = ConfigurationManager.AppSettings["NameSpreadSheet"];
 
@@ -33,11 +30,11 @@ namespace TestBars.UpdateWorkSheetsGoogle
                 sheet.Properties.Title = servers[a].NameServer;
                 myNewSheet.Sheets.Add(sheet);
             }
-            Spreadsheet newSheet = service.Spreadsheets.Create(myNewSheet).Execute();
+            Spreadsheet newSheet = sheetService.Spreadsheets.Create(myNewSheet).Execute();
 
             Console.WriteLine("--Таблица создана\nСсылка на таблицу: {0}", newSheet.SpreadsheetUrl);
             
-            writerSheets.WriteSheet(newSheet.SpreadsheetId.ToString(), servers, service);
+            writerSheets.WriteSheet(newSheet.SpreadsheetId.ToString(), servers, sheetService);
         }
     }
 }

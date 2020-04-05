@@ -2,12 +2,9 @@
 using Google.Apis.Sheets.v4.Data;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TestBars.WorkServersPostgreSql;
 
-namespace TestBars.UpdateWorkSheetsGoogle
+namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
 {
     class ScanerSheets : IScanerSheets
     {
@@ -16,7 +13,7 @@ namespace TestBars.UpdateWorkSheetsGoogle
         {
             this.creatorSheets = creatorSheets;
         }
-        public void ScanSheets(string IdSreadssheet, IList<IServerObj> servers, SheetsService service)// Метод который парсит листы в таблице.
+        public void ScanSheets(string IdSreadssheet, IList<IServerObj> servers, SheetsService sheetService)// Метод который парсит листы в таблице.
         {
             Console.WriteLine("Сканирование листов в таблице");
 
@@ -27,7 +24,7 @@ namespace TestBars.UpdateWorkSheetsGoogle
             List<string> result = new List<string>();
 
             Spreadsheet gsSpreadsheet;
-            gsSpreadsheet = service.Spreadsheets.Get(IdSreadssheet).Execute();
+            gsSpreadsheet = sheetService.Spreadsheets.Get(IdSreadssheet).Execute();
             foreach (Sheet gsSheet in gsSpreadsheet.Sheets)
             {
                 sheets.Add(gsSheet.Properties.Title);
@@ -45,7 +42,7 @@ namespace TestBars.UpdateWorkSheetsGoogle
 
             if (result.Count > 0) // Если соответствующих листов не найдено, происходит их добавление.
             {
-                creatorSheets.CreateSheets(IdSreadssheet, result, servers, service);
+                creatorSheets.CreateSheets(IdSreadssheet, result, servers, sheetService);
             }
 
         }

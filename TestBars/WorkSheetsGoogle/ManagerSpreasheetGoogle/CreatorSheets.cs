@@ -2,12 +2,9 @@
 using Google.Apis.Sheets.v4.Data;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TestBars.WorkServersPostgreSql;
 
-namespace TestBars.UpdateWorkSheetsGoogle
+namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
 {
     class CreatorSheets : ICreatorSheets
     {
@@ -16,7 +13,7 @@ namespace TestBars.UpdateWorkSheetsGoogle
         {
             this.writerSheets = writerSheets;
         }
-        public void CreateSheets(string SpreadsheetId, List<string> ListServer, IList<IServerObj> servers, SheetsService service) //Метод для создания листов.
+        public void CreateSheets(string SpreadsheetId, List<string> ListServer, IList<IServerObj> servers, SheetsService sheetService) //Метод для создания листов.
         {
             Console.WriteLine("Количество не найденых листов: {0}\nНачинается добавление недостающих листов...", ListServer.Count);
 
@@ -29,7 +26,7 @@ namespace TestBars.UpdateWorkSheetsGoogle
                 batchUpdateSpreadsheetRequest.Requests = new List<Request>();
                 batchUpdateSpreadsheetRequest.Requests.Add(new Request { AddSheet = addSheetRequest });
 
-                var batchUpdateRequest = service.Spreadsheets.BatchUpdate(batchUpdateSpreadsheetRequest, SpreadsheetId);
+                var batchUpdateRequest = sheetService.Spreadsheets.BatchUpdate(batchUpdateSpreadsheetRequest, SpreadsheetId);
                 batchUpdateRequest.Execute();
             }
 
@@ -47,7 +44,7 @@ namespace TestBars.UpdateWorkSheetsGoogle
             }
 
 
-            writerSheets.WriteSheet(SpreadsheetId, newServers, service);
+            writerSheets.WriteSheet(SpreadsheetId, newServers, sheetService);
 
         }
     }

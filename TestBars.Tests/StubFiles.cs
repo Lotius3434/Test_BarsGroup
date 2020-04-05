@@ -8,11 +8,11 @@ namespace TestBars.Tests
 {
     class StubFiles
     {
-        public StringBuilder GetBuildeResulSortString()
+        public string GetBuildeResulSortString()
         {
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append("|LocalServer         |DbTest              |0,00741             |02.04.2020          |\n+--------------------+--------------------+--------------------+--------------------+\n");
-            return stringBuilder;
+            string resul = "|LocalServer         |DbTest              |0,00741             |02.04.2020          |\n+--------------------+--------------------+--------------------+--------------------+\n";
+            
+            return resul;
         }
     }
 }

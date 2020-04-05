@@ -5,36 +5,27 @@ using System.Collections.Generic;
 using System.Configuration;
 using TestBars.WorkServersPostgreSql;
 
-namespace TestBars.WorkSheetsGoogle
+namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
 {
     public class SearchSpreadsheets : ISearchSpreadsheets//Класс для работы с гугл диском
     {
         IWorkFiles workFiles;
-        DriveService service;
-        public DriveService SetDriveService
-        {
-            set
-            {
-                if (service == null)
-                {
-                    service = value;
-                }
-            }
-        }
+        
+        
         public SearchSpreadsheets(IWorkFiles workFiles)
         {
             this.workFiles = workFiles;
         }
         
-        public string Search(IList<IServerObj> servers)// Метод поиска таблицы по названию
+        public string Search(IList<IServerObj> servers, DriveService driveService)// Метод поиска таблицы по названию
         {
-             
+            
             string spreadsheetId = null;
             FileList folderId = null;
             Console.WriteLine("Сканирование google disk");
             try
             {
-                FilesResource.ListRequest request = service.Files.List();
+                FilesResource.ListRequest request = driveService.Files.List();
                 request.Q = $"mimeType = 'application/vnd.google-apps.spreadsheet' and name = '{ConfigurationManager.AppSettings["NameSpreadSheet"]}'";
                 folderId = request.Execute();
             }

@@ -27,7 +27,6 @@ namespace TestBars.WorkServersPostgreSql
             dataObj.size = sizeDb;
             dataObj.updateDate = updateDateDb;
             ListdataBases.Add(dataObj);
-
         }
         public IServerObj GetServerObj()
         {

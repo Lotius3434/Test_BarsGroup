@@ -5,7 +5,7 @@ using TestBars.WorkSheetsGoogle;
 using System.Threading;
 using Castle.Windsor;
 using TestBars.WorkServersPostgreSql;
-using TestBars.UpdateWorkSheetsGoogle;
+using TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle;
 
 namespace TestBars
 {
@@ -32,53 +32,15 @@ namespace TestBars
         }
         static public void StartProgram(object state)
         {
-
             var container = new WindsorContainer();
             container.Install(new ConfigurationCastleWindsor());
-            
-            var connection = container.Resolve<IConnectionDb>();
+            var connection = container.Resolve<IManagerConnectionDb>();
+
             IList<IServerObj> servers = connection.GetServers();
 
-            IServices services = container.Resolve<IServices>();
-            //ISpreasheet spreasheet = container.Resolve<ISpreasheet>();
-            ISearchSpreadsheets searchSpreadsheets = container.Resolve<ISearchSpreadsheets>();
-            //////////////////
-            IManagerSpreasheet managerSpreasheet = container.Resolve<IManagerSpreasheet>();
-            //spreasheet.SetSheetsService = services.GetSheetsService();
-            managerSpreasheet.SetSheetsService = services.GetSheetsService();
-            searchSpreadsheets.SetDriveService = services.GetDriveService();
-
-
-           
             
-            string IdSreadssheet = searchSpreadsheets.Search(servers); //Поиск таблиц на гугл диске.
-
-
-            managerSpreasheet.StartWorkSpreasheet(IdSreadssheet, servers);
-
-
-
-
-            //if (IdSreadssheet == null)
-            //{
-            //    Console.WriteLine("Таблица не найдена\nНачинается создание таблицы...");
-
-            //    string spreadsheetid = spreasheet.CreateSpreasheet(servers); //Создание таблицы и листов.
-            //    spreasheet.WriteSheet(spreadsheetid, servers); //Добавление данных в таблицы.
-
-
-
-            //}
-            //else // Если таблица найдена, создаеться новая.
-            //{
-            //    spreasheet.ScanSheets(IdSreadssheet, servers); //Скан листов, если листов серверов по названию не найдено, они добавляются.
-            //    spreasheet.WriteSheet(IdSreadssheet, servers); //Обновление листов в таблице.
-            //    Console.WriteLine("--Таблица обновлена...");
-
-            //}
-
-            //Console.WriteLine("--Ожидание повторного запуска, интервал: 30 сек...\nДля выхода из программы, нажмите 'q'\n");
-
+            IManagerSpreasheet managerSpreasheet = container.Resolve<IManagerSpreasheet>();
+            managerSpreasheet.StartWorkSpreasheet(servers);
         }
         
     }

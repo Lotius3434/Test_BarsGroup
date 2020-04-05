@@ -2,7 +2,7 @@
 
 namespace TestBars.WorkServersPostgreSql
 {
-    public interface IConnectionDb
+    public interface IManagerConnectionDb
     {
         IList<IServerObj> GetServers();
     }

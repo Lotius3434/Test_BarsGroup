@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using TestBars.WorkServersPostgreSql;
 
-namespace TestBars.WorkSheetsGoogle
+namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
 {
     public interface ISearchSpreadsheets
     {
-        DriveService SetDriveService { set; }
-        string Search(IList<IServerObj> servers);
+        string Search(IList<IServerObj> servers, DriveService driveService);
     }
 }

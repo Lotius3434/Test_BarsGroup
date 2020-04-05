@@ -37,11 +37,10 @@ namespace TestBars.Tests
                 ,"0,00741"
                 ,"02.04.2020"
             };
-            string execute = stubFiles.GetBuildeResulSortString().ToString();
 
-            string resultSortString = workFiles.SortString(listliststring).ToString();
+            string execute = stubFiles.GetBuildeResulSortString();
 
-            Assert.AreEqual(execute, resultSortString);
+            Assert.AreEqual(execute, workFiles.SortString(listliststring));
         }
 
         [Test]
