@@ -1,10 +1,5 @@
 ﻿using NUnit.Framework;
-using TestBars.WorkServersPostgreSql;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Castle.Windsor;
 
 namespace TestBars.WorkServersPostgreSql.Tests

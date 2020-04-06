@@ -1,5 +1,4 @@
-﻿using Npgsql;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace TestBars.WorkProvider
 {   /// <summary>
