@@ -2,7 +2,8 @@
 .ad l
 .nh
 .SH NAME
-ISearchSpreadsheets
+ISearchSpreadsheets \- Интерфейс объекта, который ищет таблицы в google disk, по названию\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,7 +15,35 @@ ISearchSpreadsheets
 .ti -1c
 .RI "string \fBSearch\fP (IList< \fBIServerObj\fP > servers, DriveService driveService)"
 .br
+.RI "Ищет таблицы в google disk, по насванию\&. "
 .in -1c
+.SH "Подробное описание"
+.PP 
+Интерфейс объекта, который ищет таблицы в google disk, по названию\&. 
+
+
+.SH "Методы"
+.PP 
+.SS "string Search (IList< \fBIServerObj\fP > servers, DriveService driveService)"
+
+.PP
+Ищет таблицы в google disk, по насванию\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIservers\fP Передает список серверов с данными\&.
+.br
+\fIdriveService\fP Передает сервис для взаимодействия c google disk/
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Возвращает id таблицы, если она нашлась\&. По умолчанию возвращает: null
+.RE
+.PP
+
+.PP
+Замещается в \fBSearchSpreadsheets\fP\&.
 
 .SH "Автор"
 .PP 

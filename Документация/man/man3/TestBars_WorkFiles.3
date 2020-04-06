@@ -2,7 +2,8 @@
 .ad l
 .nh
 .SH NAME
-WorkFiles
+WorkFiles \- Класс, который отвечает за запись данных в txt файл\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,16 +15,87 @@ WorkFiles
 .ti -1c
 .RI "\fBWorkFiles\fP (\fBIDrives\fP drives)"
 .br
+.RI "Конструктор через который просходят иньекции объектов\&. "
 .ti -1c
 .RI "string \fBSortString\fP (IList< string > liststring)"
 .br
+.RI "Сортирует данные, добавляет столбцы, строки\&. "
 .ti -1c
 .RI "string \fBCreatestring\fP (IList< \fBIServerObj\fP > servers)"
 .br
+.RI "Создает общую строку с данными серверов\&. "
 .ti -1c
 .RI "void \fBWriteFileTxt\fP (IList< \fBIServerObj\fP > servers)"
 .br
+.RI "Записывает данные в txt файл\&. "
 .in -1c
+.SH "Подробное описание"
+.PP 
+Класс, который отвечает за запись данных в txt файл\&. 
+
+
+.SH "Конструктор(ы)"
+.PP 
+.SS "\fBWorkFiles\fP (\fBIDrives\fP drives)"
+
+.PP
+Конструктор через который просходят иньекции объектов\&. 
+.br
+ 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIdrives\fP Отвечает за получения списка жестких дисков и количесво свободного места на них\&.
+.RE
+.PP
+
+.SH "Методы"
+.PP 
+.SS "string Createstring (IList< \fBIServerObj\fP > servers)"
+
+.PP
+Создает общую строку с данными серверов\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIservers\fP Передает список серверов с данными\&.
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Строку с данными серверов\&.
+.RE
+.PP
+
+.SS "string SortString (IList< string > liststring)"
+
+.PP
+Сортирует данные, добавляет столбцы, строки\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIliststring\fP Передает список с данными DB
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Строка с отсортированными данными\&.
+.RE
+.PP
+
+.SS "void WriteFileTxt (IList< \fBIServerObj\fP > servers)"
+
+.PP
+Записывает данные в txt файл\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIservers\fP Передает список серверов с данными\&.
+.RE
+.PP
+
+.PP
+Замещает \fBIWorkFiles\fP\&.
 
 .SH "Автор"
 .PP 

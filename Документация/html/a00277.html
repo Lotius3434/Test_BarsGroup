@@ -73,17 +73,90 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Класс, который ищет таблицы в google disk, по названию.  
+ <a href="a00277.html#details">Подробнее...</a></p>
+
 <p>Базовые классы:<a class="el" href="a00265.html">ISearchSpreadsheets</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Открытые члены</h2></td></tr>
-<tr class="memitem:a13d7560c3db36f41af03842177dcdafe"><td class="memItemLeft" align="right" valign="top"><a id="a13d7560c3db36f41af03842177dcdafe"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SearchSpreadsheets</b> (<a class="el" href="a00165.html">IWorkFiles</a> workFiles)</td></tr>
+<tr class="memitem:a13d7560c3db36f41af03842177dcdafe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00277.html#a13d7560c3db36f41af03842177dcdafe">SearchSpreadsheets</a> (<a class="el" href="a00165.html">IWorkFiles</a> workFiles)</td></tr>
+<tr class="memdesc:a13d7560c3db36f41af03842177dcdafe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор через который просходят иньекция объекта.  <a href="a00277.html#a13d7560c3db36f41af03842177dcdafe">Подробнее...</a><br /></td></tr>
 <tr class="separator:a13d7560c3db36f41af03842177dcdafe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade2550472c78641cd70102d1ad573e96"><td class="memItemLeft" align="right" valign="top"><a id="ade2550472c78641cd70102d1ad573e96"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>Search</b> (IList&lt; <a class="el" href="a00205.html">IServerObj</a> &gt; servers, DriveService driveService)</td></tr>
+<tr class="memitem:ade2550472c78641cd70102d1ad573e96"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00277.html#ade2550472c78641cd70102d1ad573e96">Search</a> (IList&lt; <a class="el" href="a00205.html">IServerObj</a> &gt; servers, DriveService driveService)</td></tr>
+<tr class="memdesc:ade2550472c78641cd70102d1ad573e96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ищет таблицы в google disk, по насванию.  <a href="a00277.html#ade2550472c78641cd70102d1ad573e96">Подробнее...</a><br /></td></tr>
 <tr class="separator:ade2550472c78641cd70102d1ad573e96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс, который ищет таблицы в google disk, по названию. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a13d7560c3db36f41af03842177dcdafe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13d7560c3db36f41af03842177dcdafe">&#9670;&nbsp;</a></span>SearchSpreadsheets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00277.html">SearchSpreadsheets</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00165.html">IWorkFiles</a>&#160;</td>
+          <td class="paramname"><em>workFiles</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор через который просходят иньекция объекта. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">workFiles</td><td>Отвечает за запись данных в txt файл, если не удалось соединиться с google Api и сработало исключение.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="ade2550472c78641cd70102d1ad573e96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade2550472c78641cd70102d1ad573e96">&#9670;&nbsp;</a></span>Search()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Search </td>
+          <td>(</td>
+          <td class="paramtype">IList&lt; <a class="el" href="a00205.html">IServerObj</a> &gt;&#160;</td>
+          <td class="paramname"><em>servers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DriveService&#160;</td>
+          <td class="paramname"><em>driveService</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ищет таблицы в google disk, по насванию. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">servers</td><td>Передает список серверов с данными.</td></tr>
+    <tr><td class="paramname">driveService</td><td>Передает сервис для взаимодействия c google disk/</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает id таблицы, если она нашлась. По умолчанию возвращает: null</dd></dl>
+
+<p>Замещает <a class="el" href="a00265.html#ade2550472c78641cd70102d1ad573e96">ISearchSpreadsheets</a>.</p>
+
+</div>
+</div>
 <hr/>Объявления и описания членов класса находятся в файле:<ul>
 <li>C:/Users/Алия/Desktop/Выполненое тестовое задание Bars Group/TestBars Monitor Db Postgresql/TestBars/WorkSheetsGoogle/ManagerSpreasheetGoogle/SearchSpreadsheets.cs</li>
 </ul>

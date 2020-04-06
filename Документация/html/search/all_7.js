@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['parseconfiguration_37',['ParseConfiguration',['../a00217.html',1,'TestBars::WorkServersPostgreSql']]],
-  ['program_38',['Program',['../a00169.html',1,'TestBars']]],
-  ['providernpgsql_39',['ProviderNpgsql',['../a00185.html',1,'TestBars::WorkProvider']]]
+  ['openconnection_42',['OpenConnection',['../a00181.html#ad268fa29942afaa65660be371146f197',1,'TestBars.WorkProvider.IProvider.OpenConnection()'],['../a00185.html#ad268fa29942afaa65660be371146f197',1,'TestBars.WorkProvider.ProviderNpgsql.OpenConnection()']]]
 ];

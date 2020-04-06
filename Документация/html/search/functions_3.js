@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['openconnection_110',['OpenConnection',['../a00181.html#ad268fa29942afaa65660be371146f197',1,'TestBars.WorkProvider.IProvider.OpenConnection()'],['../a00185.html#ad268fa29942afaa65660be371146f197',1,'TestBars.WorkProvider.ProviderNpgsql.OpenConnection()']]]
+  ['managerconnectiondb_127',['ManagerConnectionDb',['../a00213.html#ab42a87dca7c7663ae0ab7982f0351b51',1,'TestBars::WorkServersPostgreSql::ManagerConnectionDb']]],
+  ['managerspreasheet_128',['ManagerSpreasheet',['../a00241.html#a6da915ed943227d8a664cfdd3ef2614c',1,'TestBars::WorkSheetsGoogle::ManagerSpreasheet']]]
 ];

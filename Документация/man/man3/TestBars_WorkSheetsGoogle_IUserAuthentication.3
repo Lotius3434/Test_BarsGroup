@@ -2,7 +2,8 @@
 .ad l
 .nh
 .SH NAME
-IUserAuthentication
+IUserAuthentication \- Интерфейс объекта, который отвечает за аутентификацию пользователя  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,7 +15,28 @@ IUserAuthentication
 .ti -1c
 .RI "UserCredential \fBAuthentication\fP ()"
 .br
+.RI "Начинает аутентификацию, создает файл с настройками для соединения с google api\&. "
 .in -1c
+.SH "Подробное описание"
+.PP 
+Интерфейс объекта, который отвечает за аутентификацию пользователя 
+
+
+.SH "Методы"
+.PP 
+.SS "UserCredential Authentication ()"
+
+.PP
+Начинает аутентификацию, создает файл с настройками для соединения с google api\&. Если файл соединения создан и настроки scope не изменялись, повторной аутентификации не происходит\&. 
+.PP
+\fBВозвращает\fP
+.RS 4
+Возврашает файл с настройками api/
+.RE
+.PP
+
+.PP
+Замещается в \fBUserAuthentication\fP\&.
 
 .SH "Автор"
 .PP 

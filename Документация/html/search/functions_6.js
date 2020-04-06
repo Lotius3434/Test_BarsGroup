@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['scanersheets_217',['ScanerSheets',['../a00273.html#a3ed05f267919ec3a082e212b860eac22',1,'TestBars::WorkSheetsGoogle::ManagerSpreasheetGoogle::ScanerSheets']]],
-  ['scansheets_218',['ScanSheets',['../a00261.html#a81f4c0aa964499ed4079f6824f8cabf1',1,'TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.IScanerSheets.ScanSheets()'],['../a00273.html#ad65d825245df7d0a99c53f7a7b73a72d',1,'TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.ScanerSheets.ScanSheets()']]],
-  ['search_219',['Search',['../a00265.html#a2c153cc8fc9a1a2afa7ba833e60ddc7d',1,'TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.ISearchSpreadsheets.Search()'],['../a00277.html#a395c3dd4d8c16507d3fc7563ce7c3253',1,'TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.SearchSpreadsheets.Search()']]],
-  ['searchspreadsheets_220',['SearchSpreadsheets',['../a00277.html#a9d827190e099f53e2ec9547e4f6ad6bf',1,'TestBars::WorkSheetsGoogle::ManagerSpreasheetGoogle::SearchSpreadsheets']]],
-  ['services_221',['Services',['../a00285.html#ab26b43710d6c8dedc7b5467543c98513',1,'TestBars::WorkSheetsGoogle::Services']]],
-  ['sortstring_222',['SortString',['../a00177.html#a44cb9737074d786d35ccfe549227822a',1,'TestBars::WorkFiles']]],
-  ['startprogram_223',['StartProgram',['../a00169.html#ae0de8f4135ec1d4b9281a02fe32407a9',1,'TestBars::Program']]],
-  ['startworkspreasheet_224',['StartWorkSpreasheet',['../a00229.html#ab2e40853407252813b7a8008e47ffcc7',1,'TestBars.WorkSheetsGoogle.IManagerSpreasheet.StartWorkSpreasheet()'],['../a00241.html#a31ec9783d7efc54ce12d81407439a781',1,'TestBars.WorkSheetsGoogle.ManagerSpreasheet.StartWorkSpreasheet()']]]
+  ['workfiles_137',['WorkFiles',['../a00177.html#a26e2d421b886e611dcb0260def9c151b',1,'TestBars::WorkFiles']]],
+  ['writefiletxt_138',['WriteFileTxt',['../a00165.html#a8e1232b7e6c882701b6ef46384df6b1a',1,'TestBars.IWorkFiles.WriteFileTxt()'],['../a00177.html#a8e1232b7e6c882701b6ef46384df6b1a',1,'TestBars.WorkFiles.WriteFileTxt()']]],
+  ['writersheets_139',['WriterSheets',['../a00281.html#a8b3a89decda2a13860f8eccd6adc21ed',1,'TestBars::WorkSheetsGoogle::ManagerSpreasheetGoogle::WriterSheets']]],
+  ['writeserverobjs_140',['WriteServerObjs',['../a00209.html#ac1567d446f48f341290e59fa9e704f2a',1,'TestBars.WorkServersPostgreSql.IWriterServers.WriteServerObjs()'],['../a00225.html#ac1567d446f48f341290e59fa9e704f2a',1,'TestBars.WorkServersPostgreSql.WriterServers.WriteServerObjs()']]],
+  ['writesheet_141',['WriteSheet',['../a00269.html#a6a1fd2d430f77541bc135a8c0cc21e2c',1,'TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.IWriterSheets.WriteSheet()'],['../a00281.html#a6a1fd2d430f77541bc135a8c0cc21e2c',1,'TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.WriterSheets.WriteSheet()']]]
 ];

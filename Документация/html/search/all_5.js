@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['name_34',['name',['../a00189.html#a8ccf841cb59e451791bcb2e1ac4f1edc',1,'TestBars.WorkServersPostgreSql.DbObj.name()'],['../a00193.html#a8ccf841cb59e451791bcb2e1ac4f1edc',1,'TestBars.WorkServersPostgreSql.IDbObj.name()']]],
-  ['nameserver_35',['NameServer',['../a00205.html#aa7f81b646952167d2fa413176b1bdd31',1,'TestBars.WorkServersPostgreSql.IServerObj.NameServer()'],['../a00221.html#aa7f81b646952167d2fa413176b1bdd31',1,'TestBars.WorkServersPostgreSql.ServerObj.NameServer()']]]
+  ['managerconnectiondb_38',['ManagerConnectionDb',['../a00213.html',1,'ManagerConnectionDb'],['../a00213.html#ab42a87dca7c7663ae0ab7982f0351b51',1,'TestBars.WorkServersPostgreSql.ManagerConnectionDb.ManagerConnectionDb()']]],
+  ['managerspreasheet_39',['ManagerSpreasheet',['../a00241.html',1,'ManagerSpreasheet'],['../a00241.html#a6da915ed943227d8a664cfdd3ef2614c',1,'TestBars.WorkSheetsGoogle.ManagerSpreasheet.ManagerSpreasheet()']]]
 ];

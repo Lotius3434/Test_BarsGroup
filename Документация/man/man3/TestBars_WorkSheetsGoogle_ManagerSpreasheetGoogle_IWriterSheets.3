@@ -2,7 +2,8 @@
 .ad l
 .nh
 .SH NAME
-IWriterSheets
+IWriterSheets \- Интерфейс объекта, который отвечает за запись данных в google лист\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,7 +15,32 @@ IWriterSheets
 .ti -1c
 .RI "void \fBWriteSheet\fP (string spreadsheet, IList< \fBIServerObj\fP > servers, SheetsService sheetService)"
 .br
+.RI "Записывает данные в google лист\&. "
 .in -1c
+.SH "Подробное описание"
+.PP 
+Интерфейс объекта, который отвечает за запись данных в google лист\&. 
+
+
+.SH "Методы"
+.PP 
+.SS "void WriteSheet (string spreadsheet, IList< \fBIServerObj\fP > servers, SheetsService sheetService)"
+
+.PP
+Записывает данные в google лист\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIspreadsheet\fP Передает Id google таблицы
+.br
+\fIservers\fP Передает список серверов с данными\&.
+.br
+\fIsheetService\fP Передает сервис для взаимодействия с таблицами google\&.
+.RE
+.PP
+
+.PP
+Замещается в \fBWriterSheets\fP\&.
 
 .SH "Автор"
 .PP 

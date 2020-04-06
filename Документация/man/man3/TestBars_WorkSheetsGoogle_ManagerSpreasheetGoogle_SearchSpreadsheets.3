@@ -2,7 +2,8 @@
 .ad l
 .nh
 .SH NAME
-SearchSpreadsheets
+SearchSpreadsheets \- Класс, который ищет таблицы в google disk, по названию\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,10 +15,52 @@ SearchSpreadsheets
 .ti -1c
 .RI "\fBSearchSpreadsheets\fP (\fBIWorkFiles\fP workFiles)"
 .br
+.RI "Конструктор через который просходят иньекция объекта\&. "
 .ti -1c
 .RI "string \fBSearch\fP (IList< \fBIServerObj\fP > servers, DriveService driveService)"
 .br
+.RI "Ищет таблицы в google disk, по насванию\&. "
 .in -1c
+.SH "Подробное описание"
+.PP 
+Класс, который ищет таблицы в google disk, по названию\&. 
+
+
+.SH "Конструктор(ы)"
+.PP 
+.SS "\fBSearchSpreadsheets\fP (\fBIWorkFiles\fP workFiles)"
+
+.PP
+Конструктор через который просходят иньекция объекта\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIworkFiles\fP Отвечает за запись данных в txt файл, если не удалось соединиться с google Api и сработало исключение\&.
+.RE
+.PP
+
+.SH "Методы"
+.PP 
+.SS "string Search (IList< \fBIServerObj\fP > servers, DriveService driveService)"
+
+.PP
+Ищет таблицы в google disk, по насванию\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIservers\fP Передает список серверов с данными\&.
+.br
+\fIdriveService\fP Передает сервис для взаимодействия c google disk/
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Возвращает id таблицы, если она нашлась\&. По умолчанию возвращает: null
+.RE
+.PP
+
+.PP
+Замещает \fBISearchSpreadsheets\fP\&.
 
 .SH "Автор"
 .PP 

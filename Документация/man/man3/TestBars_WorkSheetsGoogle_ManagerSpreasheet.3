@@ -2,7 +2,8 @@
 .ad l
 .nh
 .SH NAME
-ManagerSpreasheet
+ManagerSpreasheet \- Класс менеджер управляющий всеми объектами, которые взаимодействуют с goole table и google disk\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -17,7 +18,47 @@ ManagerSpreasheet
 .ti -1c
 .RI "void \fBStartWorkSpreasheet\fP (IList< \fBIServerObj\fP > servers)"
 .br
+.RI "Инициализации все компонентов и начало их работы\&. "
 .in -1c
+.SH "Подробное описание"
+.PP 
+Класс менеджер управляющий всеми объектами, которые взаимодействуют с goole table и google disk\&. 
+
+
+.SH "Конструктор(ы)"
+.PP 
+.SS "\fBManagerSpreasheet\fP (\fBIServices\fP services, \fBISearchSpreadsheets\fP searchSpreadsheets, \fBICreatorSpreasheet\fP creatorSpreasheet, \fBIScanerSheets\fP scanerSheets)"
+
+.PP
+
+.PP
+\fBАргументы\fP
+.RS 4
+\fIservices\fP Отвечает, за получение сервисов, после аутентификации, пользователя\&.
+.br
+\fIsearchSpreadsheets\fP Отвечает, за поиск таблицы в google disk, по названию\&.
+.br
+\fIcreatorSpreasheet\fP Создает google таблицы
+.br
+\fIscanerSheets\fP Сканирует таблицу, на наличие листов для каждого сервера\&.
+.RE
+.PP
+
+.SH "Методы"
+.PP 
+.SS "void StartWorkSpreasheet (IList< \fBIServerObj\fP > servers)"
+
+.PP
+Инициализации все компонентов и начало их работы\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIservers\fP Передает список серверов с данными\&.
+.RE
+.PP
+
+.PP
+Замещает \fBIManagerSpreasheet\fP\&.
 
 .SH "Автор"
 .PP 

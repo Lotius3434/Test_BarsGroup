@@ -2,7 +2,8 @@
 .ad l
 .nh
 .SH NAME
-IServices
+IServices \- Интерфейс объекта, который Отвечает, за получение сервисов, после аутентификации, пользователя\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,10 +15,44 @@ IServices
 .ti -1c
 .RI "SheetsService \fBGetSheetsService\fP ()"
 .br
+.RI "Инициализирует сервис, для работы с google таблицами\&. "
 .ti -1c
 .RI "DriveService \fBGetDriveService\fP ()"
 .br
 .in -1c
+.SH "Подробное описание"
+.PP 
+Интерфейс объекта, который Отвечает, за получение сервисов, после аутентификации, пользователя\&. 
+
+
+.SH "Методы"
+.PP 
+.SS "DriveService GetDriveService ()"
+
+.PP
+Инициализирует сервис, для работы с google disk\&.
+.PP
+\fBВозвращает\fP
+.RS 4
+Возвращает сервис для google disk\&.
+.RE
+.PP
+
+.PP
+Замещается в \fBServices\fP\&.
+.SS "SheetsService GetSheetsService ()"
+
+.PP
+Инициализирует сервис, для работы с google таблицами\&. 
+.PP
+\fBВозвращает\fP
+.RS 4
+Возвращает сервис для google таблиц\&.
+.RE
+.PP
+
+.PP
+Замещается в \fBServices\fP\&.
 
 .SH "Автор"
 .PP 
