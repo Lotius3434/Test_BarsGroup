@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace TestBars.WorkServersPostgreSql
 {
     /// <summary>
-    /// Класс сортирует данные, полученные из DB, по объектам для хранения.
+    /// Класс сортирует данные полученные из DB, по объектам для хранения.
     /// </summary>
     /// <inheritdoc/>
     public class WriterServers : IWriterServers

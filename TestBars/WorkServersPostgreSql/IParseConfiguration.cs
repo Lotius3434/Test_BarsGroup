@@ -10,7 +10,7 @@ namespace TestBars.WorkServersPostgreSql
         /// <summary>
         /// Сканирует, собирает и возвращает, настройки серверов из файла App.config.
         /// </summary>
-        /// <returns>Словарь, ключ: название сервера, значение: конфигурации для соединения с сервером.</returns>
+        /// <returns>Словарь, ключ - название сервера, значение - конфигурации для соединения с сервером.</returns>
         Dictionary<string, string> GetConfigServers_Npgsql();
     }
 }

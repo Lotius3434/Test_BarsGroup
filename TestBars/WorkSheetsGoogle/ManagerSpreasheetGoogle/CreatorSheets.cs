@@ -18,7 +18,7 @@ namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
         /// <summary>
         /// Конструктор через который просходят иньекции объектов.
         /// </summary>
-        /// <param name="writerSheets">Отвечает за запись в google лист, существующей google таблицы.</param>
+        /// <param name="writerSheets">Отвечает за запись данных в google лист.</param>
         /// <param name="workFiles">Отвечает за запись данных в txt файл, если не удалось соединиться с google Api и сработало исключение.</param>
         public CreatorSheets(IWriterSheets writerSheets, IWorkFiles workFiles)
         {

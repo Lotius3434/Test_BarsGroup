@@ -17,7 +17,7 @@ namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
         /// <para>После того как метод отработал, он вызывает метод объекта <see cref="IWriterSheets"/> для заполнения листа данными.</para>
         /// </remarks>
         /// <param name="SpreadsheetId">Передает Id google таблицы.</param>
-        /// <param name="ListServer">Передает список названий серверов, у который не создан лист в таблице.</param>
+        /// <param name="ListServer">Передает список названий серверов для которых не создан лист в таблице.</param>
         /// <param name="servers">Передает список серверов с данными.</param>
         /// <param name="sheetService">Передает сервис для взаимодействия с таблицами google.</param>
         void CreateSheets(string SpreadsheetId, List<string> ListServer, IList<IServerObj> servers, SheetsService sheetService);

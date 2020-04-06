@@ -3,7 +3,7 @@
 namespace TestBars.WorkServersPostgreSql
 {
     /// <summary>
-    /// Интерфейс взаимодействия с объектом, который хранит в себе данные сервера и список DB.
+    /// Интерфейс взаимодействия с объектом, который хранит в себе данные сервера и список <see cref="IDbObj"/>.
     /// </summary>
     public interface IServerObj
     {

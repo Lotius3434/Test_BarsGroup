@@ -22,8 +22,8 @@ namespace TestBars.WorkSheetsGoogle
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="services">Отвечает, за получение сервисов, после аутентификации, пользователя.</param>
-        /// <param name="searchSpreadsheets">Отвечает, за поиск таблицы в google disk, по названию.</param>
+        /// <param name="services">Отвечает, за получение сервисов, после аутентификации пользователя.</param>
+        /// <param name="searchSpreadsheets">Отвечает, за поиск таблицы в google disk по названию.</param>
         /// <param name="creatorSpreasheet">Создает google таблицы</param>
         /// <param name="scanerSheets">Сканирует таблицу, на наличие листов для каждого сервера.</param>
         public ManagerSpreasheet(IServices services, ISearchSpreadsheets searchSpreadsheets, ICreatorSpreasheet creatorSpreasheet, IScanerSheets scanerSheets)

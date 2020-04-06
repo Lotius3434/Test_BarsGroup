@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace TestBars.WorkServersPostgreSql
 {
     /// <summary>
-    /// Интерфейс объекта, который сортирует данные, полученные из DB, по объектам для хранения.
+    /// Интерфейс объекта, который сортирует данные полученные из DB, по объектам для хранения.
     /// </summary>
     public interface IWriterServers
     {

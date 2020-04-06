@@ -10,7 +10,7 @@ namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
     interface IScanerSheets
     {
         /// <summary>
-        /// Сканирует листы в существующей таблицы.
+        /// Сканирует листы в существующей таблице.
         /// <para>Eсли лист не найден, вызывается метод объекта: <see cref="ICreatorSheets"/></para> 
         /// <para>Eсли лист найден, вызывается метод объекта: <see cref="IWriterSheets"/> и данные у листа обновляются.</para> 
         /// </summary>

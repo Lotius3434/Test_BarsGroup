@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TestBars.WorkProvider
 {   /// <summary>
-    /// Интерфейс для взамодействия с базой данных
+    /// Интерфейс для взаимодействия с базой данных.
     /// </summary>
     public interface IProvider 
     {

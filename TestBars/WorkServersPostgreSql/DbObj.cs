@@ -23,7 +23,7 @@
                     Name = value;
             }
         }
-        /// <value>Содержит размер DB, в гигабайтах.</value>
+        /// <value>Содержит размер DB в гигабайтах.</value>
         public string size
         {
             get

@@ -10,7 +10,7 @@ namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
     public interface ISearchSpreadsheets
     {
         /// <summary>
-        /// Ищет таблицы в google disk, по насванию.
+        /// Ищет таблицы в google disk, по названию.
         /// </summary>
         /// <param name="servers">Передает список серверов с данными.</param>
         /// <param name="driveService">Передает сервис для взаимодействия c google disk/</param>

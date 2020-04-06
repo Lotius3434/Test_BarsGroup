@@ -7,7 +7,7 @@
     {
         /// <value>Содержит имя DB.</value>
         string name { get; set; }
-        /// <value>Содержит размер DB, в гигабайтах.</value>
+        /// <value>Содержит размер DB в гигабайтах.</value>
         string size { get; set; }
         /// <value>Содержит дату получения данных из DB.</value>
         string updateDate { get; set; }
