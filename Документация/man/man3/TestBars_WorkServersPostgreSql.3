@@ -20,7 +20,7 @@ TestBars.WorkServersPostgreSql
 .ti -1c
 .RI "interface \fBIManagerConnectionDb\fP"
 .br
-.RI "Интерфейс менеджера управляющего всеми объектами, которые отвечают за получение данных из серверов\&. "
+.RI "Интерфейс объекта, который управляет всеми компонентами, отвечающими за получение данных из серверов\&. "
 .ti -1c
 .RI "interface \fBIParseConfiguration\fP"
 .br
@@ -28,11 +28,11 @@ TestBars.WorkServersPostgreSql
 .ti -1c
 .RI "interface \fBIServerObj\fP"
 .br
-.RI "Интерфейс взаимодействия с объектом, который хранит в себе данные сервера и список DB\&. "
+.RI "Интерфейс взаимодействия с объектом, который хранит в себе данные сервера и список \fBIDbObj\fP\&. "
 .ti -1c
 .RI "interface \fBIWriterServers\fP"
 .br
-.RI "Интерфейс объекта, который сортирует данные, полученные из DB, по объектам для хранения\&. "
+.RI "Интерфейс объекта, который сортирует данные полученные из DB, по объектам для хранения\&. "
 .ti -1c
 .RI "class \fBManagerConnectionDb\fP"
 .br
@@ -48,7 +48,7 @@ TestBars.WorkServersPostgreSql
 .ti -1c
 .RI "class \fBWriterServers\fP"
 .br
-.RI "Класс сортирует данные, полученные из DB, по объектам для хранения\&. "
+.RI "Класс сортирует данные полученные из DB, по объектам для хранения\&. "
 .in -1c
 .SH "Автор"
 .PP 

@@ -19,7 +19,7 @@ ScanerSheets \- Класс, который сканирует таблицу, н
 .ti -1c
 .RI "void \fBScanSheets\fP (string IdSreadssheet, IList< \fBIServerObj\fP > servers, SheetsService sheetService)"
 .br
-.RI "Сканирует листы в существующей таблицы\&. "
+.RI "Сканирует листы в существующей таблице\&. "
 .in -1c
 .SH "Подробное описание"
 .PP 
@@ -37,7 +37,7 @@ ScanerSheets \- Класс, который сканирует таблицу, н
 .RS 4
 \fIcreatorSheets\fP Отвечает за создание google листа, в существующей google таблице\&.
 .br
-\fIwriterSheets\fP Отвечает за запись в google лист, существующей google таблицы\&.
+\fIwriterSheets\fP Отвечает за запись данных в google лист\&.
 .br
 \fIworkFiles\fP Отвечает за запись данных в txt файл, если не удалось соединиться с google Api и сработало исключение\&.
 .RE
@@ -48,7 +48,7 @@ ScanerSheets \- Класс, который сканирует таблицу, н
 .SS "void ScanSheets (string ListId, IList< \fBIServerObj\fP > servers, SheetsService sheetService)"
 
 .PP
-Сканирует листы в существующей таблицы\&. Eсли лист не найден, вызывается метод объекта: \fBICreatorSheets\fP
+Сканирует листы в существующей таблице\&. Eсли лист не найден, вызывается метод объекта: \fBICreatorSheets\fP
 .PP
 Eсли лист найден, вызывается метод объекта: \fBIWriterSheets\fP и данные у листа обновляются\&.
 .PP

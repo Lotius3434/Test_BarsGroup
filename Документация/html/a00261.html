@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TestBars: Интерфейс IScanerSheets</title>
+<title>TestBars: Cписок членов класса</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,84 +61,19 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00119.html">TestBars</a></li><li class="navelem"><a class="el" href="a00122.html">WorkSheetsGoogle</a></li><li class="navelem"><a class="el" href="a00123.html">ManagerSpreasheetGoogle</a></li><li class="navelem"><a class="el" href="a00261.html">IScanerSheets</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00119.html">TestBars</a></li><li class="navelem"><a class="el" href="a00122.html">WorkSheetsGoogle</a></li><li class="navelem"><a class="el" href="a00123.html">ManagerSpreasheetGoogle</a></li><li class="navelem"><a class="el" href="a00264.html">ISearchSpreadsheets</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Открытые члены</a> &#124;
-<a href="a00258.html">Полный список членов класса</a>  </div>
   <div class="headertitle">
-<div class="title">Интерфейс IScanerSheets</div>  </div>
+<div class="title">ISearchSpreadsheets Cписок членов класса</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Интерфейс объекта, который сканирует таблицу, на наличие листов для каждого сервера.  
- <a href="a00261.html#details">Подробнее...</a></p>
-
-<p>Производные классы:<a class="el" href="a00273.html">ScanerSheets</a>.</p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Открытые члены</h2></td></tr>
-<tr class="memitem:ae757fc8c74fb8375c7556bb0eac983a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00261.html#ae757fc8c74fb8375c7556bb0eac983a5">ScanSheets</a> (string ListId, IList&lt; <a class="el" href="a00205.html">IServerObj</a> &gt; servers, SheetsService sheetService)</td></tr>
-<tr class="memdesc:ae757fc8c74fb8375c7556bb0eac983a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сканирует листы в существующей таблицы.  <a href="a00261.html#ae757fc8c74fb8375c7556bb0eac983a5">Подробнее...</a><br /></td></tr>
-<tr class="separator:ae757fc8c74fb8375c7556bb0eac983a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Интерфейс объекта, который сканирует таблицу, на наличие листов для каждого сервера. </p>
-</div><h2 class="groupheader">Методы</h2>
-<a id="ae757fc8c74fb8375c7556bb0eac983a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae757fc8c74fb8375c7556bb0eac983a5">&#9670;&nbsp;</a></span>ScanSheets()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ScanSheets </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>ListId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">IList&lt; <a class="el" href="a00205.html">IServerObj</a> &gt;&#160;</td>
-          <td class="paramname"><em>servers</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SheetsService&#160;</td>
-          <td class="paramname"><em>sheetService</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Сканирует листы в существующей таблицы. </p>
-<p>Eсли лист не найден, вызывается метод объекта: <a class="el" href="a00253.html" title="Интерфейс объекта, который создает google лист, в существующей google таблице.">ICreatorSheets</a></p>
-<p>Eсли лист найден, вызывается метод объекта: <a class="el" href="a00269.html" title="Интерфейс объекта, который отвечает за запись данных в google лист.">IWriterSheets</a> и данные у листа обновляются.</p>
-<dl class="params"><dt>Аргументы</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ListId</td><td>Передает Id google таблицы.</td></tr>
-    <tr><td class="paramname">servers</td><td>Передает список серверов с данными.</td></tr>
-    <tr><td class="paramname">sheetService</td><td>Передает сервис для взаимодействия с таблицами google.</td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Замещается в <a class="el" href="a00273.html#a549d664e4595fdbb37465bf9e23f4efb">ScanerSheets</a>.</p>
-
-</div>
-</div>
-<hr/>Объявления и описания членов интерфейса находятся в файле:<ul>
-<li>C:/Users/Алия/Desktop/Выполненое тестовое задание Bars Group/TestBars Monitor Db Postgresql/TestBars/WorkSheetsGoogle/ManagerSpreasheetGoogle/IScanerSheets.cs</li>
-</ul>
-</div><!-- contents -->
+<p>Полный список членов класса <a class="el" href="a00264.html">ISearchSpreadsheets</a>, включая наследуемые из базового класса</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a00264.html#ade2550472c78641cd70102d1ad573e96">Search</a>(IList&lt; IServerObj &gt; servers, DriveService driveService)</td><td class="entry"><a class="el" href="a00264.html">ISearchSpreadsheets</a></td><td class="entry"></td></tr>
+</table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Создано системой &#160;<a href="http://www.doxygen.org/index.html">
