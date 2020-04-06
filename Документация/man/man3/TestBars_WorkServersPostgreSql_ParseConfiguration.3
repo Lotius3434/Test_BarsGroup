@@ -1,0 +1,43 @@
+.TH "ParseConfiguration" 3 "Пн 6 Апр 2020" "TestBars" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ParseConfiguration \- Класс ,который сканирует и собирает настройки серверов из файла App\&.config\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Базовые классы:\fBIParseConfiguration\fP\&.
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "Dictionary< string, string > \fBGetConfigServers_Npgsql\fP ()"
+.br
+.RI "Сканирует, собирает и возвращает, настройки серверов из файла App\&.config\&. "
+.in -1c
+.SH "Подробное описание"
+.PP 
+Класс ,который сканирует и собирает настройки серверов из файла App\&.config\&. 
+
+
+.SH "Методы"
+.PP 
+.SS "Dictionary<string, string> GetConfigServers_Npgsql ()"
+
+.PP
+Сканирует, собирает и возвращает, настройки серверов из файла App\&.config\&. 
+.PP
+\fBВозвращает\fP
+.RS 4
+Словарь, ключ: название сервера, значение: конфигурации для соединения с сервером\&.
+.RE
+.PP
+
+.PP
+Замещает \fBIParseConfiguration\fP\&.
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для TestBars из исходного текста\&.

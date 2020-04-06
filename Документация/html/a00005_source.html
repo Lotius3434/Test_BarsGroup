@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TestBars: Исходный файл C:/Users/Алия/Desktop/Выполненое тестовое задание Bars Group/TestBars Monitor Db Postgresql/TestBars/ConfigurationCastleWindsor.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TestBars
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_d80b380ee1e0e671e339b4df2c1d9f7a.html">Алия</a></li><li class="navelem"><a class="el" href="dir_84c1cd60f3c48007a8091911aa5c0d0c.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_9d67f8f9568f95c2ab78c8dc1140255f.html">Выполненое тестовое задание Bars Group</a></li><li class="navelem"><a class="el" href="dir_11f2d2998daeb1d1d71343134d0cacac.html">TestBars Monitor Db Postgresql</a></li><li class="navelem"><a class="el" href="dir_42f18e64a7579b0c4129a57b623136a1.html">TestBars</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ConfigurationCastleWindsor.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> Castle.MicroKernel.Registration;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> Castle.MicroKernel.SubSystems.Configuration;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> Castle.Windsor;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> <a class="code" href="a00119.html">TestBars</a>.<a class="code" href="a00120.html">WorkProvider</a>;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> <a class="code" href="a00119.html">TestBars</a>.<a class="code" href="a00121.html">WorkServersPostgreSql</a>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using</span> <a class="code" href="a00119.html">TestBars</a>.<a class="code" href="a00122.html">WorkSheetsGoogle</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using</span> <a class="code" href="a00119.html">TestBars</a>.<a class="code" href="a00122.html">WorkSheetsGoogle</a>.<a class="code" href="a00123.html">ManagerSpreasheetGoogle</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="a00119.html">    9</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="a00119.html">TestBars</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="a00149.html">   11</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a00149.html">ConfigurationCastleWindsor</a> : IWindsorInstaller</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> Install(IWindsorContainer container, IConfigurationStore store)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            container.Register(Component.For&lt;<a class="code" href="a00161.html">IDrives</a>&gt;().ImplementedBy&lt;<a class="code" href="a00157.html">Drives</a>&gt;().LifestyleTransient());</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            container.Register(Component.For&lt;<a class="code" href="a00193.html">IDbObj</a>&gt;().ImplementedBy&lt;<a class="code" href="a00189.html">DbObj</a>&gt;().LifestyleTransient());</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            container.Register(Component.For&lt;<a class="code" href="a00205.html">IServerObj</a>&gt;().ImplementedBy&lt;<a class="code" href="a00221.html">ServerObj</a>&gt;().LifestyleTransient());</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            container.Register(Component.For&lt;<a class="code" href="a00201.html">IParseConfiguration</a>&gt;().ImplementedBy&lt;<a class="code" href="a00217.html">ParseConfiguration</a>&gt;());</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            container.Register(Component.For&lt;<a class="code" href="a00197.html">IManagerConnectionDb</a>&gt;().ImplementedBy&lt;<a class="code" href="a00213.html">ManagerConnectionDb</a>&gt;());</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            container.Register(Component.For&lt;<a class="code" href="a00209.html">IWriterServers</a>&gt;().ImplementedBy&lt;<a class="code" href="a00225.html">WriterServers</a>&gt;());</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            container.Register(Component.For&lt;<a class="code" href="a00237.html">IUserAuthentication</a>&gt;().ImplementedBy&lt;<a class="code" href="a00289.html">UserAuthentication</a>&gt;());</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            container.Register(Component.For&lt;<a class="code" href="a00233.html">IServices</a>&gt;().ImplementedBy&lt;<a class="code" href="a00285.html">Services</a>&gt;());</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            container.Register(Component.For&lt;<a class="code" href="a00265.html">ISearchSpreadsheets</a>&gt;().ImplementedBy&lt;<a class="code" href="a00277.html">SearchSpreadsheets</a>&gt;());</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            container.Register(Component.For&lt;<a class="code" href="a00165.html">IWorkFiles</a>&gt;().ImplementedBy&lt;<a class="code" href="a00177.html">WorkFiles</a>&gt;().LifestyleTransient());</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            container.Register(Component.For&lt;<a class="code" href="a00181.html">IProvider</a>&gt;().ImplementedBy&lt;<a class="code" href="a00185.html">ProviderNpgsql</a>&gt;());</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            container.Register(Component.For&lt;<a class="code" href="a00229.html">IManagerSpreasheet</a>&gt;().ImplementedBy&lt;<a class="code" href="a00241.html">ManagerSpreasheet</a>&gt;());</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            container.Register(Component.For&lt;<a class="code" href="a00257.html">ICreatorSpreasheet</a>&gt;().ImplementedBy&lt;<a class="code" href="a00249.html">CreatorSpreasheet</a>&gt;());</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            container.Register(Component.For&lt;<a class="code" href="a00261.html">IScanerSheets</a>&gt;().ImplementedBy&lt;<a class="code" href="a00273.html">ScanerSheets</a>&gt;());</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            container.Register(Component.For&lt;<a class="code" href="a00253.html">ICreatorSheets</a>&gt;().ImplementedBy&lt;<a class="code" href="a00245.html">CreatorSheets</a>&gt;());</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            container.Register(Component.For&lt;<a class="code" href="a00269.html">IWriterSheets</a>&gt;().ImplementedBy&lt;<a class="code" href="a00281.html">WriterSheets</a>&gt;());</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aa00201_html"><div class="ttname"><a href="a00201.html">TestBars.WorkServersPostgreSql.IParseConfiguration</a></div><div class="ttdef"><b>Definition:</b> <a href="a00050_source.html#l00005">IParseConfiguration.cs:5</a></div></div>
+<div class="ttc" id="aa00249_html"><div class="ttname"><a href="a00249.html">TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.CreatorSpreasheet</a></div><div class="ttdef"><b>Definition:</b> <a href="a00086_source.html#l00010">CreatorSpreasheet.cs:10</a></div></div>
+<div class="ttc" id="aa00149_html"><div class="ttname"><a href="a00149.html">TestBars.ConfigurationCastleWindsor</a></div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00011">ConfigurationCastleWindsor.cs:11</a></div></div>
+<div class="ttc" id="aa00237_html"><div class="ttname"><a href="a00237.html">TestBars.WorkSheetsGoogle.IUserAuthentication</a></div><div class="ttdef"><b>Definition:</b> <a href="a00077_source.html#l00005">IUserAuthentication.cs:5</a></div></div>
+<div class="ttc" id="aa00122_html"><div class="ttname"><a href="a00122.html">TestBars.WorkSheetsGoogle</a></div><div class="ttdef"><b>Definition:</b> <a href="a00071_source.html#l00005">IManagerSpreasheet.cs:5</a></div></div>
+<div class="ttc" id="aa00229_html"><div class="ttname"><a href="a00229.html">TestBars.WorkSheetsGoogle.IManagerSpreasheet</a></div><div class="ttdef"><b>Definition:</b> <a href="a00071_source.html#l00007">IManagerSpreasheet.cs:7</a></div></div>
+<div class="ttc" id="aa00217_html"><div class="ttname"><a href="a00217.html">TestBars.WorkServersPostgreSql.ParseConfiguration</a></div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00007">ParseConfiguration.cs:7</a></div></div>
+<div class="ttc" id="aa00245_html"><div class="ttname"><a href="a00245.html">TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.CreatorSheets</a></div><div class="ttdef"><b>Definition:</b> <a href="a00083_source.html#l00010">CreatorSheets.cs:10</a></div></div>
+<div class="ttc" id="aa00233_html"><div class="ttname"><a href="a00233.html">TestBars.WorkSheetsGoogle.IServices</a></div><div class="ttdef"><b>Definition:</b> <a href="a00074_source.html#l00006">IServices.cs:6</a></div></div>
+<div class="ttc" id="aa00209_html"><div class="ttname"><a href="a00209.html">TestBars.WorkServersPostgreSql.IWriterServers</a></div><div class="ttdef"><b>Definition:</b> <a href="a00056_source.html#l00006">IWriterServers.cs:6</a></div></div>
+<div class="ttc" id="aa00225_html"><div class="ttname"><a href="a00225.html">TestBars.WorkServersPostgreSql.WriterServers</a></div><div class="ttdef"><b>Definition:</b> <a href="a00068_source.html#l00008">WriterServers.cs:8</a></div></div>
+<div class="ttc" id="aa00213_html"><div class="ttname"><a href="a00213.html">TestBars.WorkServersPostgreSql.ManagerConnectionDb</a></div><div class="ttdoc">Класс управляющий всеми объектами, которые отвечают за получение данных из серверов.</div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00019">ManagerConnectionDb.cs:19</a></div></div>
+<div class="ttc" id="aa00281_html"><div class="ttname"><a href="a00281.html">TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.WriterSheets</a></div><div class="ttdef"><b>Definition:</b> <a href="a00110_source.html#l00010">WriterSheets.cs:10</a></div></div>
+<div class="ttc" id="aa00181_html"><div class="ttname"><a href="a00181.html">TestBars.WorkProvider.IProvider</a></div><div class="ttdoc">Интерфейс для взамодействия с базой данных</div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00008">IProvider.cs:8</a></div></div>
+<div class="ttc" id="aa00205_html"><div class="ttname"><a href="a00205.html">TestBars.WorkServersPostgreSql.IServerObj</a></div><div class="ttdef"><b>Definition:</b> <a href="a00053_source.html#l00005">IServerObj.cs:5</a></div></div>
+<div class="ttc" id="aa00261_html"><div class="ttname"><a href="a00261.html">TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.IScanerSheets</a></div><div class="ttdef"><b>Definition:</b> <a href="a00095_source.html#l00007">IScanerSheets.cs:7</a></div></div>
+<div class="ttc" id="aa00161_html"><div class="ttname"><a href="a00161.html">TestBars.IDrives</a></div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00009">IDrives.cs:9</a></div></div>
+<div class="ttc" id="aa00197_html"><div class="ttname"><a href="a00197.html">TestBars.WorkServersPostgreSql.IManagerConnectionDb</a></div><div class="ttdoc">Интерфейс менеджера управляющего всеми объектами, которые отвечают за получение данных из серверов.</div><div class="ttdef"><b>Definition:</b> <a href="a00047_source.html#l00008">IManagerConnectionDb.cs:8</a></div></div>
+<div class="ttc" id="aa00119_html"><div class="ttname"><a href="a00119.html">TestBars</a></div><div class="ttdef"><b>Definition:</b> <a href="a00005_source.html#l00009">ConfigurationCastleWindsor.cs:9</a></div></div>
+<div class="ttc" id="aa00289_html"><div class="ttname"><a href="a00289.html">TestBars.WorkSheetsGoogle.UserAuthentication</a></div><div class="ttdef"><b>Definition:</b> <a href="a00116_source.html#l00012">UserAuthentication.cs:12</a></div></div>
+<div class="ttc" id="aa00189_html"><div class="ttname"><a href="a00189.html">TestBars.WorkServersPostgreSql.DbObj</a></div><div class="ttdoc">Класс для хранения данных из DB.</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00007">DbObj.cs:7</a></div></div>
+<div class="ttc" id="aa00277_html"><div class="ttname"><a href="a00277.html">TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.SearchSpreadsheets</a></div><div class="ttdef"><b>Definition:</b> <a href="a00107_source.html#l00010">SearchSpreadsheets.cs:10</a></div></div>
+<div class="ttc" id="aa00177_html"><div class="ttname"><a href="a00177.html">TestBars.WorkFiles</a></div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00010">WorkFiles.cs:10</a></div></div>
+<div class="ttc" id="aa00120_html"><div class="ttname"><a href="a00120.html">TestBars.WorkProvider</a></div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00004">IProvider.cs:4</a></div></div>
+<div class="ttc" id="aa00193_html"><div class="ttname"><a href="a00193.html">TestBars.WorkServersPostgreSql.IDbObj</a></div><div class="ttdoc">Интерфейс для взаимодействия с обьектом, который хранит в себе данные из Db.</div><div class="ttdef"><b>Definition:</b> <a href="a00044_source.html#l00006">IDbObj.cs:6</a></div></div>
+<div class="ttc" id="aa00269_html"><div class="ttname"><a href="a00269.html">TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.IWriterSheets</a></div><div class="ttdef"><b>Definition:</b> <a href="a00101_source.html#l00007">IWriterSheets.cs:7</a></div></div>
+<div class="ttc" id="aa00257_html"><div class="ttname"><a href="a00257.html">TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.ICreatorSpreasheet</a></div><div class="ttdef"><b>Definition:</b> <a href="a00092_source.html#l00007">ICreatorSpreasheet.cs:7</a></div></div>
+<div class="ttc" id="aa00157_html"><div class="ttname"><a href="a00157.html">TestBars.Drives</a></div><div class="ttdef"><b>Definition:</b> <a href="a00011_source.html#l00007">Drives.cs:7</a></div></div>
+<div class="ttc" id="aa00285_html"><div class="ttname"><a href="a00285.html">TestBars.WorkSheetsGoogle.Services</a></div><div class="ttdef"><b>Definition:</b> <a href="a00113_source.html#l00009">Services.cs:9</a></div></div>
+<div class="ttc" id="aa00185_html"><div class="ttname"><a href="a00185.html">TestBars.WorkProvider.ProviderNpgsql</a></div><div class="ttdoc">Класс для взаимодействия c провайдером Npgsql.</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00011">ProviderNpgsql.cs:11</a></div></div>
+<div class="ttc" id="aa00241_html"><div class="ttname"><a href="a00241.html">TestBars.WorkSheetsGoogle.ManagerSpreasheet</a></div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00010">ManagerSpreasheet.cs:10</a></div></div>
+<div class="ttc" id="aa00273_html"><div class="ttname"><a href="a00273.html">TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.ScanerSheets</a></div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00010">ScanerSheets.cs:10</a></div></div>
+<div class="ttc" id="aa00123_html"><div class="ttname"><a href="a00123.html">TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle</a></div><div class="ttdef"><b>Definition:</b> <a href="a00083_source.html#l00008">CreatorSheets.cs:8</a></div></div>
+<div class="ttc" id="aa00265_html"><div class="ttname"><a href="a00265.html">TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.ISearchSpreadsheets</a></div><div class="ttdef"><b>Definition:</b> <a href="a00098_source.html#l00007">ISearchSpreadsheets.cs:7</a></div></div>
+<div class="ttc" id="aa00165_html"><div class="ttname"><a href="a00165.html">TestBars.IWorkFiles</a></div><div class="ttdef"><b>Definition:</b> <a href="a00017_source.html#l00006">IWorkFiles.cs:6</a></div></div>
+<div class="ttc" id="aa00221_html"><div class="ttname"><a href="a00221.html">TestBars.WorkServersPostgreSql.ServerObj</a></div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00005">ServerObj.cs:5</a></div></div>
+<div class="ttc" id="aa00121_html"><div class="ttname"><a href="a00121.html">TestBars.WorkServersPostgreSql</a></div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00001">DbObj.cs:1</a></div></div>
+<div class="ttc" id="aa00253_html"><div class="ttname"><a href="a00253.html">TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.ICreatorSheets</a></div><div class="ttdef"><b>Definition:</b> <a href="a00089_source.html#l00007">ICreatorSheets.cs:7</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

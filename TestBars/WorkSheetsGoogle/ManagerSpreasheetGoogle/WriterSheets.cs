@@ -7,10 +7,19 @@ using TestBars.WorkServersPostgreSql;
 
 namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
 {
+    /// <summary>
+    /// Класс, который отвечает за запись данных в google лист.
+    /// </summary>
+    /// <inheritdoc/>
     class WriterSheets : IWriterSheets
     {
         IWorkFiles workFiles;
         IDrives drives;
+        /// <summary>
+        /// Конструктор через который просходят иньекции объектов.
+        /// </summary>
+        /// <param name="workFiles">Отвечает за запись данных в txt файл, если не удалось соединиться с google Api и сработало исключение.</param>
+        /// <param name="drives">Отвечает за получения списка жестких дисков и количесво свободного места на них.</param>
         public WriterSheets(IWorkFiles workFiles, IDrives drives)
         {
             this.workFiles = workFiles;

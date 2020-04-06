@@ -7,16 +7,25 @@ using TestBars.WorkServersPostgreSql;
 
 namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
 {
+    /// <summary>
+    /// Класс, который создает google лист, в существующей google таблице.
+    /// </summary>
+    /// <inheritdoc/>
     class CreatorSheets : ICreatorSheets
     {
         IWriterSheets writerSheets;
         IWorkFiles workFiles;
+        /// <summary>
+        /// Конструктор через который просходят иньекции объектов.
+        /// </summary>
+        /// <param name="writerSheets">Отвечает за запись в google лист, существующей google таблицы.</param>
+        /// <param name="workFiles">Отвечает за запись данных в txt файл, если не удалось соединиться с google Api и сработало исключение.</param>
         public CreatorSheets(IWriterSheets writerSheets, IWorkFiles workFiles)
         {
             this.writerSheets = writerSheets;
             this.workFiles = workFiles;
         }
-        public void CreateSheets(string SpreadsheetId, List<string> ListServer, IList<IServerObj> servers, SheetsService sheetService) //Метод для создания листов.
+        public void CreateSheets(string SpreadsheetId, List<string> ListServer, IList<IServerObj> servers, SheetsService sheetService)
         {
             Console.WriteLine("Количество не найденых листов: {0}\nНачинается добавление недостающих листов...", ListServer.Count);
 

@@ -1,0 +1,80 @@
+.TH "IProvider" 3 "Пн 6 Апр 2020" "TestBars" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IProvider \- Интерфейс для взамодействия с базой данных  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Производные классы:\fBProviderNpgsql\fP\&.
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "void \fBCreateconnection\fP (string Configurations)"
+.br
+.RI "Создает соединение "
+.ti -1c
+.RI "void \fBOpenConnection\fP ()"
+.br
+.RI "Открывает соединение "
+.ti -1c
+.RI "IList< List< string > > \fBGetDataReader\fP ()"
+.br
+.RI "Метод для получения данных из DB, во время получения формирует в себе списки с данными\&. "
+.ti -1c
+.RI "void \fBCloseConnection\fP ()"
+.br
+.RI "Закрывает соединение\&. "
+.in -1c
+.SH "Подробное описание"
+.PP 
+Интерфейс для взамодействия с базой данных 
+
+
+.SH "Методы"
+.PP 
+.SS "void CloseConnection ()"
+
+.PP
+Закрывает соединение\&. 
+.PP
+Замещается в \fBProviderNpgsql\fP\&.
+.SS "void Createconnection (string Configurations)"
+
+.PP
+Создает соединение 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIConfigurations\fP Передает конфигурацию для соединение с DB\&. 
+.RE
+.PP
+
+.PP
+Замещается в \fBProviderNpgsql\fP\&.
+.SS "IList<List<string> > GetDataReader ()"
+
+.PP
+Метод для получения данных из DB, во время получения формирует в себе списки с данными\&. 
+.PP
+\fBВозвращает\fP
+.RS 4
+Возврашает готовый список с данными\&.
+.RE
+.PP
+
+.PP
+Замещается в \fBProviderNpgsql\fP\&.
+.SS "void OpenConnection ()"
+
+.PP
+Открывает соединение 
+.PP
+Замещается в \fBProviderNpgsql\fP\&.
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для TestBars из исходного текста\&.

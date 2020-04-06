@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TestBars: Интерфейс IWriterServers</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TestBars
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="a00119.html">TestBars</a></li><li class="navelem"><a class="el" href="a00121.html">WorkServersPostgreSql</a></li><li class="navelem"><a class="el" href="a00209.html">IWriterServers</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="a00206.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Интерфейс IWriterServers</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Интерфейс объекта, который сортирует данные, полученные из DB, по объектам для хранения.  
+ <a href="a00209.html#details">Подробнее...</a></p>
+
+<p>Производные классы:<a class="el" href="a00225.html">WriterServers</a>.</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:af35c7c9f8e9b53a5e919c9334724f9d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00209.html#af35c7c9f8e9b53a5e919c9334724f9d1">CreateServerObj</a> (string ServerName)</td></tr>
+<tr class="memdesc:af35c7c9f8e9b53a5e919c9334724f9d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создает объект сервера <a class="el" href="a00205.html" title="Интерфейс взаимодействия с объектом, который хранит в себе данные сервера и список DB.">IServerObj</a> для дальнейшего его заполнения.  <a href="a00209.html#af35c7c9f8e9b53a5e919c9334724f9d1">Подробнее...</a><br /></td></tr>
+<tr class="separator:af35c7c9f8e9b53a5e919c9334724f9d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1567d446f48f341290e59fa9e704f2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00209.html#ac1567d446f48f341290e59fa9e704f2a">WriteServerObjs</a> (string nameDb, string sizeDb, string updateDateDb)</td></tr>
+<tr class="memdesc:ac1567d446f48f341290e59fa9e704f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создает и заполняет за одну итерацию, один объект <a class="el" href="a00193.html" title="Интерфейс для взаимодействия с обьектом, который хранит в себе данные из Db.">IDbObj</a>, добавляет все объекты в список.  <a href="a00209.html#ac1567d446f48f341290e59fa9e704f2a">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac1567d446f48f341290e59fa9e704f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc21a11e39e78226894c27188cc5c7ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00205.html">IServerObj</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00209.html#acc21a11e39e78226894c27188cc5c7ce">GetServerObj</a> ()</td></tr>
+<tr class="memdesc:acc21a11e39e78226894c27188cc5c7ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает объект <a class="el" href="a00205.html" title="Интерфейс взаимодействия с объектом, который хранит в себе данные сервера и список DB.">IServerObj</a>, заполненный данными.  <a href="a00209.html#acc21a11e39e78226894c27188cc5c7ce">Подробнее...</a><br /></td></tr>
+<tr class="separator:acc21a11e39e78226894c27188cc5c7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Интерфейс объекта, который сортирует данные, полученные из DB, по объектам для хранения. </p>
+</div><h2 class="groupheader">Методы</h2>
+<a id="af35c7c9f8e9b53a5e919c9334724f9d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af35c7c9f8e9b53a5e919c9334724f9d1">&#9670;&nbsp;</a></span>CreateServerObj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CreateServerObj </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>ServerName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создает объект сервера <a class="el" href="a00205.html" title="Интерфейс взаимодействия с объектом, который хранит в себе данные сервера и список DB.">IServerObj</a> для дальнейшего его заполнения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ServerName</td><td>Передает название сервера </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Замещается в <a class="el" href="a00225.html#af35c7c9f8e9b53a5e919c9334724f9d1">WriterServers</a>.</p>
+
+</div>
+</div>
+<a id="acc21a11e39e78226894c27188cc5c7ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc21a11e39e78226894c27188cc5c7ce">&#9670;&nbsp;</a></span>GetServerObj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00205.html">IServerObj</a> GetServerObj </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает объект <a class="el" href="a00205.html" title="Интерфейс взаимодействия с объектом, который хранит в себе данные сервера и список DB.">IServerObj</a>, заполненный данными. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает заполненный объект.</dd></dl>
+
+<p>Замещается в <a class="el" href="a00225.html#acc21a11e39e78226894c27188cc5c7ce">WriterServers</a>.</p>
+
+</div>
+</div>
+<a id="ac1567d446f48f341290e59fa9e704f2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1567d446f48f341290e59fa9e704f2a">&#9670;&nbsp;</a></span>WriteServerObjs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WriteServerObjs </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>nameDb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>sizeDb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>updateDateDb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создает и заполняет за одну итерацию, один объект <a class="el" href="a00193.html" title="Интерфейс для взаимодействия с обьектом, который хранит в себе данные из Db.">IDbObj</a>, добавляет все объекты в список. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nameDb</td><td>Передает название Db</td></tr>
+    <tr><td class="paramname">sizeDb</td><td>Передает размер Db</td></tr>
+    <tr><td class="paramname">updateDateDb</td><td>Передает дату получения данных из DB</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Замещается в <a class="el" href="a00225.html#ac1567d446f48f341290e59fa9e704f2a">WriterServers</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов интерфейса находятся в файле:<ul>
+<li>C:/Users/Алия/Desktop/Выполненое тестовое задание Bars Group/TestBars Monitor Db Postgresql/TestBars/WorkServersPostgreSql/IWriterServers.cs</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

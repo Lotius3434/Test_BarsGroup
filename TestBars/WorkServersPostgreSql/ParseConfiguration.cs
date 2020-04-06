@@ -4,6 +4,10 @@ using System.Configuration;
 
 namespace TestBars.WorkServersPostgreSql
 {
+    /// <summary>
+    /// Класс ,который сканирует и собирает настройки серверов из файла App.config.
+    /// </summary>
+    /// <inheritdoc/>
     public class ParseConfiguration : IParseConfiguration 
     {
         Dictionary<string, string> configlist = new Dictionary<string, string>();

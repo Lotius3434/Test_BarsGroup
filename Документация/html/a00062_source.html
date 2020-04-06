@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TestBars: Исходный файл C:/Users/Алия/Desktop/Выполненое тестовое задание Bars Group/TestBars Monitor Db Postgresql/TestBars/WorkServersPostgreSql/ParseConfiguration.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TestBars
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_d80b380ee1e0e671e339b4df2c1d9f7a.html">Алия</a></li><li class="navelem"><a class="el" href="dir_84c1cd60f3c48007a8091911aa5c0d0c.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_9d67f8f9568f95c2ab78c8dc1140255f.html">Выполненое тестовое задание Bars Group</a></li><li class="navelem"><a class="el" href="dir_11f2d2998daeb1d1d71343134d0cacac.html">TestBars Monitor Db Postgresql</a></li><li class="navelem"><a class="el" href="dir_42f18e64a7579b0c4129a57b623136a1.html">TestBars</a></li><li class="navelem"><a class="el" href="dir_1713b41806b17b5447ef899b5ce98ce5.html">WorkServersPostgreSql</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ParseConfiguration.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> System.Collections.Generic;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> System.Configuration;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00121.html">TestBars.WorkServersPostgreSql</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="a00217.html">    7</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="a00217.html">ParseConfiguration</a> : <a class="code" href="a00201.html">IParseConfiguration</a> </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        Dictionary&lt;string, string&gt; configlist = <span class="keyword">new</span> Dictionary&lt;string, string&gt;();</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordtype">string</span> SearchKey = ConfigurationManager.AppSettings[<span class="stringliteral">&quot;SearchKey&quot;</span>];</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        ConnectionStringSettingsCollection ConnectionStrings = ConfigurationManager.ConnectionStrings;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keyword">public</span> Dictionary&lt;string, string&gt; GetConfigServers_Npgsql()</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keywordflow">if</span> (SearchKey != <span class="keyword">null</span>)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                    Console.WriteLine(<span class="stringliteral">&quot;Поиск серверов по настройке файла конфигурации&quot;</span>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> a = 0; a &lt; ConnectionStrings.Count; a++)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                        {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                            <span class="keywordflow">if</span> (ConnectionStrings[a].ProviderName == SearchKey)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                            {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                configlist.Add(ConnectionStrings[a].Name, ConnectionStrings[a].ConnectionString);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                            }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                        }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                        <span class="keywordflow">if</span> (configlist.Count == 0)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                            <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Не найдено серверов по ключевому слову&quot;</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Не найдено ключевого слова, для поиска сервера&quot;</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                Console.WriteLine(<span class="stringliteral">&quot;Ошибка: {0}\nНажмите любую кнопку для закрытия программы&quot;</span>, e.Message);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                Console.ReadKey();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                Environment.Exit(1);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">return</span> configlist;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aa00201_html"><div class="ttname"><a href="a00201.html">TestBars.WorkServersPostgreSql.IParseConfiguration</a></div><div class="ttdef"><b>Definition:</b> <a href="a00050_source.html#l00005">IParseConfiguration.cs:5</a></div></div>
+<div class="ttc" id="aa00217_html"><div class="ttname"><a href="a00217.html">TestBars.WorkServersPostgreSql.ParseConfiguration</a></div><div class="ttdef"><b>Definition:</b> <a href="a00062_source.html#l00007">ParseConfiguration.cs:7</a></div></div>
+<div class="ttc" id="aa00121_html"><div class="ttname"><a href="a00121.html">TestBars.WorkServersPostgreSql</a></div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00001">DbObj.cs:1</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

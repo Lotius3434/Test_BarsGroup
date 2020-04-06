@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TestBars: Исходный файл C:/Users/Алия/Desktop/Выполненое тестовое задание Bars Group/TestBars Monitor Db Postgresql/TestBars/WorkProvider/ProviderNpgsql.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TestBars
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_d80b380ee1e0e671e339b4df2c1d9f7a.html">Алия</a></li><li class="navelem"><a class="el" href="dir_84c1cd60f3c48007a8091911aa5c0d0c.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_9d67f8f9568f95c2ab78c8dc1140255f.html">Выполненое тестовое задание Bars Group</a></li><li class="navelem"><a class="el" href="dir_11f2d2998daeb1d1d71343134d0cacac.html">TestBars Monitor Db Postgresql</a></li><li class="navelem"><a class="el" href="dir_42f18e64a7579b0c4129a57b623136a1.html">TestBars</a></li><li class="navelem"><a class="el" href="dir_aa0874e0c4276966d8a189b08336c7b4.html">WorkProvider</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ProviderNpgsql.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> Npgsql;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> System;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> System.Collections.Generic;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="a00120.html">TestBars.WorkProvider</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="a00185.html">   11</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="a00185.html">ProviderNpgsql</a> : <a class="code" href="a00181.html">IProvider</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        NpgsqlConnection connection;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        NpgsqlCommand NpgsqlCommand;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        NpgsqlDataReader DataReader;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        IList&lt;List&lt;string&gt;&gt; DataList = <span class="keyword">new</span> List&lt;List&lt;string&gt;&gt;();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00185.html#a961cb0d1d98ecf5c708972d7e1509882">   19</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="a00185.html#a961cb0d1d98ecf5c708972d7e1509882">Createconnection</a>(<span class="keywordtype">string</span> Configurations)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            connection = <span class="keyword">new</span> NpgsqlConnection(Configurations);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            NpgsqlCommand = <span class="keyword">new</span> NpgsqlCommand(<a class="code" href="a00173.html">SqlConfig</a>.sqlquery, connection);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a00185.html#a61dcf4a74127c62eb36ede4e50b1a1c3">   24</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="a00185.html#a61dcf4a74127c62eb36ede4e50b1a1c3">OpenConnection</a>()</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            connection.Open();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            DataReader = NpgsqlCommand.ExecuteReader();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a00185.html#a59bea7a2af37f77e8e6ad1db108cd9f7">   29</a></span>&#160;        <span class="keyword">public</span> IList&lt;List&lt;string&gt;&gt; <a class="code" href="a00185.html#a59bea7a2af37f77e8e6ad1db108cd9f7">GetDataReader</a>()</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        { </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">while</span> (DataReader.Read())</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                List&lt;string&gt; DataReaderResul = <span class="keyword">new</span> List&lt;string&gt;();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                DataReaderResul.Add(DataReader.GetString(0));</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                DataReaderResul.Add(<a class="code" href="a00153.html">Converter</a>.CalculateBytetoGB(DataReader.GetInt64(1)));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                DataReaderResul.Add(DateTime.Now.ToString(<span class="stringliteral">&quot;dd.MM.yyyy&quot;</span>));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                DataList.Add(DataReaderResul);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">return</span> DataList;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a00185.html#a871a6492cc2e669cb3cc1429281f6849">   43</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="a00185.html#a871a6492cc2e669cb3cc1429281f6849">CloseConnection</a>()</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            connection.Close();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aa00185_html_a961cb0d1d98ecf5c708972d7e1509882"><div class="ttname"><a href="a00185.html#a961cb0d1d98ecf5c708972d7e1509882">TestBars.WorkProvider.ProviderNpgsql.Createconnection</a></div><div class="ttdeci">void Createconnection(string Configurations)</div><div class="ttdoc">Создает соединение</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00019">ProviderNpgsql.cs:19</a></div></div>
+<div class="ttc" id="aa00185_html_a871a6492cc2e669cb3cc1429281f6849"><div class="ttname"><a href="a00185.html#a871a6492cc2e669cb3cc1429281f6849">TestBars.WorkProvider.ProviderNpgsql.CloseConnection</a></div><div class="ttdeci">void CloseConnection()</div><div class="ttdoc">Закрывает соединение.</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00043">ProviderNpgsql.cs:43</a></div></div>
+<div class="ttc" id="aa00185_html_a59bea7a2af37f77e8e6ad1db108cd9f7"><div class="ttname"><a href="a00185.html#a59bea7a2af37f77e8e6ad1db108cd9f7">TestBars.WorkProvider.ProviderNpgsql.GetDataReader</a></div><div class="ttdeci">IList&lt; List&lt; string &gt; &gt; GetDataReader()</div><div class="ttdoc">Метод для получения данных из DB, во время получения формирует в себе списки с данными.</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00029">ProviderNpgsql.cs:29</a></div></div>
+<div class="ttc" id="aa00181_html"><div class="ttname"><a href="a00181.html">TestBars.WorkProvider.IProvider</a></div><div class="ttdoc">Интерфейс для взамодействия с базой данных</div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00008">IProvider.cs:8</a></div></div>
+<div class="ttc" id="aa00185_html_a61dcf4a74127c62eb36ede4e50b1a1c3"><div class="ttname"><a href="a00185.html#a61dcf4a74127c62eb36ede4e50b1a1c3">TestBars.WorkProvider.ProviderNpgsql.OpenConnection</a></div><div class="ttdeci">void OpenConnection()</div><div class="ttdoc">Открывает соединение</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00024">ProviderNpgsql.cs:24</a></div></div>
+<div class="ttc" id="aa00120_html"><div class="ttname"><a href="a00120.html">TestBars.WorkProvider</a></div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00004">IProvider.cs:4</a></div></div>
+<div class="ttc" id="aa00185_html"><div class="ttname"><a href="a00185.html">TestBars.WorkProvider.ProviderNpgsql</a></div><div class="ttdoc">Класс для взаимодействия c провайдером Npgsql.</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00011">ProviderNpgsql.cs:11</a></div></div>
+<div class="ttc" id="aa00173_html"><div class="ttname"><a href="a00173.html">TestBars.SqlConfig</a></div><div class="ttdef"><b>Definition:</b> <a href="a00029_source.html#l00003">SqlConfig.cs:3</a></div></div>
+<div class="ttc" id="aa00153_html"><div class="ttname"><a href="a00153.html">TestBars.Converter</a></div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00005">Converter.cs:5</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -4,6 +4,10 @@ using System.Collections.Generic;
 
 namespace TestBars.WorkProvider
 {
+    /// <summary>
+    /// Класс для взаимодействия c провайдером Npgsql.
+    /// </summary>
+    /// <inheritdoc/>
     public class ProviderNpgsql : IProvider
     {
         
@@ -11,6 +15,7 @@ namespace TestBars.WorkProvider
         NpgsqlCommand NpgsqlCommand;
         NpgsqlDataReader DataReader;
         IList<List<string>> DataList = new List<List<string>>();
+        
         public void Createconnection(string Configurations)
         {
             connection = new NpgsqlConnection(Configurations);

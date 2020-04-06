@@ -2,11 +2,15 @@
 
 namespace TestBars.WorkServersPostgreSql
 {
+    /// <summary>
+    /// Объект, который хранит в себе данные сервера и список DB.
+    /// </summary>
+    /// <inheritdoc/>
     public class ServerObj : IServerObj
     {
         private string _NameServer;
         private IList<IDbObj> dbObjs;
-        
+        /// <value>Содержит название сервера.</value>
         public string NameServer
         {
             get
@@ -20,7 +24,8 @@ namespace TestBars.WorkServersPostgreSql
                
             }
         }
-       public IList<IDbObj> DataBases
+        /// <value>Содержит список Db.</value>
+        public IList<IDbObj> DataBases
         {
             get
             {

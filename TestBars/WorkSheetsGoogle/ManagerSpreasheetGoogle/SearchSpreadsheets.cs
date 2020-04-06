@@ -7,14 +7,22 @@ using TestBars.WorkServersPostgreSql;
 
 namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
 {
-    public class SearchSpreadsheets : ISearchSpreadsheets//Класс для работы с гугл диском
+    /// <summary>
+    /// Класс, который ищет таблицы в google disk, по названию.
+    /// </summary>
+    /// <inheritdoc/>
+    public class SearchSpreadsheets : ISearchSpreadsheets
     {
-        IWorkFiles workFiles;        
+        IWorkFiles workFiles;
+        /// <summary>
+        /// Конструктор через который просходят иньекция объекта.
+        /// </summary>
+        /// <param name="workFiles">Отвечает за запись данных в txt файл, если не удалось соединиться с google Api и сработало исключение.</param>
         public SearchSpreadsheets(IWorkFiles workFiles)
         {
             this.workFiles = workFiles;
         }        
-        public string Search(IList<IServerObj> servers, DriveService driveService)// Метод поиска таблицы по названию
+        public string Search(IList<IServerObj> servers, DriveService driveService)
         {
             
             string spreadsheetId = null;

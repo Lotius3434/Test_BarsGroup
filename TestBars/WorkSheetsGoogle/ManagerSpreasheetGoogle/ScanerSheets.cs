@@ -7,18 +7,28 @@ using TestBars.WorkServersPostgreSql;
 
 namespace TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle
 {
+    /// <summary>
+    /// Класс, который сканирует таблицу, на наличие листов для каждого сервера.
+    /// </summary>
+    /// <inheritdoc/>
     class ScanerSheets : IScanerSheets
     {
         ICreatorSheets creatorSheets;
         IWriterSheets writerSheets;
         IWorkFiles workFiles;
+        /// <summary>
+        /// Конструктор через который просходят иньекции объектов.
+        /// </summary>
+        /// <param name="creatorSheets">Отвечает за создание google листа, в существующей google таблице.</param>
+        /// <param name="writerSheets">Отвечает за запись в google лист, существующей google таблицы.</param>
+        /// <param name="workFiles">Отвечает за запись данных в txt файл, если не удалось соединиться с google Api и сработало исключение.</param>
         public ScanerSheets(ICreatorSheets creatorSheets, IWriterSheets writerSheets,IWorkFiles workFiles)
         {
             this.creatorSheets = creatorSheets;
             this.writerSheets = writerSheets;
             this.workFiles = workFiles;
         }
-        public void ScanSheets(string IdSreadssheet, IList<IServerObj> servers, SheetsService sheetService)// Метод который парсит листы в таблице.
+        public void ScanSheets(string IdSreadssheet, IList<IServerObj> servers, SheetsService sheetService)
         {
             Console.WriteLine("Сканирование листов в таблице");
 

@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['icreatorsheets_63',['ICreatorSheets',['../a00253.html',1,'TestBars::WorkSheetsGoogle::ManagerSpreasheetGoogle']]],
+  ['icreatorspreasheet_64',['ICreatorSpreasheet',['../a00257.html',1,'TestBars::WorkSheetsGoogle::ManagerSpreasheetGoogle']]],
+  ['idbobj_65',['IDbObj',['../a00193.html',1,'TestBars::WorkServersPostgreSql']]],
+  ['idrives_66',['IDrives',['../a00161.html',1,'TestBars']]],
+  ['imanagerconnectiondb_67',['IManagerConnectionDb',['../a00197.html',1,'TestBars::WorkServersPostgreSql']]],
+  ['imanagerspreasheet_68',['IManagerSpreasheet',['../a00229.html',1,'TestBars::WorkSheetsGoogle']]],
+  ['iparseconfiguration_69',['IParseConfiguration',['../a00201.html',1,'TestBars::WorkServersPostgreSql']]],
+  ['iprovider_70',['IProvider',['../a00181.html',1,'TestBars::WorkProvider']]],
+  ['iscanersheets_71',['IScanerSheets',['../a00261.html',1,'TestBars::WorkSheetsGoogle::ManagerSpreasheetGoogle']]],
+  ['isearchspreadsheets_72',['ISearchSpreadsheets',['../a00265.html',1,'TestBars::WorkSheetsGoogle::ManagerSpreasheetGoogle']]],
+  ['iserverobj_73',['IServerObj',['../a00205.html',1,'TestBars::WorkServersPostgreSql']]],
+  ['iservices_74',['IServices',['../a00233.html',1,'TestBars::WorkSheetsGoogle']]],
+  ['iuserauthentication_75',['IUserAuthentication',['../a00237.html',1,'TestBars::WorkSheetsGoogle']]],
+  ['iworkfiles_76',['IWorkFiles',['../a00165.html',1,'TestBars']]],
+  ['iwriterservers_77',['IWriterServers',['../a00209.html',1,'TestBars::WorkServersPostgreSql']]],
+  ['iwritersheets_78',['IWriterSheets',['../a00269.html',1,'TestBars::WorkSheetsGoogle::ManagerSpreasheetGoogle']]]
+];

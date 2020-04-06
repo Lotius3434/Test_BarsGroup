@@ -7,13 +7,25 @@ using TestBars.WorkServersPostgreSql;
 
 namespace TestBars
 {
+    /// <summary>
+    /// Класс, который отвечает за запись данных в txt файл.
+    /// </summary>
     public class WorkFiles : IWorkFiles
     {
         IDrives drives;
+        /// <summary>
+        /// Конструктор через который просходят иньекции объектов.
+        /// </summary>      
+        /// <param name="drives">Отвечает за получения списка жестких дисков и количесво свободного места на них.</param>
         public WorkFiles(IDrives drives)
         {
             this.drives = drives;
         }
+        /// <summary>
+        /// Сортирует данные, добавляет столбцы, строки.
+        /// </summary>
+        /// <param name="liststring">Передает список с данными DB</param>
+        /// <returns>Строка с отсортированными данными.</returns>
         public string SortString(IList<string> liststring )
         {
             StringBuilder stringBuilder = new StringBuilder();
@@ -51,6 +63,11 @@ namespace TestBars
             string resul = stringBuilder.ToString();
             return resul;
         }
+        /// <summary>
+        /// Создает общую строку с данными серверов.
+        /// </summary>
+        /// <param name="servers">Передает список серверов с данными.</param>
+        /// <returns>Строку с данными серверов.</returns>
         public string Createstring(IList<IServerObj> servers)
         {
             StringBuilder stringBuilder = new StringBuilder();
@@ -101,6 +118,10 @@ namespace TestBars
 
 
         }
+        /// <summary>
+        /// Записывает данные в txt файл.
+        /// </summary>
+        /// <param name="servers">Передает список серверов с данными.</param>
         public void WriteFileTxt(IList<IServerObj> servers)
         {
             string ResulString = Createstring(servers);

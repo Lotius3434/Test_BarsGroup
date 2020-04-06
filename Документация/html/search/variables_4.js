@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['workfiles_112',['workFiles',['../a00086.html#a554e2fa1329d4d98866244f49b7d5df0',1,'TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.CreatorSheets.workFiles()'],['../a00090.html#a5645251cd026cc7ec8454c4b007e064f',1,'TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.CreatorSpreasheet.workFiles()'],['../a00114.html#a5c75a6260905ff72085d64187c1e4f6a',1,'TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.ScanerSheets.workFiles()'],['../a00118.html#a2924ec2d9e34d9d280b3e73f587e77d8',1,'TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.SearchSpreadsheets.workFiles()'],['../a00122.html#af5c0c1a3b907d840bd33603c1e84b013',1,'TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.WriterSheets.workFiles()']]],
+  ['writersheets_113',['writerSheets',['../a00086.html#abee325b4e30e39c0108277c16abc83e2',1,'TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.CreatorSheets.writerSheets()'],['../a00090.html#afb4c5a5b528e7a1f3e92bf5347811ecf',1,'TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.CreatorSpreasheet.writerSheets()'],['../a00114.html#aa58c292ab392b259999ccb4acf9a8d52',1,'TestBars.WorkSheetsGoogle.ManagerSpreasheetGoogle.ScanerSheets.writerSheets()']]]
+];

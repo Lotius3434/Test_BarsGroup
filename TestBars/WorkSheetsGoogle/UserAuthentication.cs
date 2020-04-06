@@ -9,6 +9,10 @@ using System.Threading;
 
 namespace TestBars.WorkSheetsGoogle
 {
+    /// <summary>
+    /// Класс, который отвечает за аутентификацию пользователя.
+    /// </summary>
+    /// <inheritdoc/>
     public class UserAuthentication : IUserAuthentication
     {
         UserCredential credential;
