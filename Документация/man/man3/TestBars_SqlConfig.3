@@ -1,0 +1,35 @@
+.TH "SqlConfig" 3 "Пн 6 Апр 2020" "TestBars" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SqlConfig \- Класс содержит строку с sql запросом\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Статические открытые данные"
+
+.in +1c
+.ti -1c
+.RI "static readonly string \fBsqlquery\fP"
+.br
+.in -1c
+.SH "Подробное описание"
+.PP 
+Класс содержит строку с sql запросом\&. 
+
+
+.SH "Данные класса"
+.PP 
+.SS "readonly string sqlquery\fC [static]\fP"
+\fBИнициализатор\fP
+.PP
+.nf
+= @"select datname,  pg_database_size(datname)
+                     from pg_database;"
+.fi
+
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для TestBars из исходного текста\&.

@@ -1,0 +1,67 @@
+.TH "CreatorSpreasheet" 3 "Пн 6 Апр 2020" "TestBars" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CreatorSpreasheet \- Класс, который создает google таблицу\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Базовые классы:\fBICreatorSpreasheet\fP\&.
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "\fBCreatorSpreasheet\fP (\fBIWriterSheets\fP writerSheets, \fBIWorkFiles\fP workFiles)"
+.br
+.RI "Конструктор через который просходят иньекции объектов\&. "
+.ti -1c
+.RI "void \fBCreateSpreasheet\fP (IList< \fBIServerObj\fP > servers, SheetsService sheetService)"
+.br
+.RI "Создает google таблицу\&. "
+.in -1c
+.SH "Подробное описание"
+.PP 
+Класс, который создает google таблицу\&. 
+
+
+.SH "Конструктор(ы)"
+.PP 
+.SS "\fBCreatorSpreasheet\fP (\fBIWriterSheets\fP writerSheets, \fBIWorkFiles\fP workFiles)"
+
+.PP
+Конструктор через который просходят иньекции объектов\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIwriterSheets\fP Отвечает за запись данных в google лист\&.
+.br
+\fIworkFiles\fP Отвечает за запись данных в txt файл, если не удалось соединиться с google Api и сработало исключение\&.
+.RE
+.PP
+
+.SH "Методы"
+.PP 
+.SS "void CreateSpreasheet (IList< \fBIServerObj\fP > servers, SheetsService sheetService)"
+
+.PP
+Создает google таблицу\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIservers\fP Передает список с данными серверов
+.br
+\fIsheetService\fP Передает сервис для взаимодействия с таблицами google\&.
+.RE
+.PP
+.PP
+После выполнения метода, вызывает метод объекта: \fBIWriterSheets\fP для записи в google лист 
+.PP
+Если не удалось соединиться с google api высывается метод объекта \fBIWorkFiles\fP\&.
+.PP
+Замещает \fBICreatorSpreasheet\fP\&.
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для TestBars из исходного текста\&.

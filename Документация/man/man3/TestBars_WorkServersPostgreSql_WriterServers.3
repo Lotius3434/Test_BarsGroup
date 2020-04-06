@@ -1,0 +1,81 @@
+.TH "WriterServers" 3 "Пн 6 Апр 2020" "TestBars" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WriterServers \- Класс сортирует данные полученные из DB, по объектам для хранения\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Базовые классы:\fBIWriterServers\fP\&.
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "void \fBCreateServerObj\fP (string ServerName)"
+.br
+.RI "Создает объект сервера \fBIServerObj\fP для дальнейшего его заполнения\&. "
+.ti -1c
+.RI "void \fBWriteServerObjs\fP (string nameDb, string sizeDb, string updateDateDb)"
+.br
+.RI "Создает и заполняет за одну итерацию, один объект \fBIDbObj\fP, добавляет все объекты в список\&. "
+.ti -1c
+.RI "\fBIServerObj\fP \fBGetServerObj\fP ()"
+.br
+.RI "Возвращает объект \fBIServerObj\fP, заполненный данными\&. "
+.in -1c
+.SH "Подробное описание"
+.PP 
+Класс сортирует данные полученные из DB, по объектам для хранения\&. 
+
+
+.SH "Методы"
+.PP 
+.SS "void CreateServerObj (string ServerName)"
+
+.PP
+Создает объект сервера \fBIServerObj\fP для дальнейшего его заполнения\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIServerName\fP Передает название сервера 
+.RE
+.PP
+
+.PP
+Замещает \fBIWriterServers\fP\&.
+.SS "\fBIServerObj\fP GetServerObj ()"
+
+.PP
+Возвращает объект \fBIServerObj\fP, заполненный данными\&. 
+.PP
+\fBВозвращает\fP
+.RS 4
+Возвращает заполненный объект\&.
+.RE
+.PP
+
+.PP
+Замещает \fBIWriterServers\fP\&.
+.SS "void WriteServerObjs (string nameDb, string sizeDb, string updateDateDb)"
+
+.PP
+Создает и заполняет за одну итерацию, один объект \fBIDbObj\fP, добавляет все объекты в список\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fInameDb\fP Передает название Db
+.br
+\fIsizeDb\fP Передает размер Db
+.br
+\fIupdateDateDb\fP Передает дату получения данных из DB
+.RE
+.PP
+
+.PP
+Замещает \fBIWriterServers\fP\&.
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для TestBars из исходного текста\&.

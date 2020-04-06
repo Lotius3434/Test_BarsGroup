@@ -1,17 +1,34 @@
-﻿using Google.Apis.Drive.v3;
+﻿using Google.Apis.Auth.OAuth2;
+using Google.Apis.Drive.v3;
 using Google.Apis.Services;
 using Google.Apis.Sheets.v4;
+using System.Configuration;
 
 namespace TestBars.WorkSheetsGoogle
 {
-    class Services
+    /// <summary>
+    ///Класс, который отвечает за создание сервисов, после аутентификации пользователя.
+    /// </summary>
+    /// <inheritdoc/>
+    public class Services : IServices
     {
+        
+        UserCredential _credential;
+        /// <summary>
+        /// Конструктор через который просходят иньекция объекта.
+        /// </summary>
+        /// <param name="userAuthentication">Отвечает за аутентификацию пользователя.</param>
+        public Services(IUserAuthentication userAuthentication)
+        {
+            this._credential = userAuthentication.Authentication();
+        }
         public SheetsService GetSheetsService()
         {
+
             var service = new SheetsService(new BaseClientService.Initializer()
             {
-                HttpClientInitializer = Config_Scope_Appname.credential,
-                ApplicationName = Config_Scope_Appname.ApplicationName,
+                HttpClientInitializer = _credential,
+                ApplicationName = ConfigurationManager.AppSettings["ApplicationName"],
             });
             return service;
         }
@@ -19,8 +36,8 @@ namespace TestBars.WorkSheetsGoogle
         {
             var service = new DriveService(new BaseClientService.Initializer()
             {
-                HttpClientInitializer = Config_Scope_Appname.credential,
-                ApplicationName = Config_Scope_Appname.ApplicationName,
+                HttpClientInitializer = _credential,
+                ApplicationName = ConfigurationManager.AppSettings["ApplicationName"],
             });
             return service;
         }

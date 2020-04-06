@@ -1,0 +1,48 @@
+.TH "ICreatorSpreasheet" 3 "Пн 6 Апр 2020" "TestBars" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ICreatorSpreasheet \- Интерфейс объекта, который создает google таблицу\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Производные классы:\fBCreatorSpreasheet\fP\&.
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "void \fBCreateSpreasheet\fP (IList< \fBIServerObj\fP > servers, SheetsService sheetService)"
+.br
+.RI "Создает google таблицу\&. "
+.in -1c
+.SH "Подробное описание"
+.PP 
+Интерфейс объекта, который создает google таблицу\&. 
+
+
+.SH "Методы"
+.PP 
+.SS "void CreateSpreasheet (IList< \fBIServerObj\fP > servers, SheetsService sheetService)"
+
+.PP
+Создает google таблицу\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIservers\fP Передает список с данными серверов
+.br
+\fIsheetService\fP Передает сервис для взаимодействия с таблицами google\&.
+.RE
+.PP
+.PP
+После выполнения метода, вызывает метод объекта: \fBIWriterSheets\fP для записи в google лист 
+.PP
+Если не удалось соединиться с google api высывается метод объекта \fBIWorkFiles\fP\&.
+.PP
+Замещается в \fBCreatorSpreasheet\fP\&.
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для TestBars из исходного текста\&.

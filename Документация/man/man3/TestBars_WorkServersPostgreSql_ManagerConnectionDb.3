@@ -1,0 +1,64 @@
+.TH "ManagerConnectionDb" 3 "Пн 6 Апр 2020" "TestBars" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ManagerConnectionDb \- Класс управляющий всеми объектами, которые отвечают за получение данных из серверов\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Базовые классы:\fBIManagerConnectionDb\fP\&.
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "\fBManagerConnectionDb\fP (\fBIParseConfiguration\fP parseConfiguration, \fBIWriterServers\fP writerServers, \fBIProvider\fP provider)"
+.br
+.RI "Конструктор через который просходят иньекции объектов\&. "
+.ti -1c
+.RI "IList< \fBIServerObj\fP > \fBGetServers\fP ()"
+.br
+.RI "Метод для возвращения списка серверов и с списками DB\&. "
+.in -1c
+.SH "Подробное описание"
+.PP 
+Класс управляющий всеми объектами, которые отвечают за получение данных из серверов\&. 
+
+Для управления всеми компонентами в классе должны быть иньекции через конструктор\&.
+.SH "Конструктор(ы)"
+.PP 
+.SS "\fBManagerConnectionDb\fP (\fBIParseConfiguration\fP parseConfiguration, \fBIWriterServers\fP writerServers, \fBIProvider\fP provider)"
+
+.PP
+Конструктор через который просходят иньекции объектов\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIparseConfiguration\fP Отвечает за парсинг конфигураций серверов\&.
+.br
+\fIwriterServers\fP Отвечает сортировку данных,полученных из DB, по объектам для хранения\&.
+.br
+\fIprovider\fP Отвечает за соединение, возврат данных из Db\&.
+.RE
+.PP
+
+.SH "Методы"
+.PP 
+.SS "IList<\fBIServerObj\fP> GetServers ()"
+
+.PP
+Метод для возвращения списка серверов и с списками DB\&. 
+.PP
+\fBВозвращает\fP
+.RS 4
+Списки серверов с списками DB\&.Список
+.RE
+.PP
+
+.PP
+Замещает \fBIManagerConnectionDb\fP\&.
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для TestBars из исходного текста\&.

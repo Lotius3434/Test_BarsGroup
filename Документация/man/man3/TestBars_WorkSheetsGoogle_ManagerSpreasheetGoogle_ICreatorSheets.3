@@ -1,0 +1,51 @@
+.TH "ICreatorSheets" 3 "Пн 6 Апр 2020" "TestBars" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ICreatorSheets \- Интерфейс объекта, который создает google лист, в существующей google таблице\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Производные классы:\fBCreatorSheets\fP\&.
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "void \fBCreateSheets\fP (string SpreadsheetId, List< string > ListServer, IList< \fBIServerObj\fP > servers, SheetsService sheetService)"
+.br
+.RI "Создает google лист, в google таблице\&. "
+.in -1c
+.SH "Подробное описание"
+.PP 
+Интерфейс объекта, который создает google лист, в существующей google таблице\&. 
+
+
+.SH "Методы"
+.PP 
+.SS "void CreateSheets (string SpreadsheetId, List< string > ListServer, IList< \fBIServerObj\fP > servers, SheetsService sheetService)"
+
+.PP
+Создает google лист, в google таблице\&. Метод вызывается объектом \fBIScanerSheets\fP если в таблице, не было найдено листа с названием сервера\&.
+.PP
+После того как метод отработал, он вызывает метод объекта \fBIWriterSheets\fP для заполнения листа данными\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fISpreadsheetId\fP Передает Id google таблицы\&.
+.br
+\fIListServer\fP Передает список названий серверов для которых не создан лист в таблице\&.
+.br
+\fIservers\fP Передает список серверов с данными\&.
+.br
+\fIsheetService\fP Передает сервис для взаимодействия с таблицами google\&.
+.RE
+.PP
+
+.PP
+Замещается в \fBCreatorSheets\fP\&.
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для TestBars из исходного текста\&.

@@ -1,0 +1,76 @@
+.TH "Services" 3 "Пн 6 Апр 2020" "TestBars" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Services \- Класс, который отвечает за создание сервисов, после аутентификации пользователя\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Базовые классы:\fBIServices\fP\&.
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "\fBServices\fP (\fBIUserAuthentication\fP userAuthentication)"
+.br
+.RI "Конструктор через который просходят иньекция объекта\&. "
+.ti -1c
+.RI "SheetsService \fBGetSheetsService\fP ()"
+.br
+.RI "Инициализирует сервис для работы с google таблицами\&. "
+.ti -1c
+.RI "DriveService \fBGetDriveService\fP ()"
+.br
+.in -1c
+.SH "Подробное описание"
+.PP 
+Класс, который отвечает за создание сервисов, после аутентификации пользователя\&. 
+
+
+.SH "Конструктор(ы)"
+.PP 
+.SS "\fBServices\fP (\fBIUserAuthentication\fP userAuthentication)"
+
+.PP
+Конструктор через который просходят иньекция объекта\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIuserAuthentication\fP Отвечает за аутентификацию пользователя\&.
+.RE
+.PP
+
+.SH "Методы"
+.PP 
+.SS "DriveService GetDriveService ()"
+
+.PP
+Инициализирует сервис для работы с google disk\&.
+.PP
+\fBВозвращает\fP
+.RS 4
+Возвращает сервис для работы с google disk\&.
+.RE
+.PP
+
+.PP
+Замещает \fBIServices\fP\&.
+.SS "SheetsService GetSheetsService ()"
+
+.PP
+Инициализирует сервис для работы с google таблицами\&. 
+.PP
+\fBВозвращает\fP
+.RS 4
+Возвращает сервис для google таблиц\&.
+.RE
+.PP
+
+.PP
+Замещает \fBIServices\fP\&.
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для TestBars из исходного текста\&.

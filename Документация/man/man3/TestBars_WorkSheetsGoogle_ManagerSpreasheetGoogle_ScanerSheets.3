@@ -1,0 +1,70 @@
+.TH "ScanerSheets" 3 "Пн 6 Апр 2020" "TestBars" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ScanerSheets \- Класс, который сканирует таблицу, на наличие листов для каждого сервера\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Базовые классы:\fBIScanerSheets\fP\&.
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "\fBScanerSheets\fP (\fBICreatorSheets\fP creatorSheets, \fBIWriterSheets\fP writerSheets, \fBIWorkFiles\fP workFiles)"
+.br
+.RI "Конструктор через который просходят иньекции объектов\&. "
+.ti -1c
+.RI "void \fBScanSheets\fP (string IdSreadssheet, IList< \fBIServerObj\fP > servers, SheetsService sheetService)"
+.br
+.RI "Сканирует листы в существующей таблице\&. "
+.in -1c
+.SH "Подробное описание"
+.PP 
+Класс, который сканирует таблицу, на наличие листов для каждого сервера\&. 
+
+
+.SH "Конструктор(ы)"
+.PP 
+.SS "\fBScanerSheets\fP (\fBICreatorSheets\fP creatorSheets, \fBIWriterSheets\fP writerSheets, \fBIWorkFiles\fP workFiles)"
+
+.PP
+Конструктор через который просходят иньекции объектов\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIcreatorSheets\fP Отвечает за создание google листа, в существующей google таблице\&.
+.br
+\fIwriterSheets\fP Отвечает за запись данных в google лист\&.
+.br
+\fIworkFiles\fP Отвечает за запись данных в txt файл, если не удалось соединиться с google Api и сработало исключение\&.
+.RE
+.PP
+
+.SH "Методы"
+.PP 
+.SS "void ScanSheets (string ListId, IList< \fBIServerObj\fP > servers, SheetsService sheetService)"
+
+.PP
+Сканирует листы в существующей таблице\&. Eсли лист не найден, вызывается метод объекта: \fBICreatorSheets\fP
+.PP
+Eсли лист найден, вызывается метод объекта: \fBIWriterSheets\fP и данные у листа обновляются\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIListId\fP Передает Id google таблицы\&.
+.br
+\fIservers\fP Передает список серверов с данными\&.
+.br
+\fIsheetService\fP Передает сервис для взаимодействия с таблицами google\&.
+.RE
+.PP
+
+.PP
+Замещает \fBIScanerSheets\fP\&.
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для TestBars из исходного текста\&.

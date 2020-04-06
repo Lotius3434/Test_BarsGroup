@@ -1,0 +1,66 @@
+.TH "WriterSheets" 3 "Пн 6 Апр 2020" "TestBars" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WriterSheets \- Класс, который отвечает за запись данных в google лист\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Базовые классы:\fBIWriterSheets\fP\&.
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "\fBWriterSheets\fP (\fBIWorkFiles\fP workFiles, \fBIDrives\fP drives)"
+.br
+.RI "Конструктор через который просходят иньекции объектов\&. "
+.ti -1c
+.RI "void \fBWriteSheet\fP (string spreadsheet, IList< \fBIServerObj\fP > servers, SheetsService sheetService)"
+.br
+.RI "Записывает данные в google лист\&. "
+.in -1c
+.SH "Подробное описание"
+.PP 
+Класс, который отвечает за запись данных в google лист\&. 
+
+
+.SH "Конструктор(ы)"
+.PP 
+.SS "\fBWriterSheets\fP (\fBIWorkFiles\fP workFiles, \fBIDrives\fP drives)"
+
+.PP
+Конструктор через который просходят иньекции объектов\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIworkFiles\fP Отвечает за запись данных в txt файл, если не удалось соединиться с google Api и сработало исключение\&.
+.br
+\fIdrives\fP Отвечает за получения списка названий жестких дисков и количесво свободного места на них\&.
+.RE
+.PP
+
+.SH "Методы"
+.PP 
+.SS "void WriteSheet (string spreadsheet, IList< \fBIServerObj\fP > servers, SheetsService sheetService)"
+
+.PP
+Записывает данные в google лист\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIspreadsheet\fP Передает Id google таблицы
+.br
+\fIservers\fP Передает список серверов с данными\&.
+.br
+\fIsheetService\fP Передает сервис для взаимодействия с таблицами google\&.
+.RE
+.PP
+
+.PP
+Замещает \fBIWriterSheets\fP\&.
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для TestBars из исходного текста\&.

@@ -4,9 +4,13 @@ using System.IO;
 
 namespace TestBars
 {
-    class Drives// Класс для работы с жесткими дисками
+    /// <summary>
+    /// Класс, который отвечает за получения списка названий жестких дисков и размер свободного места на них.
+    /// </summary>
+    /// <inheritdoc/>
+    public class Drives : IDrives// Класс для работы с жесткими дисками
     {
-        public static IList<IList<Object>> GetDriveFreeSize()//Метод получает все жесткие диски и свободное место в памяти на них
+        public IList<IList<Object>> GetDriveFreeSize()//Метод получает все жесткие диски и свободное место в памяти на них
         {
             IList<IList<Object>> drivesInfo = new List<IList<Object>>() { };
             IList<Object> drives = new List<Object>();
@@ -15,7 +19,7 @@ namespace TestBars
             foreach (DriveInfo MyDriveInfo in allDrives)
             {
 
-                //Fixed
+                
                 if (MyDriveInfo.DriveType.ToString() == "Fixed")
                 {
                     drives = new List<Object>();

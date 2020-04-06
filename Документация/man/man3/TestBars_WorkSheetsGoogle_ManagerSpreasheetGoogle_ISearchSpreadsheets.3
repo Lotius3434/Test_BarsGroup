@@ -1,0 +1,50 @@
+.TH "ISearchSpreadsheets" 3 "Пн 6 Апр 2020" "TestBars" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ISearchSpreadsheets \- Интерфейс объекта, который ищет таблицы в google disk, по названию\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Производные классы:\fBSearchSpreadsheets\fP\&.
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "string \fBSearch\fP (IList< \fBIServerObj\fP > servers, DriveService driveService)"
+.br
+.RI "Ищет таблицы в google disk, по названию\&. "
+.in -1c
+.SH "Подробное описание"
+.PP 
+Интерфейс объекта, который ищет таблицы в google disk, по названию\&. 
+
+
+.SH "Методы"
+.PP 
+.SS "string Search (IList< \fBIServerObj\fP > servers, DriveService driveService)"
+
+.PP
+Ищет таблицы в google disk, по названию\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIservers\fP Передает список серверов с данными\&.
+.br
+\fIdriveService\fP Передает сервис для взаимодействия c google disk/
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Возвращает id таблицы, если она нашлась\&. По умолчанию возвращает: null
+.RE
+.PP
+
+.PP
+Замещается в \fBSearchSpreadsheets\fP\&.
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для TestBars из исходного текста\&.
